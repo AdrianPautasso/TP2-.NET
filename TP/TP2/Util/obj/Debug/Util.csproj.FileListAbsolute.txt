@@ -10,3 +10,7 @@ C:\Proyectos\Labs\TP2L06\TP2\Util\bin\Debug\Util.dll
 C:\Proyectos\Labs\TP2L06\TP2\Util\bin\Debug\Util.pdb
 C:\Proyectos\Labs\TP2L06\TP2\Util\obj\Debug\Util.dll
 C:\Proyectos\Labs\TP2L06\TP2\Util\obj\Debug\Util.pdb
+C:\NET\TP2-.NET\TP\TP2\Util\bin\Debug\Util.dll
+C:\NET\TP2-.NET\TP\TP2\Util\bin\Debug\Util.pdb
+C:\NET\TP2-.NET\TP\TP2\Util\obj\Debug\Util.dll
+C:\NET\TP2-.NET\TP\TP2\Util\obj\Debug\Util.pdb

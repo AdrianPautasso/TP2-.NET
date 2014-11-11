@@ -5,8 +5,10 @@ using System.Text;
 
 namespace Business.Entities
 {
-    public class Personas : BusinessEntity
+    public class Persona : BusinessEntity
     {
+        private int _IDTipoPersona;
+
         private string _apellido;
 
         private string _direccion;
@@ -22,6 +24,22 @@ namespace Business.Entities
         private string _nombre;
 
         private string _telefono;
+
+        public string NombreCompleto
+        {
+            get 
+            {
+                string nombreCompleto;
+                nombreCompleto = _nombre + " " + _apellido;
+                return nombreCompleto;
+            }
+        }
+
+        public int IDTipoPersona 
+        {
+            get { return _IDTipoPersona; }
+            set { _IDTipoPersona = value; }
+        }
     
         public String Apellido
         {

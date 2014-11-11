@@ -16,7 +16,6 @@ namespace Data.Database
             SqlCommand cmdUsuarios = new SqlCommand("select us.id_usuario, per.nombre, per.apellido, us.nombre_usuario, per.email, us.habilitado " + 
                                                     "from personas per inner join usuarios us " +
                                                     "on per.id_persona = us.id_persona", this.sqlConn);
-            //SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios", this.sqlConn);
             SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
             while (drUsuarios.Read())
             {
@@ -60,10 +59,6 @@ namespace Data.Database
                 new Exception("Error al recuperar datos de usuario", ex);
                 throw ExcepcionManejada;
             }
-            finally 
-            {
-                this.CloseConnection();
-            }
             return usr;
         }
 
@@ -90,17 +85,18 @@ namespace Data.Database
 
         public void Update(Usuario usuario)
         {
-            try 
+            try
             {
                 this.OpenConnection();
-                SqlCommand cmdUpdate = new SqlCommand("UPDATE usuarios"+
-                                                    "SET nombre_usuario=@nombre_usuario, clave=@clave," +
-                                                         "habilitado=@habilitado, nombre=@nombre, apellido=@apellido, email=@email, id_persona=@id_persona" +
+                SqlCommand cmdUpdate = new SqlCommand("UPDATE usuarios "+
+                                                    "SET nombre_usuario=@nombre_usuario, clave=@clave, " +
+                                                         "habilitado=@habilitado, id_persona=@id_persona " +
                                                     "WHERE id_usuario=@id",sqlConn);
-                cmdUpdate.Parameters.Add("@nomre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
+                cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
+                cmdUpdate.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdUpdate.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
                 cmdUpdate.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
-                cmdUpdate.Parameters.Add("id_persona", SqlDbType.Int).Value = usuario.IdPersona;
+                cmdUpdate.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.IdPersona;
                 cmdUpdate.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -120,8 +116,8 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdInsert = new SqlCommand("INSERT into usuarios (nombre_usuario, clave, habilitado, nombre, apellido, email, id_persona)" +
-                                                      "VALUES (@nombre_usuario,@clave,@habilitado,@nombre,@apellido,@email,@id_persona)" +
+                SqlCommand cmdInsert = new SqlCommand("INSERT into usuarios (nombre_usuario, clave, habilitado, id_persona)" +
+                                                      "VALUES (@nombre_usuario,@clave,@habilitado,@id_persona)" +
                                                       "select @@identity", sqlConn);
                 cmdInsert.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
                 cmdInsert.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
@@ -142,11 +138,22 @@ namespace Data.Database
             }
         }
 
-        /*
         public void Save(Usuario usuario)
-        { 
-            
+        {
+            if (usuario.State == BusinessEntity.States.New)
+            {
+                this.Insert(usuario);
+            }
+            else if (usuario.State == BusinessEntity.States.Deleted)
+            {
+                this.Delete(usuario.ID);
+            }
+            else if (usuario.State == BusinessEntity.States.Modified)
+            {
+                this.Update(usuario);
+            }
+            usuario.State = BusinessEntity.States.Unmodified;
         }
-        */
+
     }
 }

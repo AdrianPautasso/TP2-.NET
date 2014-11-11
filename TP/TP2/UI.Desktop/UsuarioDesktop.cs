@@ -17,10 +17,15 @@ namespace UI.Desktop
         public UsuarioDesktop()
         {
             InitializeComponent();
-            Business.Logic.TipoPersonaLogic tpl = new Business.Logic.TipoPersonaLogic();
-            cbxTipoPersona.DataSource = tpl.GetAll();
-            cbxTipoPersona.DisplayMember = "Descripcion";
-            cbxTipoPersona.ValueMember = "IDTipoPersona";
+            this.LlenarCbxTipoPersona();
+        }
+
+        public void LlenarCbxTipoPersona()
+        {
+            Business.Logic.PersonaLogic pl = new Business.Logic.PersonaLogic();
+            cbxPersona.DataSource = pl.GetAll();
+            cbxPersona.DisplayMember = "NombreCompleto";
+            cbxPersona.ValueMember = "ID";
         }
 
         public UsuarioDesktop(ModoForm modo) : this()
@@ -69,14 +74,14 @@ namespace UI.Desktop
                     UsuarioActual = new Usuario();
                     UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                     UsuarioActual.Clave = this.txtClave.Text;
-                    //UsuarioActual.IdPersona = ((Persona)this.dgvPersona.SelectedRows[0].DataBoundItem).ID;
+                    UsuarioActual.IdPersona = Convert.ToInt32(this.cbxPersona.SelectedValue);
                     UsuarioActual.Habilitado = this.chkHabilitado.Checked;
                     UsuarioActual.State = Usuario.States.New;
                     break;
                 case UsuarioDesktop.ModoForm.Modificacion:
                     UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                     UsuarioActual.Clave = this.txtClave.Text;
-                    //UsuarioActual.IdPersona = ((Persona)this.dgvPersona.SelectedRows[0].DataBoundItem).ID;
+                    UsuarioActual.IdPersona = Convert.ToInt32(this.cbxPersona.SelectedValue);
                     UsuarioActual.Habilitado = this.chkHabilitado.Checked;
                     UsuarioActual.State = Usuario.States.Modified;
                     break;
@@ -99,15 +104,6 @@ namespace UI.Desktop
         {
             string mensaje = "";
 
-            if (String.IsNullOrEmpty(txtNombre.Text.Trim()))
-                mensaje += "- El Nombre no puede estar en blanco." + "\n";
-
-            if (String.IsNullOrEmpty(txtApellido.Text.Trim()))
-                mensaje += "- El Apellido no puede estar en blanco." + "\n";
-
-            if (String.IsNullOrEmpty(txtEmail.Text.Trim()))
-                mensaje += "- El Email no puede estar en blanco." + "\n";
-
             if (String.IsNullOrEmpty(txtUsuario.Text.Trim()))
                 mensaje += "- El Nombre de Usuario no puede estar en blanco." + "\n";
 
@@ -123,21 +119,33 @@ namespace UI.Desktop
             if (txtClave.Text.Length < 8)
                 mensaje += "- La Clave debe tener por los menos 8 caracteres." + "\n";
 
-            String expresion = @"^(?("")(""[^""]+?""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
-                @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$";
-
-            if (Regex.IsMatch(txtEmail.Text, expresion) == false)
-                mensaje += "- El Email no es valido." + "\n";
-
             if (!String.IsNullOrEmpty(mensaje))
             {
                 MessageBox.Show(mensaje, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }    
-
             return true; 
-          
         }
+
+            //if (String.IsNullOrEmpty(txtNombre.Text.Trim()))
+            //    mensaje += "- El Nombre no puede estar en blanco." + "\n";
+
+            //if (String.IsNullOrEmpty(txtApellido.Text.Trim()))
+            //    mensaje += "- El Apellido no puede estar en blanco." + "\n";
+
+            //if (String.IsNullOrEmpty(txtEmail.Text.Trim()))
+            //    mensaje += "- El Email no puede estar en blanco." + "\n";
+
+            //String expresion = @"^(?("")(""[^""]+?""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+            //    @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$";
+
+            //if (Regex.IsMatch(txtEmail.Text, expresion) == false)
+            //    mensaje += "- El Email no es valido." + "\n";
+
+            //Business.Logic.TipoPersonaLogic tpl = new Business.Logic.TipoPersonaLogic();
+            //cbxTipoPersona.DataSource = tpl.GetAll();
+            //cbxTipoPersona.DisplayMember = "Descripcion";
+            //cbxTipoPersona.ValueMember = "IDTipoPersona";
 
         private Usuario _UsuarioActual;
         public Usuario UsuarioActual

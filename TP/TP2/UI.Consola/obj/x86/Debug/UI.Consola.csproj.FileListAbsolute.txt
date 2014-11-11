@@ -64,3 +64,14 @@ C:\NET\TP\Labs\TP2L06\TP2\UI.Consola\bin\Debug\Data.Database.pdb
 C:\NET\TP\Labs\TP2L06\TP2\UI.Consola\obj\x86\Debug\UI.Consola.csprojResolveAssemblyReference.cache
 C:\NET\TP\Labs\TP2L06\TP2\UI.Consola\obj\x86\Debug\UI.Consola.exe
 C:\NET\TP\Labs\TP2L06\TP2\UI.Consola\obj\x86\Debug\UI.Consola.pdb
+C:\NET\TP2-.NET\TP\TP2\UI.Consola\bin\Debug\UI.Consola.exe
+C:\NET\TP2-.NET\TP\TP2\UI.Consola\bin\Debug\UI.Consola.pdb
+C:\NET\TP2-.NET\TP\TP2\UI.Consola\bin\Debug\Business.Entities.dll
+C:\NET\TP2-.NET\TP\TP2\UI.Consola\bin\Debug\Business.Logic.dll
+C:\NET\TP2-.NET\TP\TP2\UI.Consola\bin\Debug\Data.Database.dll
+C:\NET\TP2-.NET\TP\TP2\UI.Consola\bin\Debug\Business.Entities.pdb
+C:\NET\TP2-.NET\TP\TP2\UI.Consola\bin\Debug\Business.Logic.pdb
+C:\NET\TP2-.NET\TP\TP2\UI.Consola\bin\Debug\Data.Database.pdb
+C:\NET\TP2-.NET\TP\TP2\UI.Consola\obj\x86\Debug\UI.Consola.csprojResolveAssemblyReference.cache
+C:\NET\TP2-.NET\TP\TP2\UI.Consola\obj\x86\Debug\UI.Consola.exe
+C:\NET\TP2-.NET\TP\TP2\UI.Consola\obj\x86\Debug\UI.Consola.pdb

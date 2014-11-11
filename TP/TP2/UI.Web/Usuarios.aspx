@@ -1,24 +1,57 @@
-﻿<%@ Page Title="Usuarios" Language="C#" MasterPageFile="~/Site.Master" 
-AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" 
-Inherits="UI.Web.Usuarios" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" 
-runat="server">
-
-    <asp:Panel ID="gridPanel" runat="server" Height="235px">
-        <asp:GridView ID="gridView" runat="server"
-            AutoGenerateColumns="False"
-            SelectedRowStyle-BackColor="Black"
-            SelectedRowStyle-ForeColor="White"
-            DataKeyNames="ID" >
-            <Columns>
-                <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
-                <asp:BoundField DataField="Apellido" HeaderText="Apellido" />
-                <asp:BoundField DataField="EMail" HeaderText="EMail" />
-                <asp:BoundField DataField="NombreUsuario" HeaderText="Usuario" />
-                <asp:BoundField DataField="Habilitado" HeaderText="Habilitado" />
-                <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
-            </Columns>
+﻿<%@ Page Title="Usuarios" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="UI.Web.Usuarios" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
+<asp:Panel ID="grdUsuarios" runat="server">
+    <asp:GridView ID="gridView" ShowHeaderWhenEmpty="True" runat="server" AutoGenerateColumns="false"
+        SelectedRowStyle-BackColor="Black"
+        SelectedRowStyle-ForeColor="White"
+        DataKeyNames="ID"
+        OnSelectedIndexChanged="gridView_SelectedIndexChanged">
+        <Columns>
+        <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
+        <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
+        <asp:BoundField HeaderText="EMail" DataField="EMail" />
+        <asp:BoundField HeaderText="Usuario" DataField="NombreUsuario" />
+        <asp:BoundField HeaderText="Habilitado" DataField="Habilitado" />
+        <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" />
+        </Columns>
         </asp:GridView>
-    </asp:Panel>
+</asp:Panel>
+
+<asp:Panel ID="formPanel" Visible="false" runat="server" >
+    <asp:Label ID="personaLabel" runat="server" Text="Persona:"></asp:Label>
+    <asp:DropDownList ID="dpdPersonas" runat="server" 
+        DataSourceID="ObjectDataSource1" DataTextField="Nombre" DataValueField="ID">
+    </asp:DropDownList>
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+        SelectMethod="GetAll" TypeName="Business.Logic.PersonaLogic">
+    </asp:ObjectDataSource>
+    <br />
+    <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: "></asp:Label>
+    <asp:CheckBox ID="habilitadoCheckBox" runat="server"></asp:CheckBox>
+    <br />
+    <asp:Label ID="nombreUsuarioLabel" runat="server" Text="Usuario: "></asp:Label>
+    <asp:TextBox ID="nombreUsuarioTextBox" runat="server"></asp:TextBox>
+    <br />
+    <asp:Label ID="claveLabel" runat="server" Text="Clave: "></asp:Label>
+    <asp:TextBox ID="claveTextBox" TextMode="Password" runat="server"></asp:TextBox>
+    <br />
+    <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir Clave: "></asp:Label>
+    <asp:TextBox ID="repetirclaveTextBox" TextMode="Password" runat="server"></asp:TextBox>
+    <br />
+</asp:Panel>
+
+<asp:Panel ID="gridActionsPanel" runat="server">
+<asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
+<asp:LinkButton ID="elimnarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
+<asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
+</asp:Panel>
+
+<asp:Panel ID="formActionPanel" runat="server">
+    <asp:LinkButton ID="aceptarLinkButton" runat="server" 
+        onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+    <asp:LinkButton ID="cancelarLinkButton" runat="server" 
+        onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
+</asp:Panel>
+
 
 </asp:Content>

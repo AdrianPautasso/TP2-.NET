@@ -25,7 +25,6 @@ namespace UI.Desktop
         {
             UsuarioLogic usuarioLogic = new UsuarioLogic();
             this.dgvUsuarios.DataSource = usuarioLogic.GetAll();
-            //Agregar nombre apellido y usuario
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -73,7 +72,5 @@ namespace UI.Desktop
             formUsuario.ShowDialog();
             this.Listar();
         }
-
-
     }
 }

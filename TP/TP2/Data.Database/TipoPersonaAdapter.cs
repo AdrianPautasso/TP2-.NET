@@ -11,7 +11,7 @@ namespace Data.Database
     {
         public List<TipoPersona>GetAll()
         {
-           List<TipoPersona> tipos = new List<TipoPersona>();
+            List<TipoPersona> tipos = new List<TipoPersona>();
             this.OpenConnection();
             SqlCommand cmdTiposPersonas = new SqlCommand("select * from tipos_personas",this.sqlConn);
             SqlDataReader drTiposPersonas = cmdTiposPersonas.ExecuteReader();
