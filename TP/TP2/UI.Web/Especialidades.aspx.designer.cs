@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace UI.Web {
-    
-    
-    public partial class Especialidades {
-        
+namespace UI.Web
+{
+    public partial class Especialidades
+    {
+
         /// <summary>
         /// Control grdEspecialidades.
         /// </summary>
@@ -20,7 +20,7 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel grdEspecialidades;
-        
+
         /// <summary>
         /// Control GridViewEsp.
         /// </summary>
@@ -29,7 +29,7 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridViewEsp;
-        
+
         /// <summary>
         /// Control formPanelEsp.
         /// </summary>
@@ -38,7 +38,7 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel formPanelEsp;
-        
+
         /// <summary>
         /// Control lblID.
         /// </summary>
@@ -47,7 +47,7 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblID;
-        
+
         /// <summary>
         /// Control txtID.
         /// </summary>
@@ -56,7 +56,7 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtID;
-        
+
         /// <summary>
         /// Control lblDesc.
         /// </summary>
@@ -65,7 +65,7 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDesc;
-        
+
         /// <summary>
         /// Control txtDesc.
         /// </summary>
@@ -74,7 +74,7 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDesc;
-        
+
         /// <summary>
         /// Control gridActionPanelEsp.
         /// </summary>
@@ -83,7 +83,7 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel gridActionPanelEsp;
-        
+
         /// <summary>
         /// Control lnkEditar.
         /// </summary>
@@ -92,7 +92,7 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkEditar;
-        
+
         /// <summary>
         /// Control lnkEliminar.
         /// </summary>
@@ -101,7 +101,7 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkEliminar;
-        
+
         /// <summary>
         /// Control lnkNueva.
         /// </summary>
@@ -110,7 +110,7 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkNueva;
-        
+
         /// <summary>
         /// Control formActionPanelEsp.
         /// </summary>
@@ -119,7 +119,7 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel formActionPanelEsp;
-        
+
         /// <summary>
         /// Control lnkAceptar.
         /// </summary>
@@ -128,7 +128,7 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkAceptar;
-        
+
         /// <summary>
         /// Control lnkCancelar.
         /// </summary>

@@ -41,5 +41,15 @@ namespace Business.Logic
             }
         }
 
+        public void Save(Especialidad especialidad)
+        {
+            especialidadData.Save(especialidad);
+        }
+
+        public void Delete(int id)
+        {
+            especialidadData.Delete(id);
+        }
+
     }
 }

@@ -40,7 +40,7 @@ namespace Data.Database
                 {
                     especialidad.ID = (int)drEspecialidad["id_especialidad"];
                     especialidad.Descripcion = (string)drEspecialidad["desc_especialidad"];
-                    
+
                 }
                 this.CloseConnection();
             }
@@ -144,3 +144,4 @@ namespace Data.Database
 
     }
 }
+
