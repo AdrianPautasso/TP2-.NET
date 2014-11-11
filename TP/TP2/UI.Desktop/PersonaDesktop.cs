@@ -29,6 +29,9 @@ namespace UI.Desktop
         private void LlenarCbxPlanes()
         {
             Business.Logic.PlanLogic plg = new Business.Logic.PlanLogic();
+            cbxPlan.DataSource = plg.GetAll();
+            cbxPlan.DisplayMember = "Descripcion";
+            cbxPlan.ValueMember = "ID";
         }
 
     }
