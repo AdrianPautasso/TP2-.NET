@@ -207,6 +207,7 @@
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -217,10 +218,12 @@
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtId
             // 
             this.txtId.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(115, 9);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(162, 20);

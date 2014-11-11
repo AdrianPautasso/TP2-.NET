@@ -28,5 +28,23 @@ namespace Business.Logic
         {
             return PersonaData.GetAll();
         }
+
+        public Persona GetOne(int id)
+        {
+            try
+            {
+                return PersonaData.GetOne(id);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public void Save(Persona persona)
+        {
+            PersonaData.Save(persona);
+        }
+
     }
 }

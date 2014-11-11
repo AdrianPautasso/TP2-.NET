@@ -17,10 +17,10 @@ namespace UI.Desktop
         public UsuarioDesktop()
         {
             InitializeComponent();
-            this.LlenarCbxTipoPersona();
+            this.LlenarCbxPersonas();
         }
 
-        public void LlenarCbxTipoPersona()
+        public void LlenarCbxPersonas()
         {
             Business.Logic.PersonaLogic pl = new Business.Logic.PersonaLogic();
             cbxPersona.DataSource = pl.GetAll();
@@ -111,7 +111,7 @@ namespace UI.Desktop
                 mensaje += "- La Clave no puede estar en blanco." + "\n";
 
             if (String.IsNullOrEmpty(txtConfirmarClave.Text.Trim()))
-                mensaje += "- La Confirmacion de la Clave no puede estar en blanco." + "\n";
+                mensaje += "- La Confirmación de la Clave no puede estar en blanco." + "\n";
 
             if (txtClave.Text != txtConfirmarClave.Text)
                 mensaje += "- Las Claves no coindicen." + "\n";
@@ -126,26 +126,6 @@ namespace UI.Desktop
             }    
             return true; 
         }
-
-            //if (String.IsNullOrEmpty(txtNombre.Text.Trim()))
-            //    mensaje += "- El Nombre no puede estar en blanco." + "\n";
-
-            //if (String.IsNullOrEmpty(txtApellido.Text.Trim()))
-            //    mensaje += "- El Apellido no puede estar en blanco." + "\n";
-
-            //if (String.IsNullOrEmpty(txtEmail.Text.Trim()))
-            //    mensaje += "- El Email no puede estar en blanco." + "\n";
-
-            //String expresion = @"^(?("")(""[^""]+?""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
-            //    @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$";
-
-            //if (Regex.IsMatch(txtEmail.Text, expresion) == false)
-            //    mensaje += "- El Email no es valido." + "\n";
-
-            //Business.Logic.TipoPersonaLogic tpl = new Business.Logic.TipoPersonaLogic();
-            //cbxTipoPersona.DataSource = tpl.GetAll();
-            //cbxTipoPersona.DisplayMember = "Descripcion";
-            //cbxTipoPersona.ValueMember = "IDTipoPersona";
 
         private Usuario _UsuarioActual;
         public Usuario UsuarioActual

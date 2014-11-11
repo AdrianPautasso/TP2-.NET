@@ -99,10 +99,10 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdUpdate = new SqlCommand("UPDATE personas" +
-                                                    "SET nombre=@nombre, apellido=@apellido," +
-                                                         "direccion=@direccion, email=@email, id_persona=@id_persona" +
-                                                         "telefono=@telefono, fecha_nac=@fecha_nac, legajo=@legajo, id_plan=@id_plan, id_tipo_persona=@id_tipo_persona" +
+                SqlCommand cmdUpdate = new SqlCommand("UPDATE personas " +
+                                                    "SET nombre=@nombre, apellido=@apellido, " +
+                                                         "direccion=@direccion, email=@email, id_persona=@id_persona " +
+                                                         "telefono=@telefono, fecha_nac=@fecha_nac, legajo=@legajo, id_plan=@id_plan, id_tipo_persona=@id_tipo_persona " +
                                                     "WHERE id_persona=@id", sqlConn);
                 cmdUpdate.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
                 cmdUpdate.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
@@ -133,19 +133,19 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdInsert = new SqlCommand("INSERT into personas (nombre, apellido, direccion, email, telefono, fecha_nac, legajo, id_plan, id_tipo_persona)" +
-                                                      "VALUES (@nombre,@clave,@habilitado,@nombre,@apellido,@email,@id_persona)" +
+                SqlCommand cmdInsert = new SqlCommand("INSERT into personas (nombre, apellido, direccion, email, telefono, fecha_nac, legajo, id_plan, id_tipo_persona) " +
+                                                      "VALUES (@nombre, @apellido, @direccion, @email, @telefono, @fecha_nac, @legajo, @id_plan, @id_tipo_persona) " +
                                                       "select @@identity", sqlConn);
+                //cmdInsert.Parameters.Add("@id_persona", SqlDbType.Int).Value = persona.ID;
                 cmdInsert.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
                 cmdInsert.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
-                cmdInsert.Parameters.Add("@direccion", SqlDbType.Bit).Value = persona.Direccion;
+                cmdInsert.Parameters.Add("@direccion", SqlDbType.VarChar).Value = persona.Direccion;
                 cmdInsert.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
-                cmdInsert.Parameters.Add("@id_persona", SqlDbType.Int).Value = persona.ID;
                 cmdInsert.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
-                cmdInsert.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = persona.FechaNacimiento;
-                cmdInsert.Parameters.Add("@legajo", SqlDbType.VarChar, 50).Value = persona.Legajo;
-                cmdInsert.Parameters.Add("@id_plan", SqlDbType.VarChar, 50).Value = persona.IDPlan;
-                cmdInsert.Parameters.Add("@id_tipo_persona", SqlDbType.VarChar, 50).Value = persona.IDTipoPersona;
+                cmdInsert.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
+                cmdInsert.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
+                cmdInsert.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IDPlan;
+                cmdInsert.Parameters.Add("@id_tipo_persona", SqlDbType.Int).Value = persona.IDTipoPersona;
                 cmdInsert.ExecuteNonQuery();
             }
             catch (Exception ex)
