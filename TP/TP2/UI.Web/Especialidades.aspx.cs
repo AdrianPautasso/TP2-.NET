@@ -118,7 +118,7 @@ namespace UI.Web
         private void LoadEntity(Especialidad especialidad)
         {
             especialidad.Descripcion = this.txtDesc.Text;
-            especialidad.ID = int.Parse(this.txtID.Text);
+            //especialidad.ID = int.Parse(this.txtID.Text);
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)

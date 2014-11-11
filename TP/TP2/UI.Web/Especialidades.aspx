@@ -20,7 +20,7 @@
     <br />
     <asp:Label ID="lblID" runat="server" Text="ID:"></asp:Label>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:TextBox ID="txtID" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtID" runat="server" ReadOnly="True"></asp:TextBox>
     <br />
     <asp:Label ID="lblDesc" runat="server" Text="Descripcion:"></asp:Label>
     &nbsp; &nbsp;<asp:TextBox ID="txtDesc" runat="server"></asp:TextBox>

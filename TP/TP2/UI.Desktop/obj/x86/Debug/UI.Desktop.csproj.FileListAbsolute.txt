@@ -102,3 +102,4 @@ C:\NET\TP2-.NET\TP\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.UsuarioDesktop.resour
 C:\NET\TP2-.NET\TP\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Usuarios.resources
 C:\NET\TP2-.NET\TP\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.csproj.GenerateResource.Cache
 C:\NET\TP2-.NET\TP\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.PersonaDesktop.resources
+C:\NET\TP2-.NET\TP\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Personas.resources

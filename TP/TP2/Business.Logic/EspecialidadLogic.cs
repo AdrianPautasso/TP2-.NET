@@ -31,14 +31,14 @@ namespace Business.Logic
 
         public Especialidad GetOne(int id)
         {
-            try
-            {
+            //try
+            //{
                 return EspecialidadData.GetOne(id);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    throw e;
+            //}
         }
 
         public void Save(Especialidad especialidad)

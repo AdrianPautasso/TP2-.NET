@@ -42,7 +42,6 @@ namespace Data.Database
                     especialidad.Descripcion = (string)drEspecialidad["desc_especialidad"];
 
                 }
-                this.CloseConnection();
             }
             catch (Exception ex)
             {

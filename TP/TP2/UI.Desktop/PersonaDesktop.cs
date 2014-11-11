@@ -63,9 +63,8 @@ namespace UI.Desktop
             this.txtApellido.Text = this.PersonaActual.Apellido;
             this.txtDireccion.Text = this.PersonaActual.Direccion;
             this.txtEmail.Text = this.PersonaActual.Email;
-            this.txtTelefono.Text = this.PersonaActual.Telefono;
-            DateTime fechaNac = Convert.ToDateTime(this.txtFechaNac);
-            fechaNac = this.PersonaActual.FechaNacimiento;
+            this.txtTelefono.Text = this.PersonaActual.Telefono;      
+            this.txtFechaNac.Text = this.PersonaActual.FechaNacimiento.ToString();
             this.txtLegajo.Text = this.PersonaActual.Legajo.ToString();
 
 

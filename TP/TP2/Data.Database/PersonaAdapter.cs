@@ -58,7 +58,6 @@ namespace Data.Database
                     persona.IDPlan = (int)drPersona["id_plan"];
                     persona.IDTipoPersona = (int)drPersona["id_tipo_persona"];
                 }
-                this.CloseConnection();
             }
             catch (Exception ex)
             {
@@ -101,19 +100,19 @@ namespace Data.Database
                 this.OpenConnection();
                 SqlCommand cmdUpdate = new SqlCommand("UPDATE personas " +
                                                     "SET nombre=@nombre, apellido=@apellido, " +
-                                                         "direccion=@direccion, email=@email, id_persona=@id_persona " +
-                                                         "telefono=@telefono, fecha_nac=@fecha_nac, legajo=@legajo, id_plan=@id_plan, id_tipo_persona=@id_tipo_persona " +
+                                                         "direccion=@direccion, email=@email, telefono=@telefono, " +
+                                                         "fecha_nac=@fecha_nac, legajo=@legajo, id_plan=@id_plan, id_tipo_persona=@id_tipo_persona " +
                                                     "WHERE id_persona=@id", sqlConn);
+                cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = persona.ID;
                 cmdUpdate.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
                 cmdUpdate.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
-                cmdUpdate.Parameters.Add("@direccion", SqlDbType.Bit).Value = persona.Direccion;
+                cmdUpdate.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = persona.Direccion;
                 cmdUpdate.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
-                cmdUpdate.Parameters.Add("@id_persona", SqlDbType.Int).Value = persona.ID;
                 cmdUpdate.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
-                cmdUpdate.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = persona.FechaNacimiento;
-                cmdUpdate.Parameters.Add("@legajo", SqlDbType.VarChar, 50).Value = persona.Legajo;
-                cmdUpdate.Parameters.Add("@id_plan", SqlDbType.VarChar, 50).Value = persona.IDPlan;
-                cmdUpdate.Parameters.Add("@id_tipo_persona", SqlDbType.VarChar, 50).Value = persona.IDTipoPersona;
+                cmdUpdate.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
+                cmdUpdate.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
+                cmdUpdate.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IDPlan;
+                cmdUpdate.Parameters.Add("@id_tipo_persona", SqlDbType.Int).Value = persona.IDTipoPersona;
                 cmdUpdate.ExecuteNonQuery();
             }
             catch (Exception ex)
