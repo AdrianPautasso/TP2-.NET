@@ -13,7 +13,16 @@ namespace Data.Database
         {
             List<Persona> personas = new List<Persona>();
             this.OpenConnection();
-            SqlCommand cmdPersonas = new SqlCommand("select * from personas", this.sqlConn);
+            SqlCommand cmdPersonas = new SqlCommand("SELECT per.id_persona, per.nombre, per.apellido, " +
+                                                    "per.direccion, per.fecha_nac, per.email, per.legajo, " +
+                                                    "per.telefono, tp.id_tipo_persona, tp.desc_tipo_persona, " +
+                                                    "pl.id_plan, pl.desc_plan, es.desc_especialidad " +
+                                                    "FROM personas per INNER JOIN planes pl " +
+                                                    "ON per.id_plan = pl.id_plan " +
+                                                    "INNER JOIN tipos_personas tp " +
+                                                    "ON per.id_tipo_persona = tp.id_tipo_persona " +
+                                                    "INNER JOIN especialidades es " +
+                                                    "ON es.id_especialidad = pl.id_especialidad", sqlConn);
             SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
             while (drPersonas.Read())
             {
@@ -29,7 +38,9 @@ namespace Data.Database
                 persona.Legajo = (int)drPersonas["legajo"];
                 persona.IDPlan = (int)drPersonas["id_plan"];
                 persona.IDTipoPersona = (int)drPersonas["id_tipo_persona"];
-
+                persona.DescTipoPersona = (string)drPersonas["desc_tipo_persona"];
+                persona.DescPlan = (string)drPersonas["desc_plan"];
+                persona.DescEspecialidad = (string)drPersonas["desc_especialidad"];
                 personas.Add(persona);
             }
             this.CloseConnection();

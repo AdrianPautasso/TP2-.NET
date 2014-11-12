@@ -33,7 +33,7 @@ namespace UI.Desktop
         {
             Business.Logic.PlanLogic plg = new Business.Logic.PlanLogic();
             cbxPlan.DataSource = plg.GetAll();
-            cbxPlan.DisplayMember = "Descripcion";
+            cbxPlan.DisplayMember = "DescPlanYEspecialidad";
             cbxPlan.ValueMember = "ID";
         }
 
@@ -142,7 +142,7 @@ namespace UI.Desktop
                 mensaje += "- El Apellido no puede estar en blanco." + "\n";
 
             if (String.IsNullOrEmpty(txtDireccion.Text.Trim()))
-                mensaje += "- El Dirección no puede estar en blanco." + "\n";
+                mensaje += "- La Dirección no puede estar en blanco." + "\n";
 
             if (String.IsNullOrEmpty(txtEmail.Text.Trim()))
                 mensaje += "- El Email no puede estar en blanco." + "\n";
@@ -156,13 +156,10 @@ namespace UI.Desktop
             if (String.IsNullOrEmpty(txtTelefono.Text.Trim()))
                 mensaje += "- El Teléfono no puede estar en blanco." + "\n";
 
-            if (String.IsNullOrEmpty(txtTelefono.Text.Trim()))
-                mensaje += "- El Teléfono no puede estar en blanco." + "\n";
-
             if (String.IsNullOrEmpty(txtFechaNac.Text.Trim()))
                 mensaje += "- La Fecha de nacimiento no puede estar en blanco." + "\n";
 
-            //String expresionFecha = @"^(0?[1-9]|1[0-9]|2|2[0-9]|3[0-1])/(0?[1-9]|1[0-2])/(d{2}|d{4})$";
+            //String expresionFecha = @"^(0?[1-9]|1[0-9]|2[0-9]|3[0-1])/(0?[1-9]|1[0-2])/(d{2}|d{4})$";
 
             //if (Regex.IsMatch(txtFechaNac.Text, expresionFecha) == false)
             //    mensaje += "- La fecha de nacimiento no es una fecha válida." + "\n";

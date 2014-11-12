@@ -44,8 +44,11 @@
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPersonas.ContentPanel.SuspendLayout();
             this.tcPersonas.TopToolStripPanel.SuspendLayout();
             this.tcPersonas.SuspendLayout();
@@ -102,8 +105,11 @@
             this.Direccion,
             this.FechaNacimiento,
             this.Email,
+            this.Telefono,
             this.Legajo,
-            this.Telefono});
+            this.TipoPersona,
+            this.Plan,
+            this.Especialidad});
             this.tlPersonas.SetColumnSpan(this.dgvPersonas, 2);
             this.dgvPersonas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPersonas.Location = new System.Drawing.Point(3, 3);
@@ -219,6 +225,13 @@
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
             // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Teléfono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
             // Legajo
             // 
             this.Legajo.DataPropertyName = "Legajo";
@@ -226,12 +239,26 @@
             this.Legajo.Name = "Legajo";
             this.Legajo.ReadOnly = true;
             // 
-            // Telefono
+            // TipoPersona
             // 
-            this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.HeaderText = "Teléfono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
+            this.TipoPersona.DataPropertyName = "DescTipoPersona";
+            this.TipoPersona.HeaderText = "Tipo de persona";
+            this.TipoPersona.Name = "TipoPersona";
+            this.TipoPersona.ReadOnly = true;
+            // 
+            // Plan
+            // 
+            this.Plan.DataPropertyName = "DescPlan";
+            this.Plan.HeaderText = "Plan";
+            this.Plan.Name = "Plan";
+            this.Plan.ReadOnly = true;
+            // 
+            // Especialidad
+            // 
+            this.Especialidad.DataPropertyName = "DescEspecialidad";
+            this.Especialidad.HeaderText = "Especialidad";
+            this.Especialidad.Name = "Especialidad";
+            this.Especialidad.ReadOnly = true;
             // 
             // Personas
             // 
@@ -271,8 +298,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoPersona;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Plan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Especialidad;
 
 
     }

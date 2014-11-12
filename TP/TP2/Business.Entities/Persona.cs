@@ -7,6 +7,12 @@ namespace Business.Entities
 {
     public class Persona : BusinessEntity
     {
+        private string _descEspecialidad;
+
+        private string _descPlan;
+
+        private string _descTipoPersona;
+
         private int _IDTipoPersona;
 
         private string _apellido;
@@ -135,6 +141,24 @@ namespace Business.Entities
             {
                 _telefono = value;
             }
+        }
+
+        public string DescEspecialidad
+        {
+            get { return _descEspecialidad; }
+            set { _descEspecialidad = value; }
+        }
+
+        public string DescPlan  
+        {
+            get { return _descPlan; }
+            set { _descPlan = value; }
+        }
+
+        public string DescTipoPersona
+        {
+            get { return _descTipoPersona; }
+            set { _descTipoPersona = value; }
         }
     }
 }
