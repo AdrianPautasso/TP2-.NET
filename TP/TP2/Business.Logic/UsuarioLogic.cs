@@ -36,6 +36,12 @@ namespace Business.Logic
             }
         }
 
+        // SIN TRY CATCH
+        public Usuario GetOne(string nombreUsuario)
+        {
+            return UsuarioData.GetOne(nombreUsuario);
+        }
+
         public List<Usuario> GetAll()
         {
             return UsuarioData.GetAll();
@@ -49,6 +55,20 @@ namespace Business.Logic
         public void Delete(int id)
         {
             UsuarioData.Delete(id);
+        }
+
+        public Boolean ValidarContraseña(Usuario usuario, string contraseña)
+        {
+            if (usuario.Clave.Equals(contraseña))
+            { return true; }
+            else
+            { return false; }
+        }
+
+        public Persona GetPersona(int id_persona)
+        { 
+            PersonaAdapter per = new PersonaAdapter();
+            return per.GetOne(id_persona);
         }
     }
 }

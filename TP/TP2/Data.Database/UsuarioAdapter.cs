@@ -62,6 +62,25 @@ namespace Data.Database
             return usr;
         }
 
+        //SIN TRY CATCH
+        public Usuario GetOne(string nombreUsuario)
+        {
+            Usuario usuario = new Usuario();
+            this.OpenConnection();
+            SqlCommand cmdUsuario = new SqlCommand("SELECT * FROM usuarios WHERE nombre_usuario=@nombreUsuario", sqlConn);
+            cmdUsuario.Parameters.Add("@nombreUsuario", SqlDbType.VarChar, 50).Value = nombreUsuario;
+            SqlDataReader drUsuario = cmdUsuario.ExecuteReader();
+            if (drUsuario.Read())
+            {
+                usuario.ID = (int)drUsuario["id_usuario"];
+                usuario.NombreUsuario = (string)drUsuario["nombre_usuario"];
+                usuario.Clave = (string)drUsuario["clave"];
+                usuario.IdPersona = (int)drUsuario["id_persona"];
+            }
+            this.CloseConnection();
+            return usuario;
+        }
+
         public void Delete(int id) 
         {
             try

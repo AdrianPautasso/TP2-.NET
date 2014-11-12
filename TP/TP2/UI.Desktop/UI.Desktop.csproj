@@ -51,6 +51,12 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginUsuario.Designer.cs">
+      <DependentUpon>LoginUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonaDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginUsuario.resx">
+      <DependentUpon>LoginUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonaDesktop.resx">
       <DependentUpon>PersonaDesktop.cs</DependentUpon>
