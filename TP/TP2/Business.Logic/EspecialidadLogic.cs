@@ -11,44 +11,44 @@ namespace Business.Logic
 {
     public class EspecialidadLogic : BusinessLogic
     {
-        private EspecialidadAdapter especialidadData;
+        private EspecialidadAdapter _especialidadData;
 
         public EspecialidadLogic()
         {
-            especialidadData = new EspecialidadAdapter();
+            EspecialidadData = new EspecialidadAdapter();
         }
 
         public EspecialidadAdapter EspecialidadData
         {
-            get { return especialidadData; }
-            set { especialidadData = value; }
+            get { return _especialidadData; }
+            set { _especialidadData = value; }
         }
 
         public List<Especialidad> GetAll()
         {
-            return especialidadData.GetAll();
+            return EspecialidadData.GetAll();
         }
 
         public Especialidad GetOne(int id)
         {
-            //try
-            //{
+            try
+            {
                 return EspecialidadData.GetOne(id);
-            //}
-            //catch (Exception e)
-            //{
-            //    throw e;
-            //}
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public void Save(Especialidad especialidad)
         {
-            especialidadData.Save(especialidad);
+            EspecialidadData.Save(especialidad);
         }
 
         public void Delete(int id)
         {
-            especialidadData.Delete(id);
+            EspecialidadData.Delete(id);
         }
 
     }

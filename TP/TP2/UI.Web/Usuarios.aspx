@@ -47,11 +47,8 @@
 </asp:Panel>
 
 <asp:Panel ID="formActionPanel" runat="server">
-    <asp:LinkButton ID="aceptarLinkButton" runat="server" 
-        onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
-    <asp:LinkButton ID="cancelarLinkButton" runat="server" 
-        onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
+    <asp:LinkButton ID="aceptarLinkButton" runat="server" onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+    <asp:LinkButton ID="cancelarLinkButton" runat="server" onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
 </asp:Panel>
-
 
 </asp:Content>

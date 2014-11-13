@@ -56,27 +56,6 @@ namespace Data.Database
             return especialidad;
         }
 
-        public void Delete(int id)
-        {
-            try
-            {
-                this.OpenConnection();
-                SqlCommand cmdDelete = new SqlCommand("delete especialidades where id_especialidad=@id", sqlConn);
-                cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                cmdDelete.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Exception ExcepcionManejada =
-                new Exception("Error al intentar eliminar la especialidad", ex);
-                throw ExcepcionManejada;
-            }
-            finally
-            {
-                this.CloseConnection();
-            }
-        }
-
         public void Update(Especialidad especialidad)
         {
             try
@@ -139,6 +118,27 @@ namespace Data.Database
                 this.Update(especialidad);
             }
             especialidad.State = BusinessEntity.States.Unmodified;
+        }
+
+        public void Delete(int id)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdDelete = new SqlCommand("delete especialidades where id_especialidad=@id", sqlConn);
+                cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                cmdDelete.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al intentar eliminar el especialidad", ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
         }
 
     }

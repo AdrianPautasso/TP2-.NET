@@ -1,0 +1,9 @@
+C:\Proyectos\Labs\TP2L03\TP2\Business.Entities\bin\Debug\Business.Entities.dll
+C:\Proyectos\Labs\TP2L03\TP2\Business.Entities\bin\Debug\Business.Entities.pdb
+C:\Proyectos\Labs\TP2L03\TP2\Business.Entities\obj\Debug\Business.Entities.dll
+C:\Proyectos\Labs\TP2L03\TP2\Business.Entities\obj\Debug\Business.Entities.pdb
+C:\NET\Labs\TP2L04\TP2\Business.Entities\bin\Debug\Business.Entities.dll
+C:\NET\Labs\TP2L04\TP2\Business.Entities\bin\Debug\Business.Entities.pdb
+C:\NET\Labs\TP2L04\TP2\Business.Entities\obj\Debug\Business.Entities.csprojResolveAssemblyReference.cache
+C:\NET\Labs\TP2L04\TP2\Business.Entities\obj\Debug\Business.Entities.dll
+C:\NET\Labs\TP2L04\TP2\Business.Entities\obj\Debug\Business.Entities.pdb
