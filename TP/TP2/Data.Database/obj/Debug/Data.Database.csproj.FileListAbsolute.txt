@@ -54,3 +54,10 @@ C:\Users\Adrian\Desktop\TP\TP2\Data.Database\bin\Debug\Business.Entities.pdb
 C:\Users\Adrian\Desktop\TP\TP2\Data.Database\obj\Debug\Data.Database.csprojResolveAssemblyReference.cache
 C:\Users\Adrian\Desktop\TP\TP2\Data.Database\obj\Debug\Data.Database.dll
 C:\Users\Adrian\Desktop\TP\TP2\Data.Database\obj\Debug\Data.Database.pdb
+C:\Users\ElDopela\Desktop\TP2\Data.Database\bin\Debug\Data.Database.dll
+C:\Users\ElDopela\Desktop\TP2\Data.Database\bin\Debug\Data.Database.pdb
+C:\Users\ElDopela\Desktop\TP2\Data.Database\bin\Debug\Business.Entities.dll
+C:\Users\ElDopela\Desktop\TP2\Data.Database\bin\Debug\Business.Entities.pdb
+C:\Users\ElDopela\Desktop\TP2\Data.Database\obj\Debug\Data.Database.csprojResolveAssemblyReference.cache
+C:\Users\ElDopela\Desktop\TP2\Data.Database\obj\Debug\Data.Database.dll
+C:\Users\ElDopela\Desktop\TP2\Data.Database\obj\Debug\Data.Database.pdb

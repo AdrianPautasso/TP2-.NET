@@ -33,13 +33,13 @@ namespace UI.Web
                 {
                     return (int)this.ViewState["SelectedID"];
                 }
-                else 
+                else
                 {
                     return 0;
                 }
             }
             set
-            { 
+            {
                 this.ViewState["SelectedID"] = value;
             }
         }
@@ -53,15 +53,15 @@ namespace UI.Web
         }
 
         public enum FormModes
-        { 
+        {
             Alta,
             Baja,
             Modificacion
         }
 
-        public FormModes FormMode 
+        public FormModes FormMode
         {
-            get { return (FormModes)this.ViewState["FormMode"]; } 
+            get { return (FormModes)this.ViewState["FormMode"]; }
             set { this.ViewState["FormMode"] = value; }
         }
 
@@ -102,6 +102,7 @@ namespace UI.Web
         {
             if (this.IsEntitySelected)
             {
+                this.gridActionsPanel.Visible = false;
                 this.formPanel.Visible = true;
                 this.formActionPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
@@ -127,6 +128,7 @@ namespace UI.Web
         {
             this.formPanel.Visible = false;
             this.formActionPanel.Visible = false;
+            this.gridActionsPanel.Visible = true;
         }
 
         private void EnableForm(bool enable)
@@ -142,8 +144,9 @@ namespace UI.Web
         {
             if (this.IsEntitySelected)
             {
-                this.formPanel.Visible = true;
+                this.formPanel.Visible = false;
                 this.formActionPanel.Visible = true;
+                this.gridActionsPanel.Visible = false;
                 this.FormMode = FormModes.Baja;
                 this.EnableForm(false);
                 this.LoadForm(this.SelectedID);
@@ -158,10 +161,12 @@ namespace UI.Web
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
             switch (this.FormMode)
-            { 
+            {
                 case FormModes.Baja:
                     this.DeleteEntity(this.SelectedID);
                     this.LoadGrilla();
+                    this.gridActionsPanel.Visible = true;
+                    this.formActionPanel.Visible = false;
                     break;
                 case FormModes.Modificacion:
                     this.Entity = new Usuario();
@@ -170,12 +175,17 @@ namespace UI.Web
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrilla();
+                    this.gridActionsPanel.Visible = true;
+                    this.formActionPanel.Visible = false;
                     break;
                 case FormModes.Alta:
                     this.Entity = new Usuario();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrilla();
+                    this.gridActionsPanel.Visible = true;
+                    this.formActionPanel.Visible = false;
+                    this.formPanel.Visible = true;
                     break;
                 default:
                     break;
@@ -187,6 +197,8 @@ namespace UI.Web
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
             this.formPanel.Visible = true;
+            this.formActionPanel.Visible = true;
+            this.gridActionsPanel.Visible = false;
             this.FormMode = FormModes.Alta;
             this.ClearForm();
             this.EnableForm(true);

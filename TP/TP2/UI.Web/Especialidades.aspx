@@ -16,12 +16,7 @@
 
     </asp:GridView>
 
-<asp:Panel ID="formPanelEsp" runat="server" >
-    <br />
-    <asp:Label ID="lblID" runat="server" Text="ID:"></asp:Label>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:TextBox ID="txtID" runat="server" ReadOnly="True"></asp:TextBox>
-    <br />
+<asp:Panel ID="formPanelEsp" Visible="false" runat="server" >
     <asp:Label ID="lblDesc" runat="server" Text="Descripcion:"></asp:Label>
     &nbsp; &nbsp;<asp:TextBox ID="txtDesc" runat="server"></asp:TextBox>
 </asp:Panel>
@@ -32,7 +27,7 @@
     &nbsp;<asp:LinkButton ID="lnkNueva" OnClick="nuevoLinkButton_Click" runat="server">Nueva</asp:LinkButton>
 </asp:Panel>
 
-<asp:Panel ID="formActionPanelEsp" runat="server">
+<asp:Panel ID="formActionPanelEsp" Visible="false" runat="server">
     <asp:LinkButton ID="lnkAceptar" onclick="aceptarLinkButton_Click" runat="server">Aceptar</asp:LinkButton>
     &nbsp;<asp:LinkButton ID="lnkCancelar" onclick="cancelarLinkButton_Click" runat="server">Cancelar</asp:LinkButton>
 </asp:Panel>

@@ -52,7 +52,7 @@
             this.tlpUsuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.40845F));
             this.tlpUsuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.59155F));
             this.tlpUsuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
-            this.tlpUsuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 248F));
+            this.tlpUsuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 249F));
             this.tlpUsuario.Controls.Add(this.chkHabilitado, 2, 0);
             this.tlpUsuario.Controls.Add(this.txtID, 1, 0);
             this.tlpUsuario.Controls.Add(this.lblID, 0, 0);
@@ -80,7 +80,7 @@
             // 
             this.chkHabilitado.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.chkHabilitado.AutoSize = true;
-            this.chkHabilitado.Location = new System.Drawing.Point(327, 4);
+            this.chkHabilitado.Location = new System.Drawing.Point(326, 4);
             this.chkHabilitado.Name = "chkHabilitado";
             this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
             this.chkHabilitado.TabIndex = 7;
@@ -147,18 +147,18 @@
             // 
             this.lblPersona.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPersona.AutoSize = true;
-            this.lblPersona.Location = new System.Drawing.Point(327, 111);
+            this.lblPersona.Location = new System.Drawing.Point(326, 111);
             this.lblPersona.Name = "lblPersona";
             this.lblPersona.Size = new System.Drawing.Size(46, 13);
             this.lblPersona.TabIndex = 11;
             this.lblPersona.Text = "Persona";
             // 
-            // cbxTipoPersona
+            // cbxPersona
             // 
             this.cbxPersona.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbxPersona.FormattingEnabled = true;
-            this.cbxPersona.Location = new System.Drawing.Point(426, 107);
-            this.cbxPersona.Name = "cbxTipoPersona";
+            this.cbxPersona.Location = new System.Drawing.Point(425, 107);
+            this.cbxPersona.Name = "cbxPersona";
             this.cbxPersona.Size = new System.Drawing.Size(190, 21);
             this.cbxPersona.TabIndex = 12;
             // 
@@ -166,7 +166,7 @@
             // 
             this.lblConfClave.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblConfClave.AutoSize = true;
-            this.lblConfClave.Location = new System.Drawing.Point(327, 233);
+            this.lblConfClave.Location = new System.Drawing.Point(326, 233);
             this.lblConfClave.Name = "lblConfClave";
             this.lblConfClave.Size = new System.Drawing.Size(81, 13);
             this.lblConfClave.TabIndex = 6;
@@ -175,7 +175,7 @@
             // txtConfirmarClave
             // 
             this.txtConfirmarClave.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtConfirmarClave.Location = new System.Drawing.Point(426, 230);
+            this.txtConfirmarClave.Location = new System.Drawing.Point(425, 230);
             this.txtConfirmarClave.Name = "txtConfirmarClave";
             this.txtConfirmarClave.PasswordChar = '*';
             this.txtConfirmarClave.Size = new System.Drawing.Size(190, 20);
@@ -184,7 +184,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnAceptar.Location = new System.Drawing.Point(327, 288);
+            this.btnAceptar.Location = new System.Drawing.Point(326, 288);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 8;
@@ -195,7 +195,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCancelar.Location = new System.Drawing.Point(426, 288);
+            this.btnCancelar.Location = new System.Drawing.Point(425, 288);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 9;
@@ -210,7 +210,7 @@
             this.ClientSize = new System.Drawing.Size(672, 329);
             this.Controls.Add(this.tlpUsuario);
             this.Name = "UsuarioDesktop";
-            this.Text = "UsuarioDesktop";
+            this.Text = "Usuario";
             this.tlpUsuario.ResumeLayout(false);
             this.tlpUsuario.PerformLayout();
             this.ResumeLayout(false);

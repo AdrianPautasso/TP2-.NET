@@ -9,7 +9,7 @@ using Business.Logic;
 
 namespace UI.Web
 {
-    public partial class Comision : System.Web.UI.Page
+    public partial class Comisiones : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -39,7 +39,7 @@ namespace UI.Web
             this.GridViewCom.DataBind();
         }
 
-        private Business.Entities.Comision Entity
+        private Comision Entity
         {
             get;
             set;
@@ -96,9 +96,11 @@ namespace UI.Web
             {
                 this.formPanelCom.Visible = true;
                 this.formActionPanel.Visible = true;
+                this.gridActionPanel.Visible = false;
                 this.FormMode = FormModes.Modificacion;
                 this.EnableForm(true);
                 this.LoadForm(this.SelectedID);
+
             }
         }
 
@@ -107,21 +109,22 @@ namespace UI.Web
             this.Entity = this.Logic.GetOne(id);
             this.txtDesc.Text = this.Entity.Descripcion;
             this.txtAnioDesc.Text = Convert.ToString(Entity.AnioEspecialidad);
-
         }
 
         private void EnableForm(bool enable)
         {
             this.txtDesc.Enabled = enable;
             this.txtAnioDesc.Visible = enable;
+            this.dpdPlan.Visible = enable;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
         {
             if (this.IsEntitySelected)
             {
-                this.formPanelCom.Visible = true;
+                this.formPanelCom.Visible = false;
                 this.formActionPanel.Visible = true;
+                this.gridActionPanel.Visible = false;
                 this.FormMode = FormModes.Baja;
                 this.EnableForm(false);
                 this.LoadForm(this.SelectedID);
@@ -140,6 +143,8 @@ namespace UI.Web
                 case FormModes.Baja:
                     this.DeleteEntity(this.SelectedID);
                     this.LoadGrilla();
+                    this.gridActionPanel.Visible = true;
+                    this.formActionPanel.Visible = false;
                     break;
                 case FormModes.Modificacion:
                     this.Entity = new Business.Entities.Comision();
@@ -148,12 +153,16 @@ namespace UI.Web
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrilla();
+                    this.gridActionPanel.Visible = true;
+                    this.formActionPanel.Visible = false;
                     break;
                 case FormModes.Alta:
                     this.Entity = new Business.Entities.Comision();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrilla();
+                    this.gridActionPanel.Visible = true;
+                    this.formActionPanel.Visible = false;
                     break;
                 default:
                     break;
@@ -166,11 +175,14 @@ namespace UI.Web
         {
             comision.Descripcion = this.txtDesc.Text;
             comision.AnioEspecialidad = int.Parse(this.txtAnioDesc.Text);
+            comision.IDPlan = int.Parse(this.dpdPlan.SelectedValue);
         }
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
             this.formPanelCom.Visible = true;
+            this.gridActionPanel.Visible = false;
+            this.formActionPanel.Visible = true;
             this.FormMode = FormModes.Alta;
             this.ClearForm();
             this.EnableForm(true);
@@ -191,9 +203,8 @@ namespace UI.Web
         {
             this.formPanelCom.Visible = false;
             this.formActionPanel.Visible = false;
+            this.gridActionPanel.Visible = true;
         }
 
-
     }
-        
 }

@@ -94,7 +94,6 @@ namespace UI.Web
         {
             this.Entity = this.Logic.GetOne(id);
             this.txtDesc.Text = this.Entity.Descripcion;
-            this.txtID.Text = this.Entity.ID.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -118,7 +117,6 @@ namespace UI.Web
         private void LoadEntity(Especialidad especialidad)
         {
             especialidad.Descripcion = this.txtDesc.Text;
-            //especialidad.ID = int.Parse(this.txtID.Text);
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
@@ -131,16 +129,15 @@ namespace UI.Web
         private void EnableForm(bool enable)
         {
             this.txtDesc.Enabled = enable;
-            this.txtID.Enabled = enable;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
         {
             if (this.IsEntitySelected)
             {
-                this.gridActionPanelEsp.Visible = true;
-                this.formPanelEsp.Visible = true;
+                this.formPanelEsp.Visible = false;
                 this.formActionPanelEsp.Visible = true;
+                this.gridActionPanelEsp.Visible = false;
                 this.FormMode = FormModes.Baja;
                 this.EnableForm(false);
                 this.LoadForm(this.SelectedID);
@@ -189,9 +186,9 @@ namespace UI.Web
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
+            this.formPanelEsp.Visible = true;
             this.gridActionPanelEsp.Visible = false;
             this.formActionPanelEsp.Visible = true;
-            this.formPanelEsp.Visible = true;
             this.FormMode = FormModes.Alta;
             this.ClearForm();
             this.EnableForm(true);
@@ -199,7 +196,6 @@ namespace UI.Web
 
         private void ClearForm()
         {
-            this.txtID.Text = string.Empty;
             this.txtDesc.Text = string.Empty;
         }
     }

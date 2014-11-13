@@ -46,3 +46,14 @@ C:\Users\Adrian\Desktop\TP\TP2\UI.Web\bin\Data.Database.pdb
 C:\Users\Adrian\Desktop\TP\TP2\UI.Web\obj\Debug\UI.Web.csprojResolveAssemblyReference.cache
 C:\Users\Adrian\Desktop\TP\TP2\UI.Web\obj\Debug\UI.Web.dll
 C:\Users\Adrian\Desktop\TP\TP2\UI.Web\obj\Debug\UI.Web.pdb
+C:\Users\ElDopela\Desktop\TP2\UI.Web\bin\UI.Web.dll
+C:\Users\ElDopela\Desktop\TP2\UI.Web\bin\UI.Web.pdb
+C:\Users\ElDopela\Desktop\TP2\UI.Web\bin\Business.Entities.dll
+C:\Users\ElDopela\Desktop\TP2\UI.Web\bin\Business.Logic.dll
+C:\Users\ElDopela\Desktop\TP2\UI.Web\bin\Data.Database.dll
+C:\Users\ElDopela\Desktop\TP2\UI.Web\bin\Business.Entities.pdb
+C:\Users\ElDopela\Desktop\TP2\UI.Web\bin\Business.Logic.pdb
+C:\Users\ElDopela\Desktop\TP2\UI.Web\bin\Data.Database.pdb
+C:\Users\ElDopela\Desktop\TP2\UI.Web\obj\Debug\UI.Web.csprojResolveAssemblyReference.cache
+C:\Users\ElDopela\Desktop\TP2\UI.Web\obj\Debug\UI.Web.dll
+C:\Users\ElDopela\Desktop\TP2\UI.Web\obj\Debug\UI.Web.pdb

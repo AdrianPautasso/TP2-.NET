@@ -310,7 +310,7 @@
             this.ClientSize = new System.Drawing.Size(672, 329);
             this.Controls.Add(this.tplPersonas);
             this.Name = "PersonaDesktop";
-            this.Text = "PersonaDesktop";
+            this.Text = "Persona";
             this.tplPersonas.ResumeLayout(false);
             this.tplPersonas.PerformLayout();
             this.ResumeLayout(false);

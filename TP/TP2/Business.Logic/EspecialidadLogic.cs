@@ -11,22 +11,22 @@ namespace Business.Logic
 {
     public class EspecialidadLogic : BusinessLogic
     {
-        private EspecialidadAdapter _especialidadData;
+        private EspecialidadAdapter especialidadData;
 
         public EspecialidadLogic()
         {
-            EspecialidadData = new EspecialidadAdapter();
+            especialidadData = new EspecialidadAdapter();
         }
 
         public EspecialidadAdapter EspecialidadData
         {
-            get { return _especialidadData; }
-            set { _especialidadData = value; }
+            get { return especialidadData; }
+            set { especialidadData = value; }
         }
 
         public List<Especialidad> GetAll()
         {
-            return EspecialidadData.GetAll();
+            return especialidadData.GetAll();
         }
 
         public Especialidad GetOne(int id)
@@ -43,12 +43,12 @@ namespace Business.Logic
 
         public void Save(Especialidad especialidad)
         {
-            EspecialidadData.Save(especialidad);
+            especialidadData.Save(especialidad);
         }
 
         public void Delete(int id)
         {
-            EspecialidadData.Delete(id);
+            especialidadData.Delete(id);
         }
 
     }
