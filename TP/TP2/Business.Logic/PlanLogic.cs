@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Business.Logic
 {
-    public class PlanLogic : BusinessLogic 
+    public class PlanLogic : BusinessLogic
     {
         private PlanAdapter planData;
 
@@ -27,6 +27,28 @@ namespace Business.Logic
         public List<Plan> GetAll()
         {
             return planData.GetAll();
+        }
+
+        public Plan GetOne(int id)
+        {
+            try
+            {
+                return PlanData.GetOne(id);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public void Save(Plan plan)
+        {
+            PlanData.Save(plan);
+        }
+
+        public void Delete(int id)
+        {
+            PlanData.Delete(id);
         }
     }
 }

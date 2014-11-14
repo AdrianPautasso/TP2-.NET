@@ -26,7 +26,7 @@ namespace UI.Desktop
             Business.Logic.TipoPersonaLogic tpl = new Business.Logic.TipoPersonaLogic();
             cbxTipoPersona.DataSource = tpl.GetAll();
             cbxTipoPersona.DisplayMember = "Descripcion";
-            cbxTipoPersona.ValueMember = "IDTipoPersona";
+            cbxTipoPersona.ValueMember = "ID";
         }
 
         private void LlenarCbxPlanes()

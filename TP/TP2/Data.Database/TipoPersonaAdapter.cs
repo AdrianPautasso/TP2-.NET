@@ -19,7 +19,7 @@ namespace Data.Database
             {
                 TipoPersona tipo = new TipoPersona();
 
-                tipo.IDTipoPersona = (int)drTiposPersonas["id_tipo_persona"];
+                tipo.ID = (int)drTiposPersonas["id_tipo_persona"];
                 tipo.Descripcion = (string)drTiposPersonas["desc_tipo_persona"];
 
                 tipos.Add(tipo);

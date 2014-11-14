@@ -5,10 +5,9 @@ using System.Text;
 
 namespace Business.Entities
 {
-    public class TipoPersona
+    public class TipoPersona : BusinessEntity
     {
         private string _descripcion;
-        private int _idTipoPersona;
 
         public String Descripcion
         {
@@ -19,18 +18,6 @@ namespace Business.Entities
             set
             {
                 _descripcion = value;
-            }
-        }
-
-        public int IDTipoPersona
-        {
-            get
-            {
-                return _idTipoPersona;
-            }
-            set
-            {
-                _idTipoPersona = value;
             }
         }
     }

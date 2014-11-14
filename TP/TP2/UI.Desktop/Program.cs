@@ -12,7 +12,7 @@ namespace UI.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Comisiones());
+            Application.Run(new Personas());
         }
     }
 }
