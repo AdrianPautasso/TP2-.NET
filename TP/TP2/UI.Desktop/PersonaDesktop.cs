@@ -38,6 +38,7 @@ namespace UI.Desktop
         }
 
         private Persona _PersonaActual;
+
         public Persona PersonaActual
         {
             get { return _PersonaActual; }
