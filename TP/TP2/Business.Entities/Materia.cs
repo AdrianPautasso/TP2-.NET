@@ -14,6 +14,8 @@ namespace Business.Entities
         private int _idPlan;
 
         private int _hsTotales;
+
+        private string _descPlan;
     
         public String Descripcion
         {
@@ -49,6 +51,12 @@ namespace Business.Entities
             {
                 _idPlan = value;
             }
+        }
+
+        public string DescPlan
+        {
+            get { return _descPlan; }
+            set { _descPlan = value; }
         }
 
         public int HSTotales

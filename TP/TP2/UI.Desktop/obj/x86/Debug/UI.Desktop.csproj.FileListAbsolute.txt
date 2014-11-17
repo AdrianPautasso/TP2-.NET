@@ -165,3 +165,4 @@ C:\NET\TP2-.NET\TP\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Comisiones.resources
 C:\NET\TP2-.NET\TP\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.ComisionDesktop.resources
 C:\NET\TP2-.NET\TP\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Planes.resources
 C:\NET\TP2-.NET\TP\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.PlanDesktop.resources
+C:\NET\TP2-.NET\TP\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Materias.resources

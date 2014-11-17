@@ -68,29 +68,29 @@ namespace Data.Database
 
         public void Delete(int id)
         {
-            //try
-            //{
+            try
+            {
                 this.OpenConnection();
                 SqlCommand cmdDelete = new SqlCommand("delete comisiones where id_comision=@id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 cmdDelete.ExecuteNonQuery();
-            //}
-            //catch (Exception ex)
-            //{
-            //    Exception ExcepcionManejada =
-            //    new Exception("Error al intentar eliminar la comision", ex);
-            //    throw ExcepcionManejada;
-            //}
-            //finally
-            //{
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al intentar eliminar la comision", ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
                 this.CloseConnection();
-            //}
+            }
         }
 
         public void Update(Comision comision)
         {
-            //try
-            //{
+            try
+            {
                 this.OpenConnection();
                 SqlCommand cmdUpdate = new SqlCommand("UPDATE comisiones SET desc_comision=@desc_comision, anio_especialidad=@anio_especialidad, id_plan=@id_plan " +
                                                       "WHERE id_comision=@id_comision", sqlConn);
@@ -99,23 +99,23 @@ namespace Data.Database
                 cmdUpdate.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
                 cmdUpdate.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.IDPlan;
                 cmdUpdate.ExecuteNonQuery();
-            //}
-            //catch (Exception ex)
-            //{
-            //    Exception ExcepcionManejada =
-            //    new Exception("Error al intentar actualizar datos de la comision", ex);
-            //    throw ExcepcionManejada;
-            //}
-            //finally
-            //{
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al intentar actualizar datos de la comision", ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
                 this.CloseConnection();
-            //}
+            }
         }
 
         public void Insert(Comision comision)
         {
-            //try
-            //{
+            try
+            {
                 this.OpenConnection();
                 SqlCommand cmdInsert = new SqlCommand("insert into comisiones (desc_comision, anio_especialidad, id_plan) " +
                                                       "values(@desc_comision,@anio_especialidad,@id_plan) " +
@@ -124,18 +124,18 @@ namespace Data.Database
                 cmdInsert.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
                 cmdInsert.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.IDPlan;
                 cmdInsert.ExecuteNonQuery();
-                //comision.ID = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
-            //}
-            //catch (Exception ex)
-            //{
-            //    Exception ExcepcionManejada =
-            //    new Exception("Error al intentar insertar datos de la comision", ex);
-            //    throw ExcepcionManejada;
-            //}
-            //finally
-            //{
+                comision.ID = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al intentar insertar datos de la comision", ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
                 this.CloseConnection();
-            //}
+            }
         }
 
         public void Save(Comision comision)

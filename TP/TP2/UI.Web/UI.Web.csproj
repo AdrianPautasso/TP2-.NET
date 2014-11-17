@@ -60,6 +60,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Especialidades.aspx" />
     <Content Include="Planes.aspx" />
+    <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />

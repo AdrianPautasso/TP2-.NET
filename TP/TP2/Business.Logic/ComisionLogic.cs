@@ -12,16 +12,15 @@ namespace Business.Logic
     public class ComisionLogic : BusinessLogic
     {
         private ComisionAdapter _ComisionData;
-
-        public ComisionLogic()
-        {
-            _ComisionData = new ComisionAdapter();
-        }
-
         public ComisionAdapter ComisionData
         {
             get { return _ComisionData; }
             set { _ComisionData = value; }
+        }
+
+        public ComisionLogic()
+        {
+            _ComisionData = new ComisionAdapter();
         }
 
         public List<Comision> GetAll()
