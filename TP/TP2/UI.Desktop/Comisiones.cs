@@ -56,7 +56,6 @@ namespace UI.Desktop
             {
                 System.Windows.Forms.MessageBox.Show(ExcepcionManejada.Message);
             }
-
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)

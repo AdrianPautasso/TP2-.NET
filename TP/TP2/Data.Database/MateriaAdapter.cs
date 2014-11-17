@@ -86,7 +86,7 @@ namespace Data.Database
                 cmdInsert.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HSSemanales;
                 cmdInsert.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HSTotales;
                 cmdInsert.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.IDPlan;
-                cmdInsert.ExecuteNonQuery();
+                //cmdInsert.ExecuteNonQuery();
                 materia.ID = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
             }
             catch (Exception ex)
