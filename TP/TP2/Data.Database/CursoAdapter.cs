@@ -57,8 +57,8 @@ namespace Data.Database
 
         public void Insert(Curso curso)
         {
-            //try
-            //{
+            try
+            {
                 this.OpenConnection();
                 SqlCommand cmdInsert = new SqlCommand("insert into cursos (id_materia, id_comision, anio_calendario, cupo) " +
                                                       "values(@id_materia,@id_comision,@anio_calendario ,@cupo) " +
@@ -69,17 +69,17 @@ namespace Data.Database
                 cmdInsert.Parameters.Add("@cupo", SqlDbType.Int).Value = curso.Cupo;
                 //cmdInsert.ExecuteNonQuery();
                 curso.ID = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
-            //}
-            //catch (Exception ex)
-            //{
-            //    Exception ExcepcionManejada =
-            //    new Exception("Error al intentar insertar datos del curso", ex);
-            //    throw ExcepcionManejada;
-            //}
-            //finally
-            //{
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al intentar insertar datos del curso", ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
                 this.CloseConnection();
-            //}
+            }
         }
 
         public void Delete(int id)
@@ -105,8 +105,8 @@ namespace Data.Database
 
         public void Update(Curso curso)
         {
-            ////try
-            ////{
+            try
+            {
                 this.OpenConnection();
                 SqlCommand cmdUpdate = new SqlCommand("UPDATE cursos SET id_materia=@id_materia, id_comision=@id_comision, anio_calendario=@anio_calendario ,cupo=@cupo " +
                                                       "WHERE id_curso=@id_curso", sqlConn);
@@ -117,17 +117,17 @@ namespace Data.Database
                 cmdUpdate.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
                 cmdUpdate.Parameters.Add("@cupo", SqlDbType.Int).Value = curso.Cupo;
                 cmdUpdate.ExecuteNonQuery();
-            //}
-            //catch (Exception ex)
-            //{
-            //    Exception ExcepcionManejada =
-            //    new Exception("Error al intentar actualizar datos del curso", ex);
-            //    throw ExcepcionManejada;
-            //}
-            //finally
-            //{
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al intentar actualizar datos del curso", ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
                 this.CloseConnection();
-            //}
+            }
         }
 
         public void Save(Curso curso)
