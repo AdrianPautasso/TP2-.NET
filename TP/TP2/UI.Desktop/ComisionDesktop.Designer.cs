@@ -141,17 +141,19 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(340, 84);
+            this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAceptar.Location = new System.Drawing.Point(351, 90);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 11;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_1);
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(443, 84);
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancelar.Location = new System.Drawing.Point(517, 90);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 12;

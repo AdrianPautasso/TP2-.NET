@@ -54,16 +54,16 @@ namespace UI.Desktop
             this.txtAnioEspecialidad.Text = ComisionActual.AnioEspecialidad.ToString();
             switch (this.m_form)
             {
-                case UsuarioDesktop.ModoForm.Modificacion:
+                case ComisionDesktop.ModoForm.Modificacion:
                     this.btnAceptar.Text = "Guardar";
                     break;
-                case UsuarioDesktop.ModoForm.Baja:
+                case ComisionDesktop.ModoForm.Baja:
                     this.btnAceptar.Text = "Borrar";
                     break;
-                case UsuarioDesktop.ModoForm.Alta:
+                case ComisionDesktop.ModoForm.Alta:
                     this.btnAceptar.Text = "Guardar";
                     break;
-                case UsuarioDesktop.ModoForm.Consulta:
+                case ComisionDesktop.ModoForm.Consulta:
                     this.btnAceptar.Text = "Aceptar";
                     break;
                 default:
@@ -75,21 +75,21 @@ namespace UI.Desktop
         {
             switch (this.m_form)
             {
-                case UsuarioDesktop.ModoForm.Alta:
+                case ComisionDesktop.ModoForm.Alta:
                     ComisionActual = new Comision();
                     ComisionActual.Descripcion = this.txtDescripcion.Text.Trim();
                     ComisionActual.AnioEspecialidad = Convert.ToInt32(this.txtAnioEspecialidad.Text.Trim());
                     ComisionActual.IDPlan = Convert.ToInt32(this.cbxPlanes.SelectedValue);
-                    ComisionActual.State = Usuario.States.New;
+                    ComisionActual.State = Comision.States.New;
                     break;
-                case UsuarioDesktop.ModoForm.Modificacion:
+                case ComisionDesktop.ModoForm.Modificacion:
                     ComisionActual.Descripcion = this.txtDescripcion.Text.Trim();
                     ComisionActual.AnioEspecialidad = Convert.ToInt32(this.txtAnioEspecialidad.Text.Trim());
                     ComisionActual.IDPlan = Convert.ToInt32(this.cbxPlanes.SelectedValue);
-                    ComisionActual.State = Usuario.States.Modified;
+                    ComisionActual.State = Comision.States.Modified;
                     break;
-                case UsuarioDesktop.ModoForm.Baja:
-                    ComisionActual.State = Usuario.States.Deleted;
+                case ComisionDesktop.ModoForm.Baja:
+                    ComisionActual.State = Comision.States.Deleted;
                     break;
                 default:
                     break;
@@ -121,18 +121,18 @@ namespace UI.Desktop
             return true;
         }
 
-        private void btnAceptar_Click_1(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (Validar())
             {
                 GuardarCambios();
                 this.Close();
             }
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
     }
