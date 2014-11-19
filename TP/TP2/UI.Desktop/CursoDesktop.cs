@@ -86,7 +86,6 @@ namespace UI.Desktop
             { 
                 case CursoDesktop.ModoForm.Alta:
                     CursoActual = new Curso();
-                    CursoActual.ID = Convert.ToInt32(this.txtID.Text);
                     CursoActual.IDComision = Convert.ToInt32(this.cbxComision.SelectedValue);
                     CursoActual.IDMateria = Convert.ToInt32(this.cbxMateria.SelectedValue);
                     CursoActual.AnioCalendario = Convert.ToInt32(this.txtAnioAcademico.Text);

@@ -53,17 +53,16 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int ID = ((Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
-                CursoDesktop formCurso = new CursoDesktop(ID, ApplicationForm.ModoForm.Alta);
+            //try
+            //{
+                CursoDesktop formCurso = new CursoDesktop(ApplicationForm.ModoForm.Alta);
                 formCurso.ShowDialog();
                 this.Listar();
-            }
-            catch (Exception ExcepcionManejada)
-            {
-                System.Windows.Forms.MessageBox.Show(ExcepcionManejada.Message);
-            }
+            //}
+            //catch (Exception ExcepcionManejada)
+            //{
+            //    System.Windows.Forms.MessageBox.Show(ExcepcionManejada.Message);
+            //}
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)

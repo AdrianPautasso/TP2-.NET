@@ -29,6 +29,11 @@ namespace Business.Logic
             return PersonaData.GetAll();
         }
 
+        public List<Persona> GetAll(int id_tipo_persona)
+        {
+            return PersonaData.GetAll(id_tipo_persona);
+        }
+
         public Persona GetOne(int id)
         {
             try

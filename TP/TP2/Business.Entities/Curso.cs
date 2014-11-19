@@ -86,5 +86,10 @@ namespace Business.Entities
             get { return _DescComision; }
             set { _DescComision = value; }
         }
+
+        public string DescMateriaYComision
+        {
+            get { return _DescMateria + " " + _DescComision; }
+        }
     }
 }

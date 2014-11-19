@@ -47,6 +47,44 @@ namespace Data.Database
             return personas;
         }
 
+        public List<Persona> GetAll(int id_tipo_persona)
+        {
+            List<Persona> personas = new List<Persona>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdPersonas = new SqlCommand("select * from personas where id_tipo_persona=@id_tipo_persona order by nombre asc", this.sqlConn);
+                cmdPersonas.Parameters.Add("@id_tipo_persona", SqlDbType.Int).Value = id_tipo_persona;
+                SqlDataReader drPersona = cmdPersonas.ExecuteReader();
+                while (drPersona.Read())
+                {
+                    Persona persona = new Persona();
+                    persona.ID = (int)drPersona["id_persona"];
+                    persona.Nombre = (string)drPersona["nombre"];
+                    persona.Apellido = (string)drPersona["apellido"];
+                    persona.Direccion = (string)drPersona["direccion"];
+                    persona.Email = (string)drPersona["email"];
+                    persona.Telefono = (string)drPersona["telefono"];
+                    persona.FechaNacimiento = (DateTime)drPersona["fecha_nac"];
+                    persona.Legajo = (int)drPersona["legajo"];
+                    persona.IDPlan = (int)drPersona["id_plan"];
+                    persona.IDTipoPersona = (int)drPersona["id_tipo_persona"];
+                    personas.Add(persona);
+                }
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar datos de la persona", ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return personas;
+        }
+
         public Persona GetOne(int id)
         {
             Persona persona = new Persona();

@@ -34,10 +34,6 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvInscripciones = new System.Windows.Forms.DataGridView();
-            this.tsInscripciones = new System.Windows.Forms.ToolStrip();
-            this.tscNueva = new System.Windows.Forms.ToolStripButton();
-            this.tscEditar = new System.Windows.Forms.ToolStripButton();
-            this.tscEliminar = new System.Windows.Forms.ToolStripButton();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +42,10 @@
             this.Comisión = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Condición = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tsInscripciones = new System.Windows.Forms.ToolStrip();
+            this.tscNueva = new System.Windows.Forms.ToolStripButton();
+            this.tscEditar = new System.Windows.Forms.ToolStripButton();
+            this.tscEliminar = new System.Windows.Forms.ToolStripButton();
             this.tscInscripciones.ContentPanel.SuspendLayout();
             this.tscInscripciones.TopToolStripPanel.SuspendLayout();
             this.tscInscripciones.SuspendLayout();
@@ -134,45 +134,6 @@
             this.dgvInscripciones.Size = new System.Drawing.Size(753, 287);
             this.dgvInscripciones.TabIndex = 2;
             // 
-            // tsInscripciones
-            // 
-            this.tsInscripciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tsInscripciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tscNueva,
-            this.tscEditar,
-            this.tscEliminar});
-            this.tsInscripciones.Location = new System.Drawing.Point(3, 0);
-            this.tsInscripciones.Name = "tsInscripciones";
-            this.tsInscripciones.Size = new System.Drawing.Size(81, 25);
-            this.tsInscripciones.TabIndex = 0;
-            // 
-            // tscNueva
-            // 
-            this.tscNueva.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tscNueva.Image = ((System.Drawing.Image)(resources.GetObject("tscNueva.Image")));
-            this.tscNueva.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tscNueva.Name = "tscNueva";
-            this.tscNueva.Size = new System.Drawing.Size(23, 22);
-            this.tscNueva.Text = "Nueva";
-            // 
-            // tscEditar
-            // 
-            this.tscEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tscEditar.Image = ((System.Drawing.Image)(resources.GetObject("tscEditar.Image")));
-            this.tscEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tscEditar.Name = "tscEditar";
-            this.tscEditar.Size = new System.Drawing.Size(23, 22);
-            this.tscEditar.Text = "Editar";
-            // 
-            // tscEliminar
-            // 
-            this.tscEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tscEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tscEliminar.Image")));
-            this.tscEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tscEliminar.Name = "tscEliminar";
-            this.tscEliminar.Size = new System.Drawing.Size(23, 22);
-            this.tscEliminar.Text = "Eliminar";
-            // 
             // ID
             // 
             this.ID.DataPropertyName = "ID";
@@ -228,6 +189,48 @@
             this.Nota.HeaderText = "Nota";
             this.Nota.Name = "Nota";
             this.Nota.ReadOnly = true;
+            // 
+            // tsInscripciones
+            // 
+            this.tsInscripciones.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsInscripciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tscNueva,
+            this.tscEditar,
+            this.tscEliminar});
+            this.tsInscripciones.Location = new System.Drawing.Point(3, 0);
+            this.tsInscripciones.Name = "tsInscripciones";
+            this.tsInscripciones.Size = new System.Drawing.Size(112, 25);
+            this.tsInscripciones.TabIndex = 0;
+            // 
+            // tscNueva
+            // 
+            this.tscNueva.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tscNueva.Image = ((System.Drawing.Image)(resources.GetObject("tscNueva.Image")));
+            this.tscNueva.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tscNueva.Name = "tscNueva";
+            this.tscNueva.Size = new System.Drawing.Size(23, 22);
+            this.tscNueva.Text = "Nueva";
+            this.tscNueva.Click += new System.EventHandler(this.tscNueva_Click);
+            // 
+            // tscEditar
+            // 
+            this.tscEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tscEditar.Image = ((System.Drawing.Image)(resources.GetObject("tscEditar.Image")));
+            this.tscEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tscEditar.Name = "tscEditar";
+            this.tscEditar.Size = new System.Drawing.Size(23, 22);
+            this.tscEditar.Text = "Editar";
+            this.tscEditar.Click += new System.EventHandler(this.tscEditar_Click);
+            // 
+            // tscEliminar
+            // 
+            this.tscEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tscEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tscEliminar.Image")));
+            this.tscEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tscEliminar.Name = "tscEliminar";
+            this.tscEliminar.Size = new System.Drawing.Size(23, 22);
+            this.tscEliminar.Text = "Eliminar";
+            this.tscEliminar.Click += new System.EventHandler(this.tscEliminar_Click);
             // 
             // Inscripciones
             // 

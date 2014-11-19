@@ -28,5 +28,6 @@ namespace Business.Logic
         {
             return tipoPersonaData.GetAll();
         }
+
     }
 }

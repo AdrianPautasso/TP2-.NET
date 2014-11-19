@@ -35,5 +35,35 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
+        private void tscNueva_Click(object sender, EventArgs e)
+        {
+            InscripcionesDesktop formInscripcion = new InscripcionesDesktop(ApplicationForm.ModoForm.Alta);
+            formInscripcion.ShowDialog();
+            this.Listar();
+        }
+
+        private void tscEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int ID = ((AlumnoInscripcion)this.dgvInscripciones.SelectedRows[0].DataBoundItem).ID;
+                InscripcionesDesktop formInscripcion = new InscripcionesDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                formInscripcion.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception ExcepcionManejada)
+            {
+                System.Windows.Forms.MessageBox.Show(ExcepcionManejada.Message);
+            }
+        }
+
+        private void tscEliminar_Click(object sender, EventArgs e)
+        {
+            int ID = ((AlumnoInscripcion)this.dgvInscripciones.SelectedRows[0].DataBoundItem).ID;
+            InscripcionesDesktop formInscripcion = new InscripcionesDesktop(ID, ApplicationForm.ModoForm.Baja);
+            formInscripcion.ShowDialog();
+            this.Listar();
+        }
     }
 }

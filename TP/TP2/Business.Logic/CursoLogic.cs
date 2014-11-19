@@ -28,6 +28,11 @@ namespace Business.Logic
             return CursoData.GetAll();
         }
 
+        public List<Curso> GetConCupo()
+        {
+            return CursoData.GetConCupo();
+        }
+
         public Curso GetOne(int id)
         {
             return CursoData.GetOne(id);
@@ -36,6 +41,11 @@ namespace Business.Logic
         public void Save(Curso curso)
         {
             CursoData.Save(curso);
+        }
+
+        public void Update(Curso curso)
+        { 
+            CursoData.Update(curso);
         }
 
         public void Delete(int id)

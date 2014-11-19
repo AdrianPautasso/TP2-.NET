@@ -36,6 +36,35 @@ namespace Data.Database
             return cursos;
         }
 
+        public List<Curso> GetConCupo()
+        {
+            List<Curso> cursosConCupo = new List<Curso>();
+            this.OpenConnection();
+            SqlCommand cmdCursosConCupo = new SqlCommand("SELECT cur.id_curso, cur.id_materia, mat.desc_materia, cur.id_comision, " +
+                                        "com.desc_comision, cur.anio_calendario, cur.cupo " +
+                                        "FROM cursos cur INNER JOIN materias mat " +
+                                        "ON cur.id_materia = mat.id_materia " +
+                                        "INNER JOIN comisiones com " +
+                                        "ON com.id_comision = cur.id_comision " +
+                                        "where (cupo>0) and (anio_calendario=2014) ", this.sqlConn);
+            SqlDataReader drCursosConCupo = cmdCursosConCupo.ExecuteReader();
+            while (drCursosConCupo.Read())
+            {
+                Curso curso = new Curso();
+                curso.ID = (int)drCursosConCupo["id_curso"];
+                curso.IDMateria = (int)drCursosConCupo["id_materia"];
+                curso.DescMateria = (string)drCursosConCupo["desc_materia"];
+                curso.IDComision = (int)drCursosConCupo["id_comision"];
+                curso.DescComision = (string)drCursosConCupo["desc_comision"];
+                curso.AnioCalendario = (int)drCursosConCupo["anio_calendario"];
+                curso.Cupo = (int)drCursosConCupo["cupo"];
+                cursosConCupo.Add(curso);
+            }
+
+            this.CloseConnection();
+            return cursosConCupo;
+        }
+
         public Curso GetOne(int id)
         {
             Curso curso = new Curso();
