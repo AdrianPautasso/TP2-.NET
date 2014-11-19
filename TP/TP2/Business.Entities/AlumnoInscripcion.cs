@@ -15,6 +15,17 @@ namespace Business.Entities
 
         private int _idCurso;
 
+        private string _nombreAlumno;
+
+        private string _apellidoAlumno;
+
+        private int _legajoAlumno;
+
+        private string _descripcionMateria;
+
+        private string _descripcionComision;
+
+
         public string Condicion
         {
             get
@@ -62,5 +73,36 @@ namespace Business.Entities
                 _idCurso = value;
             }
         }
+
+        public string NombreAlumno
+        {
+            get { return _nombreAlumno; }
+            set { _nombreAlumno = value; }
+        }
+
+        public string ApellidoAlumno
+        {
+            get { return _apellidoAlumno; }
+            set { _apellidoAlumno = value; }
+        }
+
+        public int LegajoAlumno
+        {
+            get { return _legajoAlumno; }
+            set { _legajoAlumno = value; }
+        }
+
+        public string DescMateria
+        {
+            get { return _descripcionMateria; }
+            set { _descripcionMateria = value; }
+        }
+
+        public string DescComision
+        {
+            get { return _descripcionComision; }
+            set { _descripcionComision = value; }
+        }
+
     }
 }

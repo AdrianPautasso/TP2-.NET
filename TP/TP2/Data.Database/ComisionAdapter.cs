@@ -123,7 +123,7 @@ namespace Data.Database
                 cmdInsert.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = comision.Descripcion;
                 cmdInsert.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
                 cmdInsert.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.IDPlan;
-                cmdInsert.ExecuteNonQuery();
+                //cmdInsert.ExecuteNonQuery();
                 comision.ID = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
             }
             catch (Exception ex)

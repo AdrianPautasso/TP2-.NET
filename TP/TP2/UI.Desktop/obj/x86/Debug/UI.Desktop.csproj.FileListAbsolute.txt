@@ -169,3 +169,4 @@ C:\NET\TP2-.NET\TP\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Materias.resources
 C:\NET\TP2-.NET\TP\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.MateriaDesktop.resources
 C:\NET\TP2-.NET\TP\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Cursos.resources
 C:\NET\TP2-.NET\TP\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.CursoDesktop.resources
+C:\NET\TP2-.NET\TP\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Inscripciones.resources
