@@ -51,5 +51,10 @@ namespace Business.Logic
             PersonaData.Save(persona);
         }
 
+        public void Delete(int id)
+        {
+            PersonaData.Delete(id);
+        }
+
     }
 }
