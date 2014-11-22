@@ -16,7 +16,8 @@ namespace Data.Database
             SqlCommand cmdMaterias = new SqlCommand("select mat.id_materia, mat.desc_materia, " +
                                                     "mat.hs_semanales, mat.hs_totales, pl.id_plan, pl.desc_plan " +
                                                     "from materias mat inner join planes pl " +
-                                                    "on mat.id_plan = pl.id_plan ", this.sqlConn);
+                                                    "on mat.id_plan = pl.id_plan " +
+                                                    "order by mat.desc_materia asc ", this.sqlConn);
             SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
             while(drMaterias.Read())
             {

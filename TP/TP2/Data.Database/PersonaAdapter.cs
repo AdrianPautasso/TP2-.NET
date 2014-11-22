@@ -22,7 +22,8 @@ namespace Data.Database
                                                     "INNER JOIN tipos_personas tp " +
                                                     "ON per.id_tipo_persona = tp.id_tipo_persona " +
                                                     "INNER JOIN especialidades es " +
-                                                    "ON es.id_especialidad = pl.id_especialidad", sqlConn);
+                                                    "ON es.id_especialidad = pl.id_especialidad " +
+                                                    "ORDER BY per.nombre ASC ", sqlConn);
             SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
             while (drPersonas.Read())
             {

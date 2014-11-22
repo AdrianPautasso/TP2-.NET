@@ -30,14 +30,14 @@ namespace Business.Logic
 
         public AlumnoInscripcion GetOne(int id)
         {
-            try
-            {
+            //try
+            //{
                 return AlumnoInscripcionData.GetOne(id);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    throw e;
+            //}
         }
 
         public void Save(AlumnoInscripcion alins)

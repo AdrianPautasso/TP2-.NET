@@ -30,7 +30,25 @@ namespace Business.Logic
 
         public List<Curso> GetConCupo()
         {
-            return CursoData.GetConCupo();
+            List<Curso> Cursos = new List<Curso>();
+            List<Curso> CursosConCupo = new List<Curso>();
+            Cursos = CursoData.GetAll();
+            foreach (var curso in Cursos)
+            {
+                if ((curso.AnioCalendario == 2014) && (curso.Cupo > 0))
+                {
+                    CursosConCupo.Add(curso);
+                }
+            }
+            return CursosConCupo;
+        }
+
+        public void RestaCupo(int idCurso)
+        {
+            Curso curso = new Curso();
+            curso = CursoData.GetOne(idCurso);
+            curso.Cupo = curso.Cupo - 1;
+            CursoData.Update(curso);
         }
 
         public Curso GetOne(int id)
@@ -41,11 +59,6 @@ namespace Business.Logic
         public void Save(Curso curso)
         {
             CursoData.Save(curso);
-        }
-
-        public void Update(Curso curso)
-        { 
-            CursoData.Update(curso);
         }
 
         public void Delete(int id)

@@ -9,14 +9,44 @@ namespace Data.Database
 {
     public class PlanAdapter : Adapter
     {
-        public List<Business.Entities.Plan> GetAll()
+        public List<Plan> GetAll()
         {
             List<Plan> planes = new List<Plan>();
             this.OpenConnection();
             SqlCommand cmdPlanes = new SqlCommand("SELECT pl.id_plan, pl.desc_plan, es.id_especialidad, " +
                                                    "es.desc_especialidad " +
                                                    "FROM planes pl INNER JOIN especialidades es " +
-                                                   "ON pl.id_especialidad = es.id_especialidad ", this.sqlConn);
+                                                   "ON pl.id_especialidad = es.id_especialidad " + 
+                                                   "ORDER BY pl.desc_plan ASC", this.sqlConn);
+            SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
+            while (drPlanes.Read())
+            {
+                Plan plan = new Plan();
+                plan.ID = (int)drPlanes["id_plan"];
+                plan.IDEspecialidad = (int)drPlanes["id_especialidad"];
+                plan.Descripcion = (string)drPlanes["desc_plan"];
+                plan.DescEspecialidad = (string)drPlanes["desc_especialidad"];
+                planes.Add(plan);
+            }
+            this.CloseConnection();
+            return planes;
+        }
+
+        //Obtiene todos los planes a los que la materia a ingresar no pertenece.
+        public List<Plan> GetPlanesDisponiblesMaterias(int id_materia)
+        {
+            List<Plan> planes = new List<Plan>();
+            this.OpenConnection();
+            SqlCommand cmdPlanes = new SqlCommand("select p.desc_plan, p.id_plan, es.id_especialidad, es.desc_especialidad " +
+                                                  "from planes p inner join especialidades es " +
+                                                  "on p.id_especialidad = es.id_especialidad " +
+                                                  "where p.id_plan not in " +
+                                                  "	(select pl.id_plan " +
+                                                  "	from materias ma inner join planes pl " +
+                                                  "	on ma.id_plan = pl.id_plan " +
+                                                  "	where ma.id_materia =@id_materia) " +
+                                                  "order by p.desc_plan desc", this.sqlConn);
+            cmdPlanes.Parameters.Add("@id_materia", SqlDbType.Int).Value = id_materia;
             SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
             while (drPlanes.Read())
             {

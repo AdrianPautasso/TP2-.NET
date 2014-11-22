@@ -50,5 +50,6 @@ namespace Business.Logic
         {
             PlanData.Delete(id);
         }
+
     }
 }

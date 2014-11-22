@@ -47,7 +47,8 @@ namespace Data.Database
         {
             AlumnoInscripcion alumno_inscripcion = new AlumnoInscripcion();
             this.OpenConnection();
-            SqlCommand cmdAlumnoInscripcion = new SqlCommand("select * from alumnos_inscripciones", this.sqlConn);
+            SqlCommand cmdAlumnoInscripcion = new SqlCommand("select * from alumnos_inscripciones where id_inscripcion=@id", this.sqlConn);
+            cmdAlumnoInscripcion.Parameters.Add("@id", SqlDbType.Int).Value = id;
             SqlDataReader drAlumnoInscripcion = cmdAlumnoInscripcion.ExecuteReader();
             while (drAlumnoInscripcion.Read())
             {
@@ -88,13 +89,14 @@ namespace Data.Database
         {
             this.OpenConnection();
             SqlCommand cmdUpdate = new SqlCommand("update alumnos_inscripciones set id_alumno=@id_alumno, " +
-                                                  "id_curso=@id_curso, condicon=@condicion, nota=@nota " +
+                                                  "id_curso=@id_curso, condicion=@condicion, nota=@nota " +
                                                   "where id_inscripcion=@id_inscripcion", this.sqlConn);
             cmdUpdate.Parameters.Add("id_alumno", SqlDbType.Int).Value = alinsc.IDAlumno;
             cmdUpdate.Parameters.Add("id_curso", SqlDbType.Int).Value = alinsc.IDCurso;
             cmdUpdate.Parameters.Add("condicion", SqlDbType.VarChar, 50).Value = alinsc.Condicion;
             cmdUpdate.Parameters.Add("nota", SqlDbType.Int).Value = alinsc.Nota;
             cmdUpdate.Parameters.Add("id_inscripcion", SqlDbType.Int).Value = alinsc.ID;
+            cmdUpdate.ExecuteNonQuery();
             this.CloseConnection();
         }
 

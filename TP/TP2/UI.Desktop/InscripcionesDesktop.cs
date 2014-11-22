@@ -107,6 +107,7 @@ namespace UI.Desktop
         {
             this.txtID.Text = this.InscripcionActual.ID.ToString();
             this.txtCondicion.Text = this.InscripcionActual.Condicion;
+            this.txtNota.Text = this.InscripcionActual.Nota.ToString();
             switch (this.m_form)
             {
                 case InscripcionesDesktop.ModoForm.Modificacion:
@@ -131,16 +132,8 @@ namespace UI.Desktop
             MapearADatos();
             AlumnosInscripcionesLogic insLogic = new AlumnosInscripcionesLogic();
             insLogic.Save(InscripcionActual);
-            RestaCupo();
-        }
-
-        public void RestaCupo()
-        {
-            CursoLogic curLogic = new CursoLogic();
-            Curso cursoSeleccionado = new Curso();
-            cursoSeleccionado = curLogic.GetOne(Convert.ToInt32(cbxCurso.SelectedValue));
-            cursoSeleccionado.Cupo = cursoSeleccionado.Cupo - 1;
-            curLogic.Update(cursoSeleccionado);
+            CursoLogic curLog = new CursoLogic();
+            curLog.RestaCupo(Convert.ToInt32(cbxCurso.SelectedValue));
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

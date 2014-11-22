@@ -13,7 +13,7 @@ namespace Data.Database
         {
             List<TipoPersona> tipos = new List<TipoPersona>();
             this.OpenConnection();
-            SqlCommand cmdTiposPersonas = new SqlCommand("select * from tipos_personas",this.sqlConn);
+            SqlCommand cmdTiposPersonas = new SqlCommand("select * from tipos_personas order by desc_tipo_persona",this.sqlConn);
             SqlDataReader drTiposPersonas = cmdTiposPersonas.ExecuteReader();
             while (drTiposPersonas.Read())
             {

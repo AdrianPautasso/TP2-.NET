@@ -40,6 +40,17 @@ namespace Business.Logic
         public Usuario GetOne(string nombreUsuario)
         {
             return UsuarioData.GetOne(nombreUsuario);
+            //List<Usuario> usuarios = new List<Usuario>();
+            //Usuario usuario = new Usuario();
+            //usuarios = UsuarioData.GetAll();
+            //foreach (var us in usuarios)
+            //{
+            //    if (us.NombreUsuario == nombreUsuario)
+            //    {
+            //        usuario = us;
+            //    }
+            //}
+            //return usuario;
         }
 
         public List<Usuario> GetAll()

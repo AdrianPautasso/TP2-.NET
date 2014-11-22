@@ -37,11 +37,6 @@ namespace UI.Desktop
             this.Close();
         }
 
-        private void Usuarios_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
             UsuarioDesktop formUsuario = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);

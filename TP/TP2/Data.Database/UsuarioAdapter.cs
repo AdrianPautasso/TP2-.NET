@@ -15,7 +15,8 @@ namespace Data.Database
             this.OpenConnection();
             SqlCommand cmdUsuarios = new SqlCommand("select us.id_usuario, per.nombre, per.apellido, us.nombre_usuario, per.email, us.habilitado " + 
                                                     "from personas per inner join usuarios us " +
-                                                    "on per.id_persona = us.id_persona", this.sqlConn);
+                                                    "on per.id_persona = us.id_persona " +
+                                                    "order by per.nombre asc ", this.sqlConn);
             SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
             while (drUsuarios.Read())
             {

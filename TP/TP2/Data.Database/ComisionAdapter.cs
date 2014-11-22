@@ -19,7 +19,8 @@ namespace Data.Database
                                                       "from comisiones com inner join planes pl " + 
                                                       "on com.id_plan = pl.id_plan " +
                                                       "inner join especialidades esp " +
-                                                      "on pl.id_especialidad = esp.id_especialidad", this.sqlConn);
+                                                      "on pl.id_especialidad = esp.id_especialidad " +
+                                                      "order by com.desc_comision asc ", this.sqlConn);
             SqlDataReader drComisiones = cmdComisiones.ExecuteReader();
             while (drComisiones.Read())
             {

@@ -225,7 +225,6 @@
             this.Controls.Add(this.tcUsuarios);
             this.Name = "Usuarios";
             this.Text = "Usuarios";
-            this.Load += new System.EventHandler(this.Usuarios_Load);
             this.tcUsuarios.ContentPanel.ResumeLayout(false);
             this.tcUsuarios.TopToolStripPanel.ResumeLayout(false);
             this.tcUsuarios.TopToolStripPanel.PerformLayout();
