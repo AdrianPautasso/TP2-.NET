@@ -60,7 +60,9 @@ namespace UI.Desktop
         {
             this.txtID.Text = this.CursoActual.ID.ToString();
             this.txtAnioAcademico.Text = this.CursoActual.AnioCalendario.ToString();
-            this.txtCupo.Text = this.CursoActual.Cupo.ToString();             
+            this.txtCupo.Text = this.CursoActual.Cupo.ToString();
+            this.cbxComision.SelectedValue = this.CursoActual.IDComision;
+            this.cbxMateria.SelectedValue = this.CursoActual.IDMateria;
             switch (this.m_form)
             {
                 case UsuarioDesktop.ModoForm.Modificacion:
@@ -123,7 +125,12 @@ namespace UI.Desktop
                 mensaje += "- El Año Académico no puede estar en blanco." + "\n";
 
             if (String.IsNullOrEmpty(this.txtCupo.Text.Trim()))
-                mensaje += "- el Cupo no puede estar en blanco." + "\n";
+                mensaje += "- El Cupo no puede estar en blanco." + "\n";
+
+            if ((Convert.ToInt32(this.txtCupo.Text.Trim())) < 50)
+            {
+                mensaje += "- El Cupo máximo es de 50 alumnos." + "\n";
+            }
 
             if (!String.IsNullOrEmpty(mensaje))
             {

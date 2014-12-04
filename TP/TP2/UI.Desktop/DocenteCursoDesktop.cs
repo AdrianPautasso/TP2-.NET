@@ -88,6 +88,8 @@ namespace UI.Desktop
         public override void MapearDeDatos()
         {
             this.txtID.Text = DocenteCursoActual.ID.ToString();
+            this.cbxCursos.SelectedValue = this.DocenteCursoActual.IDCurso;
+            this.cbxDocentes.SelectedValue = this.DocenteCursoActual.IDDocente;
             switch (this.m_form)
             { 
                 case DocenteCursoDesktop.ModoForm.Modificacion:

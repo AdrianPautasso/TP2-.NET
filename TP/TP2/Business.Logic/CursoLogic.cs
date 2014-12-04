@@ -46,14 +46,26 @@ namespace Business.Logic
         public void RestaCupo(int idCurso)
         {
             Curso curso = new Curso();
-            curso = CursoData.GetOne(idCurso);
-            curso.Cupo = curso.Cupo - 1;
+            curso = this.GetOne(idCurso);
+            int cupo = curso.Cupo - 1;
+            curso.Cupo = cupo;
             CursoData.Update(curso);
         }
 
         public Curso GetOne(int id)
         {
-            return CursoData.GetOne(id);
+            try
+            {
+                Curso curso = new Curso();
+                foreach (var cur in CursoData.GetAll())
+                    if (cur.ID == id)
+                        curso = cur;
+                return curso;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public void Save(Curso curso)
@@ -64,6 +76,24 @@ namespace Business.Logic
         public void Delete(int id)
         {
             CursoData.Delete(id);
+        }
+
+        public List<Curso> GetCursosDocente(int id_persona)
+        {
+            return CursoData.GetCursosDocente(id_persona);
+        }
+
+        public void SumarCupo(int id)
+        {
+            Curso curso = new Curso();
+            curso = this.GetOne(id);
+            curso.Cupo = curso.Cupo + 1;
+            CursoData.Update(curso);
+        }
+
+        public Curso GetCursoInscripcion(int idInscripcion)
+        {
+            return CursoData.GetCursoInscripcion(idInscripcion);
         }
     }
 }

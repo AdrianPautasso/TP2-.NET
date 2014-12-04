@@ -87,6 +87,36 @@
     <Compile Include="DocentesCursos.Designer.cs">
       <DependentUpon>DocentesCursos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Especialidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Especialidades.Designer.cs">
+      <DependentUpon>Especialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EspecialidadesDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EspecialidadesDesktop.Designer.cs">
+      <DependentUpon>EspecialidadesDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPermisoAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPermisoAdministrador.Designer.cs">
+      <DependentUpon>frmPermisoAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPermisoAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPermisoAlumno.Designer.cs">
+      <DependentUpon>frmPermisoAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPermisoProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPermisoProfesor.Designer.cs">
+      <DependentUpon>frmPermisoProfesor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inscripciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +212,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DocentesCursos.resx">
       <DependentUpon>DocentesCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Especialidades.resx">
+      <DependentUpon>Especialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EspecialidadesDesktop.resx">
+      <DependentUpon>EspecialidadesDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPermisoAdministrador.resx">
+      <DependentUpon>frmPermisoAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPermisoAlumno.resx">
+      <DependentUpon>frmPermisoAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPermisoProfesor.resx">
+      <DependentUpon>frmPermisoProfesor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inscripciones.resx">
       <DependentUpon>Inscripciones.cs</DependentUpon>

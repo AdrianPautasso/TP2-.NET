@@ -14,16 +14,17 @@ namespace Data.Database
             List<Persona> personas = new List<Persona>();
             this.OpenConnection();
             SqlCommand cmdPersonas = new SqlCommand("SELECT per.id_persona, per.nombre, per.apellido, " +
-                                                    "per.direccion, per.fecha_nac, per.email, per.legajo, " +
-                                                    "per.telefono, tp.id_tipo_persona, tp.desc_tipo_persona, " +
-                                                    "pl.id_plan, pl.desc_plan, es.desc_especialidad " +
-                                                    "FROM personas per INNER JOIN planes pl " +
-                                                    "ON per.id_plan = pl.id_plan " +
-                                                    "INNER JOIN tipos_personas tp " +
-                                                    "ON per.id_tipo_persona = tp.id_tipo_persona " +
-                                                    "INNER JOIN especialidades es " +
-                                                    "ON es.id_especialidad = pl.id_especialidad " +
-                                                    "ORDER BY per.nombre ASC ", sqlConn);
+                                                        "per.direccion, per.fecha_nac, per.email, per.legajo, " +
+                                                        "per.telefono, tp.id_tipo_persona, tp.desc_tipo_persona, " +
+                                                        "isnull(pl.id_plan, 0) as id_plan, isnull(pl.desc_plan,' ') as desc_plan, " +
+                                                        "isnull(es.desc_especialidad, ' ') as desc_especialidad " +
+                                                        "FROM personas per LEFT JOIN planes pl " +
+                                                        "ON per.id_plan = pl.id_plan " +
+                                                        "LEFT JOIN tipos_personas tp " +
+                                                        "ON per.id_tipo_persona = tp.id_tipo_persona " +
+                                                        "LEFT JOIN especialidades es " +
+                                                        "ON es.id_especialidad = pl.id_especialidad " +
+                                                        "ORDER BY per.nombre ASC ", sqlConn);
             SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
             while (drPersonas.Read())
             {
@@ -46,80 +47,6 @@ namespace Data.Database
             }
             this.CloseConnection();
             return personas;
-        }
-
-        public List<Persona> GetAll(int id_tipo_persona)
-        {
-            List<Persona> personas = new List<Persona>();
-            try
-            {
-                this.OpenConnection();
-                SqlCommand cmdPersonas = new SqlCommand("select * from personas where id_tipo_persona=@id_tipo_persona order by nombre asc", this.sqlConn);
-                cmdPersonas.Parameters.Add("@id_tipo_persona", SqlDbType.Int).Value = id_tipo_persona;
-                SqlDataReader drPersona = cmdPersonas.ExecuteReader();
-                while (drPersona.Read())
-                {
-                    Persona persona = new Persona();
-                    persona.ID = (int)drPersona["id_persona"];
-                    persona.Nombre = (string)drPersona["nombre"];
-                    persona.Apellido = (string)drPersona["apellido"];
-                    persona.Direccion = (string)drPersona["direccion"];
-                    persona.Email = (string)drPersona["email"];
-                    persona.Telefono = (string)drPersona["telefono"];
-                    persona.FechaNacimiento = (DateTime)drPersona["fecha_nac"];
-                    persona.Legajo = (int)drPersona["legajo"];
-                    persona.IDPlan = (int)drPersona["id_plan"];
-                    persona.IDTipoPersona = (int)drPersona["id_tipo_persona"];
-                    personas.Add(persona);
-                }
-            }
-            catch (Exception ex)
-            {
-                Exception ExcepcionManejada =
-                new Exception("Error al recuperar datos de la persona", ex);
-                throw ExcepcionManejada;
-            }
-            finally
-            {
-                this.CloseConnection();
-            }
-            return personas;
-        }
-
-        public Persona GetOne(int id)
-        {
-            Persona persona = new Persona();
-            try
-            {
-                this.OpenConnection();
-                SqlCommand cmdPersona = new SqlCommand("select * from personas where id_persona=@id", this.sqlConn);
-                cmdPersona.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                SqlDataReader drPersona = cmdPersona.ExecuteReader();
-                while (drPersona.Read())
-                {
-                    persona.ID = (int)drPersona["id_persona"];
-                    persona.Nombre = (string)drPersona["nombre"];
-                    persona.Apellido = (string)drPersona["apellido"];
-                    persona.Direccion = (string)drPersona["direccion"];
-                    persona.Email = (string)drPersona["email"];
-                    persona.Telefono = (string)drPersona["telefono"];
-                    persona.FechaNacimiento = (DateTime)drPersona["fecha_nac"];
-                    persona.Legajo = (int)drPersona["legajo"];
-                    persona.IDPlan = (int)drPersona["id_plan"];
-                    persona.IDTipoPersona = (int)drPersona["id_tipo_persona"];
-                }
-            }
-            catch (Exception ex)
-            {
-                Exception ExcepcionManejada =
-                new Exception("Error al recuperar datos de la persona", ex);
-                throw ExcepcionManejada;
-            }
-            finally
-            {
-                this.CloseConnection();
-            }
-            return persona;
         }
 
         public void Delete(int id)
@@ -182,20 +109,38 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdInsert = new SqlCommand("INSERT into personas (nombre, apellido, direccion, email, telefono, fecha_nac, legajo, id_plan, id_tipo_persona) " +
-                                                      "VALUES (@nombre, @apellido, @direccion, @email, @telefono, @fecha_nac, @legajo, @id_plan, @id_tipo_persona) " +
-                                                      "select @@identity", sqlConn);
-                //cmdInsert.Parameters.Add("@id_persona", SqlDbType.Int).Value = persona.ID;
-                cmdInsert.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
-                cmdInsert.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
-                cmdInsert.Parameters.Add("@direccion", SqlDbType.VarChar).Value = persona.Direccion;
-                cmdInsert.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
-                cmdInsert.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
-                cmdInsert.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
-                cmdInsert.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
-                cmdInsert.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IDPlan;
-                cmdInsert.Parameters.Add("@id_tipo_persona", SqlDbType.Int).Value = persona.IDTipoPersona;
-                cmdInsert.ExecuteNonQuery();
+                if (persona.IDTipoPersona == 1)
+                {
+                    SqlCommand cmdInsert = new SqlCommand("INSERT into personas (nombre, apellido, direccion, email, telefono, fecha_nac, legajo, id_plan, id_tipo_persona) " +
+                                                          "VALUES (@nombre, @apellido, @direccion, @email, @telefono, @fecha_nac, @legajo, @id_plan, @id_tipo_persona) " +
+                                                          "select @@identity", sqlConn);
+                    cmdInsert.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
+                    cmdInsert.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
+                    cmdInsert.Parameters.Add("@direccion", SqlDbType.VarChar).Value = persona.Direccion;
+                    cmdInsert.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
+                    cmdInsert.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
+                    cmdInsert.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
+                    cmdInsert.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
+                    cmdInsert.Parameters.Add("@id_plan", SqlDbType.Int).Value = null;
+                    cmdInsert.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IDPlan;
+                    cmdInsert.Parameters.Add("@id_tipo_persona", SqlDbType.Int).Value = persona.IDTipoPersona;
+                    cmdInsert.ExecuteNonQuery();
+                }
+                else
+                {
+                    SqlCommand cmdInsert = new SqlCommand("INSERT into personas (nombre, apellido, direccion, email, telefono, fecha_nac, id_tipo_persona) " +
+                                      "VALUES (@nombre, @apellido, @direccion, @email, @telefono, @fecha_nac, @id_tipo_persona) " +
+                                      "select @@identity", sqlConn);
+                    //cmdInsert.Parameters.Add("@id_persona", SqlDbType.Int).Value = persona.ID;
+                    cmdInsert.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
+                    cmdInsert.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
+                    cmdInsert.Parameters.Add("@direccion", SqlDbType.VarChar).Value = persona.Direccion;
+                    cmdInsert.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
+                    cmdInsert.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
+                    cmdInsert.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
+                    cmdInsert.Parameters.Add("@id_tipo_persona", SqlDbType.Int).Value = persona.IDTipoPersona;
+                    cmdInsert.ExecuteNonQuery();
+                }
             }
             catch (Exception ex)
             {
@@ -224,6 +169,37 @@ namespace Data.Database
                 this.Update(persona);
             }
             persona.State = BusinessEntity.States.Unmodified;
+        }
+
+        public Persona GetAlumnoInscripcion(int idInscripcion)
+        {
+            Persona alumno = new Persona();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdPersona = new SqlCommand("select per.nombre, per.apellido, per.id_persona " +
+                                                        "from alumnos_inscripciones ai inner join personas per " +
+                                                        "on ai.id_alumno = per.id_persona " +
+                                                        "where ai.id_inscripcion = @idInscripcion", this.sqlConn);
+                cmdPersona.Parameters.Add("@idInscripcion", SqlDbType.Int).Value = idInscripcion;
+                SqlDataReader drPersona = cmdPersona.ExecuteReader();
+                while (drPersona.Read())
+                {
+                    alumno.ID = (int)drPersona["id_persona"];
+                    alumno.Nombre = (string)drPersona["nombre"];
+                    alumno.Apellido = (string)drPersona["apellido"];
+                }
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar datos de la persona", ex);
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return alumno;
         }
 
     }

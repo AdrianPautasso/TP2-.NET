@@ -35,8 +35,18 @@ namespace UI.Web
 
         private void LoadGrilla()
         {
-            this.GridViewPer.DataSource = this.Logic.GetAll();
-            this.GridViewPer.DataBind();
+
+            if (Session["TipoPersona"].ToString() == "1" || Session["TipoPersona"].ToString() == "2")
+            {
+                int isdasad = Convert.ToInt32(Session["ID"]);
+                this.GridViewPer.DataSource = this.Logic.GerPersona(Convert.ToInt32(Session["ID"]));
+                this.GridViewPer.DataBind();
+            }
+            else if (Session["TipoPersona"].ToString() == "3")
+            {
+                this.GridViewPer.DataSource = this.Logic.GetAll();
+                this.GridViewPer.DataBind();
+            }
         }
 
         private Persona Entity
@@ -95,18 +105,19 @@ namespace UI.Web
             if (this.IsEntitySelected)
             {
                 this.formPanelPer.Visible = true;
-                this.formActionPanel.Visible = true;
+                this.formActionPanel.Visible = false;
                 this.gridActionPanel.Visible = false;
                 this.FormMode = FormModes.Modificacion;
                 this.EnableForm(true);
                 this.LoadForm(this.SelectedID);
-
             }
         }
 
         private void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
+            this.txtID.Text = this.Entity.ID.ToString();
+            this.txtID.Enabled = false;
             this.txtApellido.Text = this.Entity.Apellido;
             this.txtNombre.Text = this.Entity.Nombre;
             this.txtEmail.Text = this.Entity.Email;
@@ -114,6 +125,27 @@ namespace UI.Web
             this.txtDireccion.Text = this.Entity.Direccion;
             this.txtTelefono.Text = this.Entity.Telefono;
             this.txtLegajo.Text = Convert.ToString(Entity.Legajo);
+            this.dblPlan.SelectedValue = this.Entity.IDPlan.ToString();
+            this.dblTipoPersona.SelectedValue = this.Entity.IDTipoPersona.ToString();
+
+            if (Entity.IDTipoPersona == 2)
+            {
+                this.txtLegajo.Visible = false;
+                this.lblLegajo.Visible = false;
+                this.lblPlan.Visible = false;
+                this.dblPlan.Visible = false;
+            }
+
+            if (this.IsEntitySelected & ((Session["TipoPersona"].ToString() == "1") || (Session["TipoPersona"].ToString() == "2"))) 
+            {
+                this.dblPlan.Enabled = false; //NO ME BLOQUEA EL CONTROL 
+                this.txtLegajo.Enabled = false;
+                this.txtNombre.Enabled = false;
+                this.txtApellido.Enabled = false;
+                this.txtFecNac.Enabled = false;
+                this.dblTipoPersona.Enabled = false;
+
+            }
         }
 
         private void EnableForm(bool enable)
@@ -131,7 +163,7 @@ namespace UI.Web
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
         {
-            if (this.IsEntitySelected)
+            if (this.IsEntitySelected & Session["TipoPersona"].ToString() == "3")
             {
                 this.formPanelPer.Visible = false;
                 this.formActionPanel.Visible = true;
@@ -139,6 +171,10 @@ namespace UI.Web
                 this.FormMode = FormModes.Baja;
                 this.EnableForm(false);
                 this.LoadForm(this.SelectedID);
+            }
+            else
+            {
+                Page.Response.Write("<script>window.alert('No tienes los permisos suficientes para realizar la operacion');</script>");
             }
         }
 
@@ -197,12 +233,19 @@ namespace UI.Web
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
-            this.formPanelPer.Visible = true;
-            this.gridActionPanel.Visible = false;
-            this.formActionPanel.Visible = true;
-            this.FormMode = FormModes.Alta;
-            this.ClearForm();
-            this.EnableForm(true);
+            if (Session["TipoPersona"].ToString() == "3")
+            {
+                this.formPanelPer.Visible = true;
+                this.gridActionPanel.Visible = false;
+                this.formActionPanel.Visible = true;
+                this.FormMode = FormModes.Alta;
+                this.ClearForm();
+                this.EnableForm(true);
+            }
+            else
+            {
+                Page.Response.Write("<script>window.alert('No tienes los permisos suficientes para realizar la operacion');</script>");
+            }
         }
 
         private void ClearForm()
@@ -230,7 +273,18 @@ namespace UI.Web
 
         protected void btnVolver_Click(object sender, EventArgs e)
         {
-
+            if (Session["TipoPersona"].ToString() == "1")
+            {
+                Response.Redirect("~/Alumno.aspx");
+            }
+            if (Session["TipoPersona"].ToString() == "2")
+            {
+                Response.Redirect("~/Docente.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/Admin.aspx");
+            }
         }
 
     }

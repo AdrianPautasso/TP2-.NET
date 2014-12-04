@@ -13,17 +13,33 @@ namespace UI.Desktop
 {
     public partial class Cursos : Form
     {
+        int id_persona = 0;
+
         public Cursos()
         {
             InitializeComponent();
             this.dgvCursos.AutoGenerateColumns = false;
-            this.Listar();
+        }
+
+        public Cursos(int id) : this()
+        {
+            id_persona = id;
         }
 
         private void Listar()
         {
-            CursoLogic curLog = new CursoLogic();
-            dgvCursos.DataSource = curLog.GetAll();
+            CursoLogic cl = new CursoLogic();
+            if (id_persona != 0)
+            {
+                this.tsbEditar.Enabled = false;
+                this.tsbEliminar.Enabled = false;
+                this.tsbNuevo.Enabled = false;
+                dgvCursos.DataSource = cl.GetCursosDocente(id_persona);
+            }
+            else
+            {
+                dgvCursos.DataSource = cl.GetAll();
+            } 
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -78,6 +94,11 @@ namespace UI.Desktop
             //{
             //    System.Windows.Forms.MessageBox.Show(ExcepcionManejada.Message);
             //}
+        }
+
+        private void Cursos_Load(object sender, EventArgs e)
+        {
+            this.Listar();
         }
     }
 }

@@ -81,8 +81,17 @@ namespace UI.Web
 
         private void LoadGrilla()
         {
-            this.gridView.DataSource = this.Logic.GetAll();
-            this.gridView.DataBind();
+            if (Session["TipoPersona"].ToString() == "1" || Session["TipoPersona"].ToString() == "2")
+            {
+                this.gridView.DataSource = this.Logic.GetAll(Convert.ToInt32(Session["ID"]));
+                this.gridView.DataBind();
+            }
+            else
+            {
+                this.gridView.DataSource = this.Logic.GetAll();
+                this.gridView.DataBind();
+            }
+
         }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
@@ -95,19 +104,24 @@ namespace UI.Web
             this.Entity = this.Logic.GetOne(id);
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
+            this.dpdPersonas.SelectedValue = this.Entity.IdPersona.ToString();
 
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
         {
-            if (this.IsEntitySelected)
+            if (this.IsEntitySelected & Session["TipoPersona"].ToString() == "3")
             {
                 this.gridActionsPanel.Visible = false;
                 this.formPanel.Visible = true;
-                this.formActionPanel.Visible = true;
+                this.formActionPanel.Visible = false;
                 this.FormMode = FormModes.Modificacion;
                 this.EnableForm(true);
                 this.LoadForm(this.SelectedID);
+            }
+            else
+            {
+                Page.Response.Write("<script>window.alert('No tienes los permisos suficientes para realizar la operacion');</script>");
             }
         }
 
@@ -142,7 +156,7 @@ namespace UI.Web
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
         {
-            if (this.IsEntitySelected)
+            if (this.IsEntitySelected & Session["TipoPersona"].ToString() == "3")
             {
                 this.formPanel.Visible = false;
                 this.formActionPanel.Visible = true;
@@ -150,6 +164,10 @@ namespace UI.Web
                 this.FormMode = FormModes.Baja;
                 this.EnableForm(false);
                 this.LoadForm(this.SelectedID);
+            }
+            else
+            {
+                Page.Response.Write("<script>window.alert('No tienes los permisos suficientes para realizar la operacion');</script>");
             }
         }
 
@@ -196,18 +214,41 @@ namespace UI.Web
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
-            this.formPanel.Visible = true;
-            this.formActionPanel.Visible = true;
-            this.gridActionsPanel.Visible = false;
-            this.FormMode = FormModes.Alta;
-            this.ClearForm();
-            this.EnableForm(true);
+            if (Session["TipoPersona"].ToString() == "3")
+            {
+                this.formPanel.Visible = true;
+                this.formActionPanel.Visible = true;
+                this.gridActionsPanel.Visible = false;
+                this.FormMode = FormModes.Alta;
+                this.ClearForm();
+                this.EnableForm(true);
+            }
+            else
+            {
+                Page.Response.Write("<script>window.alert('No tienes los permisos suficientes para realizar la operacion');</script>");
+            }
         }
 
         private void ClearForm()
         {
             this.habilitadoCheckBox.Checked = false;
             this.nombreUsuarioTextBox.Text = string.Empty;
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            if (Session["TipoPersona"].ToString() == "1")
+            {
+                Response.Redirect("~/Alumno.aspx");
+            }
+            if (Session["TipoPersona"].ToString() == "2")
+            {
+                Response.Redirect("~/Docente.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/Admin.aspx");
+            }
         }
     }
 }

@@ -1,0 +1,13 @@
+INSCRIPCIONES
+	ADMINISTRADOR
+		Edición condición y nota. (Si desearía editar el nombre, es como si creara una inscripcion nueva).
+		Alta.
+		Baja.
+		Consulta.
+	ALUMNO
+		Alta. (solo sus inscripciones)
+		Baja. (solo sus inscripciones)
+		Consulta (solo sus inscripciones).
+	DOCENTE	
+		Edición condición y nota. (solo los cursos asignados)
+		Consulta (solo sus cursos asignados).

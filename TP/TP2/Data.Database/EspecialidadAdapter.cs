@@ -27,35 +27,6 @@ namespace Data.Database
             return especialidades;
         }
 
-        public Especialidad GetOne(int id)
-        {
-            Especialidad especialidad = new Especialidad();
-            try
-            {
-                this.OpenConnection();
-                SqlCommand cmdEspecialidad = new SqlCommand("select * from especialidades where id_especialidad=@id", this.sqlConn);
-                cmdEspecialidad.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                SqlDataReader drEspecialidad = cmdEspecialidad.ExecuteReader();
-                while (drEspecialidad.Read())
-                {
-                    especialidad.ID = (int)drEspecialidad["id_especialidad"];
-                    especialidad.Descripcion = (string)drEspecialidad["desc_especialidad"];
-
-                }
-            }
-            catch (Exception ex)
-            {
-                Exception ExcepcionManejada =
-                new Exception("Error al recuperar datos de la Especialidad", ex);
-                throw ExcepcionManejada;
-            }
-            finally
-            {
-                this.CloseConnection();
-            }
-            return especialidad;
-        }
-
         public void Update(Especialidad especialidad)
         {
             try

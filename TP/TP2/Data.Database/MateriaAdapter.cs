@@ -34,26 +34,6 @@ namespace Data.Database
             return materias;
         }
 
-        public Materia GetOne(int id)
-        {
-            Materia materia = new Materia();
-
-            this.OpenConnection();
-            SqlCommand cmdMateria = new SqlCommand("SELECT * FROM materias WHERE id_materia=@id", this.sqlConn);
-            cmdMateria.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            SqlDataReader drMateria = cmdMateria.ExecuteReader();
-            while (drMateria.Read())
-            {
-                materia.ID = (int)drMateria["id_materia"];
-                materia.Descripcion = (string)drMateria["desc_materia"];
-                materia.HSSemanales = (int)drMateria["hs_semanales"];
-                materia.HSTotales = (int)drMateria["hs_totales"];
-                materia.IDPlan = (int)drMateria["id_plan"];
-            }
-            this.CloseConnection();
-            return materia;
-        }
-
         public void Delete(int id)
         {
             try

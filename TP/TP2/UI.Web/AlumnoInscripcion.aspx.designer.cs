@@ -7,40 +7,38 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace UI.Web
-{
-
-
-    public partial class AlumnoInscripcion
-    {
-
+namespace UI.Web {
+    
+    
+    public partial class AlumnoInscripcion {
+        
         /// <summary>
-        /// Control grdComision.
+        /// Control grdInscripciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel grdComision;
-
+        protected global::System.Web.UI.WebControls.Panel grdInscripciones;
+        
         /// <summary>
-        /// Control GridViewCom.
+        /// Control GridViewAlumInsc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewCom;
-
+        protected global::System.Web.UI.WebControls.GridView GridViewAlumInsc;
+        
         /// <summary>
-        /// Control formPanelCom.
+        /// Control formPanelAlumInsc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel formPanelCom;
-
+        protected global::System.Web.UI.WebControls.Panel formPanelAlumInsc;
+        
         /// <summary>
         /// Control lblAlumno.
         /// </summary>
@@ -49,7 +47,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAlumno;
-
+        
         /// <summary>
         /// Control ddlAlumno.
         /// </summary>
@@ -58,7 +56,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAlumno;
-
+        
         /// <summary>
         /// Control odsAlum.
         /// </summary>
@@ -67,7 +65,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource odsAlum;
-
+        
         /// <summary>
         /// Control lblCurso.
         /// </summary>
@@ -76,7 +74,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCurso;
-
+        
         /// <summary>
         /// Control ddlCurso.
         /// </summary>
@@ -85,7 +83,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCurso;
-
+        
         /// <summary>
         /// Control odsCurso.
         /// </summary>
@@ -94,7 +92,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource odsCurso;
-
+        
         /// <summary>
         /// Control lblCondicion.
         /// </summary>
@@ -103,7 +101,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCondicion;
-
+        
         /// <summary>
         /// Control txtCondicion.
         /// </summary>
@@ -112,7 +110,16 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCondicion;
-
+        
+        /// <summary>
+        /// Control rfvCondicion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCondicion;
+        
         /// <summary>
         /// Control lblNota.
         /// </summary>
@@ -121,7 +128,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNota;
-
+        
         /// <summary>
         /// Control txtNota.
         /// </summary>
@@ -130,7 +137,43 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNota;
-
+        
+        /// <summary>
+        /// Control rfvNota.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNota;
+        
+        /// <summary>
+        /// Control rvNota.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvNota;
+        
+        /// <summary>
+        /// Control lnkAceptar2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkAceptar2;
+        
+        /// <summary>
+        /// Control lnkCancelar2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkCancelar2;
+        
         /// <summary>
         /// Control gridActionPanel.
         /// </summary>
@@ -139,7 +182,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel gridActionPanel;
-
+        
         /// <summary>
         /// Control lnkEditar.
         /// </summary>
@@ -148,7 +191,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkEditar;
-
+        
         /// <summary>
         /// Control lnkEliminar.
         /// </summary>
@@ -157,7 +200,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkEliminar;
-
+        
         /// <summary>
         /// Control lnkNuevo.
         /// </summary>
@@ -166,7 +209,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkNuevo;
-
+        
         /// <summary>
         /// Control formActionPanel.
         /// </summary>
@@ -175,7 +218,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel formActionPanel;
-
+        
         /// <summary>
         /// Control lnkAceptar.
         /// </summary>
@@ -184,7 +227,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkAceptar;
-
+        
         /// <summary>
         /// Control lnkCancelar.
         /// </summary>
@@ -193,7 +236,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkCancelar;
-
+        
         /// <summary>
         /// Control panelLogin.
         /// </summary>
@@ -202,7 +245,7 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panelLogin;
-
+        
         /// <summary>
         /// Control btnVolver.
         /// </summary>
@@ -211,5 +254,14 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnVolver;
+        
+        /// <summary>
+        /// Control ValidationSummary1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
     }
 }

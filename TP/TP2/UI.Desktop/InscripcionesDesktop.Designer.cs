@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblAlumno = new System.Windows.Forms.Label();
-            this.lblCondicion = new System.Windows.Forms.Label();
-            this.lblCurso = new System.Windows.Forms.Label();
-            this.Nota = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbxAlumno = new System.Windows.Forms.ComboBox();
-            this.cbxCurso = new System.Windows.Forms.ComboBox();
-            this.txtCondicion = new System.Windows.Forms.TextBox();
-            this.txtNota = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblNota = new System.Windows.Forms.Label();
+            this.txtNota = new System.Windows.Forms.TextBox();
+            this.txtCondicion = new System.Windows.Forms.TextBox();
+            this.lblCondicion = new System.Windows.Forms.Label();
+            this.lblCurso = new System.Windows.Forms.Label();
+            this.cbxCurso = new System.Windows.Forms.ComboBox();
+            this.cbxAlumno = new System.Windows.Forms.ComboBox();
+            this.lblAlumno = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -54,7 +54,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.11881F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Nota, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblNota, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtNota, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtCondicion, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblCondicion, 2, 1);
@@ -75,21 +75,74 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(605, 148);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // lblAlumno
+            // tableLayoutPanel2
             // 
-            this.lblAlumno.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblAlumno.AutoSize = true;
-            this.lblAlumno.Location = new System.Drawing.Point(304, 12);
-            this.lblAlumno.Name = "lblAlumno";
-            this.lblAlumno.Size = new System.Drawing.Size(42, 13);
-            this.lblAlumno.TabIndex = 0;
-            this.lblAlumno.Text = "Alumno";
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.btnAceptar, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnCancelar, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(365, 114);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(237, 31);
+            this.tableLayoutPanel2.TabIndex = 4;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAceptar.Location = new System.Drawing.Point(21, 4);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 0;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancelar.Location = new System.Drawing.Point(140, 4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lblNota
+            // 
+            this.lblNota.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNota.AutoSize = true;
+            this.lblNota.Location = new System.Drawing.Point(3, 86);
+            this.lblNota.Name = "lblNota";
+            this.lblNota.Size = new System.Drawing.Size(30, 13);
+            this.lblNota.TabIndex = 3;
+            this.lblNota.Text = "Nota";
+            // 
+            // txtNota
+            // 
+            this.txtNota.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtNota.Location = new System.Drawing.Point(43, 82);
+            this.txtNota.Name = "txtNota";
+            this.txtNota.Size = new System.Drawing.Size(161, 20);
+            this.txtNota.TabIndex = 9;
+            // 
+            // txtCondicion
+            // 
+            this.txtCondicion.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtCondicion.Location = new System.Drawing.Point(365, 45);
+            this.txtCondicion.Name = "txtCondicion";
+            this.txtCondicion.Size = new System.Drawing.Size(161, 20);
+            this.txtCondicion.TabIndex = 8;
             // 
             // lblCondicion
             // 
             this.lblCondicion.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCondicion.AutoSize = true;
-            this.lblCondicion.Location = new System.Drawing.Point(304, 49);
+            this.lblCondicion.Location = new System.Drawing.Point(305, 49);
             this.lblCondicion.Name = "lblCondicion";
             this.lblCondicion.Size = new System.Drawing.Size(54, 13);
             this.lblCondicion.TabIndex = 1;
@@ -105,40 +158,6 @@
             this.lblCurso.TabIndex = 2;
             this.lblCurso.Text = "Curso";
             // 
-            // Nota
-            // 
-            this.Nota.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Nota.AutoSize = true;
-            this.Nota.Location = new System.Drawing.Point(3, 86);
-            this.Nota.Name = "Nota";
-            this.Nota.Size = new System.Drawing.Size(30, 13);
-            this.Nota.TabIndex = 3;
-            this.Nota.Text = "Nota";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.btnAceptar, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnCancelar, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(364, 114);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(238, 31);
-            this.tableLayoutPanel2.TabIndex = 4;
-            // 
-            // cbxAlumno
-            // 
-            this.cbxAlumno.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbxAlumno.FormattingEnabled = true;
-            this.cbxAlumno.Location = new System.Drawing.Point(364, 8);
-            this.cbxAlumno.Name = "cbxAlumno";
-            this.cbxAlumno.Size = new System.Drawing.Size(161, 21);
-            this.cbxAlumno.TabIndex = 5;
-            // 
             // cbxCurso
             // 
             this.cbxCurso.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -148,43 +167,24 @@
             this.cbxCurso.Size = new System.Drawing.Size(161, 21);
             this.cbxCurso.TabIndex = 7;
             // 
-            // txtCondicion
+            // cbxAlumno
             // 
-            this.txtCondicion.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtCondicion.Location = new System.Drawing.Point(364, 45);
-            this.txtCondicion.Name = "txtCondicion";
-            this.txtCondicion.Size = new System.Drawing.Size(161, 20);
-            this.txtCondicion.TabIndex = 8;
+            this.cbxAlumno.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbxAlumno.FormattingEnabled = true;
+            this.cbxAlumno.Location = new System.Drawing.Point(365, 8);
+            this.cbxAlumno.Name = "cbxAlumno";
+            this.cbxAlumno.Size = new System.Drawing.Size(161, 21);
+            this.cbxAlumno.TabIndex = 5;
             // 
-            // txtNota
+            // lblAlumno
             // 
-            this.txtNota.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtNota.Location = new System.Drawing.Point(43, 82);
-            this.txtNota.Name = "txtNota";
-            this.txtNota.Size = new System.Drawing.Size(161, 20);
-            this.txtNota.TabIndex = 9;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAceptar.Location = new System.Drawing.Point(22, 4);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 0;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancelar.Location = new System.Drawing.Point(141, 4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 1;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.lblAlumno.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblAlumno.AutoSize = true;
+            this.lblAlumno.Location = new System.Drawing.Point(305, 12);
+            this.lblAlumno.Name = "lblAlumno";
+            this.lblAlumno.Size = new System.Drawing.Size(42, 13);
+            this.lblAlumno.TabIndex = 0;
+            this.lblAlumno.Text = "Alumno";
             // 
             // lblID
             // 
@@ -226,7 +226,7 @@
         private System.Windows.Forms.Label lblAlumno;
         private System.Windows.Forms.Label lblCondicion;
         private System.Windows.Forms.Label lblCurso;
-        private System.Windows.Forms.Label Nota;
+        private System.Windows.Forms.Label lblNota;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ComboBox cbxAlumno;
         private System.Windows.Forms.ComboBox cbxCurso;

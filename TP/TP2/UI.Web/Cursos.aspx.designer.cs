@@ -58,15 +58,6 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.DropDownList dpbMaterias;
         
         /// <summary>
-        /// Control odsMaterias.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource odsMaterias;
-        
-        /// <summary>
         /// Control lblComision.
         /// </summary>
         /// <remarks>
@@ -85,13 +76,40 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.DropDownList dpbComisiones;
         
         /// <summary>
-        /// Control odsComisiones.
+        /// Control lblCupo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource odsComisiones;
+        protected global::System.Web.UI.WebControls.Label lblCupo;
+        
+        /// <summary>
+        /// Control txtCupo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCupo;
+        
+        /// <summary>
+        /// Control rfvCupo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCupo;
+        
+        /// <summary>
+        /// Control rvCupo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvCupo;
         
         /// <summary>
         /// Control lblAnioCalendario.
@@ -112,22 +130,76 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.TextBox txtAnioCalendario;
         
         /// <summary>
-        /// Control lblCupo.
+        /// Control rfvAnioCalendario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCupo;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAnioCalendario;
         
         /// <summary>
-        /// Control txtCupo.
+        /// Control lnkAceptar2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCupo;
+        protected global::System.Web.UI.WebControls.LinkButton lnkAceptar2;
+        
+        /// <summary>
+        /// Control lnkCancelar2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkCancelar2;
+        
+        /// <summary>
+        /// Control odsMaterias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsMaterias;
+        
+        /// <summary>
+        /// Control odsComisiones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsComisiones;
+        
+        /// <summary>
+        /// Control formActionPanel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel formActionPanel;
+        
+        /// <summary>
+        /// Control lnkAceptar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkAceptar;
+        
+        /// <summary>
+        /// Control lnkCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkCancelar;
         
         /// <summary>
         /// Control gridActionPanel.
@@ -166,30 +238,30 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.LinkButton lnkNuevo;
         
         /// <summary>
-        /// Control formActionPanel.
+        /// Control PanelLogin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel formActionPanel;
+        protected global::System.Web.UI.WebControls.Panel PanelLogin;
         
         /// <summary>
-        /// Control lnkAceptar.
+        /// Control btnVolver.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkAceptar;
+        protected global::System.Web.UI.WebControls.Button btnVolver;
         
         /// <summary>
-        /// Control lnkCancelar.
+        /// Control ValidationSummary1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkCancelar;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
     }
 }

@@ -24,6 +24,7 @@ namespace Data.Database
                                                           "inner join comisiones com " +
                                                           "on com.id_comision = cu.id_comision " +
                                                           "order by per.nombre asc", this.sqlConn);
+
             SqlDataReader drDocentesCursos = cmdDocentesCursos.ExecuteReader();
             while (drDocentesCursos.Read())
             {
@@ -42,24 +43,6 @@ namespace Data.Database
             return DocentesCursos;
         }
 
-        public DocenteCurso GetOne(int id)
-        {
-            DocenteCurso docCurso = new DocenteCurso();
-            this.OpenConnection();
-            SqlCommand cmdDocCurso = new SqlCommand("select * from docentes_cursos where id_dictado=@id", this.sqlConn);
-            cmdDocCurso.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            SqlDataReader drDocCurso = cmdDocCurso.ExecuteReader();
-            while (drDocCurso.Read())
-            {
-                docCurso.ID = (int)drDocCurso["id_dictado"];
-                docCurso.IDCurso = (int)drDocCurso["id_curso"];
-                docCurso.IDDocente = (int)drDocCurso["id_docente"];
-                docCurso.Cargo = (DocenteCurso.TiposCargos)drDocCurso["cargo"];
-            }
-            this.CloseConnection();
-            return docCurso;
-        }
-
         public void Insert(DocenteCurso DocenteCurso)
         {
             try
@@ -71,7 +54,6 @@ namespace Data.Database
                 cmdInsert.Parameters.Add("@id_curso", SqlDbType.Int).Value = DocenteCurso.IDCurso;
                 cmdInsert.Parameters.Add("@id_docente", SqlDbType.Int).Value = DocenteCurso.IDDocente;
                 cmdInsert.Parameters.Add("@cargo", SqlDbType.Int).Value = DocenteCurso.Cargo;
-                //cmdInsert.ExecuteNonQuery();
                 DocenteCurso.ID = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
             }
             catch (Exception ex)
@@ -149,5 +131,6 @@ namespace Data.Database
             }
             DocenteCurso.State = BusinessEntity.States.Unmodified;
         }
+
     }
 }

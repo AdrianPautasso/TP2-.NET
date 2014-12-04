@@ -28,16 +28,29 @@ namespace Business.Logic
             return AlumnoInscripcionData.GetAll();
         }
 
+        public List<AlumnoInscripcion> GetAll(int idPersona)
+        {
+            List<AlumnoInscripcion> InscripcionesAlumno = new List<AlumnoInscripcion>();
+            foreach (var inscAlumno in AlumnoInscripcionData.GetAll())
+                if (inscAlumno.IDAlumno == idPersona)
+                    InscripcionesAlumno.Add(inscAlumno);
+            return InscripcionesAlumno;
+        }
+
         public AlumnoInscripcion GetOne(int id)
         {
-            //try
-            //{
-                return AlumnoInscripcionData.GetOne(id);
-            //}
-            //catch (Exception e)
-            //{
-            //    throw e;
-            //}
+            try
+            {
+                AlumnoInscripcion InscripcionesAlumno = new AlumnoInscripcion();
+                foreach (var inscAlumno in AlumnoInscripcionData.GetAll())
+                    if (inscAlumno.ID == id)
+                        InscripcionesAlumno = inscAlumno;
+                return InscripcionesAlumno;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public void Save(AlumnoInscripcion alins)
@@ -50,5 +63,9 @@ namespace Business.Logic
             AlumnoInscripcionData.Delete(id);
         }
 
+        public object GetInscriptosCursosDocente(int IdPersona)
+        {
+            return AlumnoInscripcionData.GetInscriptosCursosDocente(IdPersona);
+        }
     }
 }

@@ -92,15 +92,18 @@ namespace UI.Web
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
         {
-            if (this.IsEntitySelected)
+            if (this.IsEntitySelected & Session["TipoPersona"].ToString() == "3")
             {
                 this.formPanelCursos.Visible = true;
-                this.formActionPanel.Visible = true;
+                this.formActionPanel.Visible = false;
                 this.gridActionPanel.Visible = false;
                 this.FormMode = FormModes.Modificacion;
                 this.EnableForm(true);
                 this.LoadForm(this.SelectedID);
-
+            }
+            else
+            {
+                Page.Response.Write("<script>window.alert('No tienes los permisos suficientes para realizar la operacion');</script>");
             }
         }
 
@@ -109,6 +112,8 @@ namespace UI.Web
             this.Entity = this.Logic.GetOne(id);
             this.txtAnioCalendario.Text = Convert.ToString(this.Entity.AnioCalendario);
             this.txtCupo.Text = Convert.ToString(this.Entity.Cupo);
+            this.dpbComisiones.SelectedValue = this.Entity.IDComision.ToString();
+            this.dpbMaterias.SelectedValue = this.Entity.IDMateria.ToString();
         }
 
         private void EnableForm(bool enable)
@@ -121,7 +126,7 @@ namespace UI.Web
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
         {
-            if (this.IsEntitySelected)
+            if (this.IsEntitySelected & Session["TipoPersona"].ToString() == "3")
             {
                 this.formPanelCursos.Visible = false;
                 this.formActionPanel.Visible = true;
@@ -129,6 +134,10 @@ namespace UI.Web
                 this.FormMode = FormModes.Baja;
                 this.EnableForm(false);
                 this.LoadForm(this.SelectedID);
+            }
+            else
+            {
+                Page.Response.Write("<script>window.alert('No tienes los permisos suficientes para realizar la operacion');</script>");
             }
         }
 
@@ -206,6 +215,18 @@ namespace UI.Web
             this.formPanelCursos.Visible = false;
             this.formActionPanel.Visible = false;
             this.gridActionPanel.Visible = true;
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            if (Session["TipoPersona"].ToString() == "2")
+            {
+                Response.Redirect("~/Docente.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/Admin.aspx");
+            }
         }
 
     }

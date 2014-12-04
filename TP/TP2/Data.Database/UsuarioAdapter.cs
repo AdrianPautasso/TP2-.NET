@@ -13,7 +13,8 @@ namespace Data.Database
         {
             List<Usuario> usuarios = new List<Usuario>();
             this.OpenConnection();
-            SqlCommand cmdUsuarios = new SqlCommand("select us.id_usuario, per.nombre, per.apellido, us.nombre_usuario, per.email, us.habilitado " + 
+            SqlCommand cmdUsuarios = new SqlCommand("select us.id_usuario, per.nombre, per.apellido, us.nombre_usuario, " + 
+                                                    "per.email, us.habilitado, per.id_persona, us.clave " + 
                                                     "from personas per inner join usuarios us " +
                                                     "on per.id_persona = us.id_persona " +
                                                     "order by per.nombre asc ", this.sqlConn);
@@ -28,58 +29,12 @@ namespace Data.Database
                 usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                 usr.EMail = (string)drUsuarios["email"];
                 usr.Habilitado = (bool)drUsuarios["habilitado"];
-
+                usr.Clave = (string)drUsuarios["clave"];
+                usr.IdPersona = (int)drUsuarios["id_persona"];
                 usuarios.Add(usr);
             }
             this.CloseConnection();
             return usuarios;
-        }
-
-        public Usuario GetOne(int id)
-        {
-            Usuario usr = new Usuario();
-            try 
-            {
-                this.OpenConnection();
-                SqlCommand cmdUsuario = new SqlCommand("select * from usuarios where id_usuario=@id", this.sqlConn);
-                cmdUsuario.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                SqlDataReader drUsuario = cmdUsuario.ExecuteReader();
-                while (drUsuario.Read())
-                {
-                    usr.ID = (int)drUsuario["id_usuario"];
-                    usr.NombreUsuario = (string)drUsuario["nombre_usuario"];
-                    usr.Clave = (string)drUsuario["clave"];
-                    usr.Habilitado = (bool)drUsuario["habilitado"];
-                    usr.IdPersona = (int)drUsuario["id_persona"];
-                }
-                this.CloseConnection();
-            }
-            catch(Exception ex)
-            {
-                Exception ExcepcionManejada =
-                new Exception("Error al recuperar datos de usuario", ex);
-                throw ExcepcionManejada;
-            }
-            return usr;
-        }
-
-        //SIN TRY CATCH
-        public Usuario GetOne(string nombreUsuario)
-        {
-            Usuario usuario = new Usuario();
-            this.OpenConnection();
-            SqlCommand cmdUsuario = new SqlCommand("SELECT * FROM usuarios WHERE nombre_usuario=@nombreUsuario", sqlConn);
-            cmdUsuario.Parameters.Add("@nombreUsuario", SqlDbType.VarChar, 50).Value = nombreUsuario;
-            SqlDataReader drUsuario = cmdUsuario.ExecuteReader();
-            if (drUsuario.Read())
-            {
-                usuario.ID = (int)drUsuario["id_usuario"];
-                usuario.NombreUsuario = (string)drUsuario["nombre_usuario"];
-                usuario.Clave = (string)drUsuario["clave"];
-                usuario.IdPersona = (int)drUsuario["id_persona"];
-            }
-            this.CloseConnection();
-            return usuario;
         }
 
         public void Delete(int id) 
@@ -174,6 +129,8 @@ namespace Data.Database
             }
             usuario.State = BusinessEntity.States.Unmodified;
         }
+
+
 
     }
 }

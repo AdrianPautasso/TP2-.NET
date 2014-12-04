@@ -13,17 +13,45 @@ namespace UI.Desktop
 {
     public partial class Personas : Form
     {
+        private int id_tipo_persona;
+
         public Personas()
         {
             InitializeComponent();
-            this.dgvPersonas.AutoGenerateColumns = false; //propiedad para no agregar columnas automaticamente
-            this.Listar();
+            this.dgvPersonas.AutoGenerateColumns = false;
+            //Listar();
+        }
+
+        public Personas(int idTipo)
+        {
+            this.id_tipo_persona = idTipo;
+            InitializeComponent();
+            this.dgvPersonas.AutoGenerateColumns = false;
         }
 
         private void Listar()
         {
-            PersonaLogic persona = new PersonaLogic();
-            this.dgvPersonas.DataSource = persona.GetAll();
+            if (id_tipo_persona == 1)
+            {
+                PersonaLogic persona = new PersonaLogic();
+                this.dgvPersonas.DataSource = persona.GetAll(1);
+            }
+            else if (id_tipo_persona == 2)
+            {
+                PersonaLogic persona = new PersonaLogic();
+                this.dgvPersonas.DataSource = persona.GetAll(2);
+            }
+            else if (id_tipo_persona == 3)
+            {
+                PersonaLogic persona = new PersonaLogic();
+                this.dgvPersonas.DataSource = persona.GetAll(3);
+            }
+            else
+            {
+                PersonaLogic ul = new PersonaLogic();
+                dgvPersonas.DataSource = ul.GetAll();
+            }
+
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -33,7 +61,8 @@ namespace UI.Desktop
 
         private void tsbNueva_Click(object sender, EventArgs e)
         {
-            PersonaDesktop formPersona = new PersonaDesktop(ApplicationForm.ModoForm.Alta);
+            int ID = ((Business.Entities.Persona)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
+            PersonaDesktop formPersona = new PersonaDesktop(ID, ApplicationForm.ModoForm.Alta, id_tipo_persona);
             formPersona.ShowDialog();
             this.Listar();
         }
@@ -43,7 +72,7 @@ namespace UI.Desktop
             try
             {
                 int ID = ((Business.Entities.Persona)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
-                PersonaDesktop formPersona = new PersonaDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                PersonaDesktop formPersona = new PersonaDesktop(ID, ApplicationForm.ModoForm.Modificacion, id_tipo_persona);
                 formPersona.ShowDialog();
                 this.Listar();
             }
@@ -59,7 +88,7 @@ namespace UI.Desktop
             try
             {
                 int ID = ((Business.Entities.Persona)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
-                PersonaDesktop formPersona = new PersonaDesktop(ID, ApplicationForm.ModoForm.Baja);
+                PersonaDesktop formPersona = new PersonaDesktop(ID, ApplicationForm.ModoForm.Baja, id_tipo_persona);
                 formPersona.ShowDialog();
                 this.Listar();
             }
@@ -72,6 +101,11 @@ namespace UI.Desktop
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Personas_Load(object sender, EventArgs e)
+        {
+            this.Listar();
         }
 
     }

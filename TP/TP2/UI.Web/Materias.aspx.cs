@@ -95,12 +95,11 @@ namespace UI.Web
             if (this.IsEntitySelected)
             {
                 this.formPanelMat.Visible = true;
-                this.formActionPanel.Visible = true;
+                this.formActionPanel.Visible = false;
                 this.gridActionPanel.Visible = false;
                 this.FormMode = FormModes.Modificacion;
                 this.EnableForm(true);
                 this.LoadForm(this.SelectedID);
-
             }
         }
 
@@ -110,6 +109,7 @@ namespace UI.Web
             this.txtMateria.Text = this.Entity.Descripcion;
             this.txtHsSem.Text = Convert.ToString(this.Entity.HSSemanales);
             this.txtHsTot.Text = Convert.ToString(this.Entity.HSTotales);
+            this.dpdPlan.SelectedValue = Entity.IDPlan.ToString();
         }
 
         private void EnableForm(bool enable)

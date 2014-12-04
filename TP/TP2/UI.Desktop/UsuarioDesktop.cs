@@ -47,6 +47,7 @@ namespace UI.Desktop
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
             this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
+            this.cbxPersona.SelectedValue = this.UsuarioActual.IdPersona;
             switch (this.m_form)
             {
                 case UsuarioDesktop.ModoForm.Modificacion:
@@ -59,6 +60,7 @@ namespace UI.Desktop
                     this.btnAceptar.Text = "Guardar";
                     break;
                 case UsuarioDesktop.ModoForm.Consulta:
+                    this.cbxPersona.Enabled = false;    
                     this.btnAceptar.Text = "Aceptar";
                     break;
                 default:

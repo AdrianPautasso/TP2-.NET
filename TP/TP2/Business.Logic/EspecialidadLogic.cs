@@ -33,7 +33,11 @@ namespace Business.Logic
         {
             try
             {
-                return EspecialidadData.GetOne(id);
+                Especialidad especialidad = new Especialidad();
+                foreach (var esp in this.EspecialidadData.GetAll())
+                    if (esp.ID == id)
+                        especialidad = esp;
+                return especialidad;
             }
             catch (Exception e)
             {

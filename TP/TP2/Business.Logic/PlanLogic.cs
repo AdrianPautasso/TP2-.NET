@@ -33,7 +33,11 @@ namespace Business.Logic
         {
             try
             {
-                return PlanData.GetOne(id);
+                Plan plan = new Plan();
+                foreach (var p in this.GetAll())
+                    if (p.ID == id)
+                        plan = p;
+                return plan;
             }
             catch (Exception e)
             {

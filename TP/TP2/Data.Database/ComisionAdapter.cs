@@ -37,36 +37,6 @@ namespace Data.Database
             return comisiones;
         }
 
-        public Comision GetOne(int id)
-        {
-            Comision comision = new Comision();
-            //try
-            //{
-                this.OpenConnection();
-                SqlCommand cmdComision = new SqlCommand("select * from comisiones where id_comision=@id", this.sqlConn);
-                cmdComision.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                SqlDataReader drComision = cmdComision.ExecuteReader();
-                while (drComision.Read())
-                {
-                    comision.ID = (int)drComision["id_comision"];
-                    comision.Descripcion = (string)drComision["desc_comision"];
-                    comision.AnioEspecialidad = (int)drComision["anio_especialidad"];
-                    comision.IDPlan = (int)drComision["id_plan"];
-                }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Exception ExcepcionManejada =
-            //    new Exception("Error al recuperar datos de la Comision", ex);
-            //    throw ExcepcionManejada;
-            //}
-            //finally
-            //{
-                this.CloseConnection();
-            //}
-            return comision;
-        }
-
         public void Delete(int id)
         {
             try

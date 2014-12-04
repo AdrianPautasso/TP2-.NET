@@ -38,6 +38,7 @@ namespace UI.Desktop
         }
 
         private Persona _PersonaActual;
+        private int id_tipo_persona;
 
         public Persona PersonaActual
         {
@@ -50,9 +51,30 @@ namespace UI.Desktop
             m_form = modo;
         }
 
+        public PersonaDesktop(int ID, ModoForm modo, int idTipoPersona)
+            : this()
+        {
+            this.m_form = modo;
+            this.id_tipo_persona = idTipoPersona;
+            PersonaActual = new PersonaLogic().GetOne(ID);
+            if (modo != ModoForm.Alta)
+                MapearDeDatos();
+            if (modo == ModoForm.Alta && id_tipo_persona != 1)
+            {
+                this.cbxTipoPersona.SelectedValue = id_tipo_persona;
+                this.cbxTipoPersona.Enabled = false;
+    
+            }
+            if (id_tipo_persona != 1)
+            {
+                this.cbxPlan.Visible = false;
+                this.lblPlan.Visible = false;
+            }
+        }
+
         public PersonaDesktop(int ID, ModoForm modo) : this()
         {
-            m_form = modo;
+            this.m_form = modo;
             PersonaActual = new PersonaLogic().GetOne(ID);
             MapearDeDatos();
         }
@@ -67,20 +89,45 @@ namespace UI.Desktop
             this.txtTelefono.Text = this.PersonaActual.Telefono;      
             this.txtFechaNac.Text = this.PersonaActual.FechaNacimiento.ToString();
             this.txtLegajo.Text = this.PersonaActual.Legajo.ToString();
-
-
+            this.cbxPlan.SelectedValue = this.PersonaActual.IDPlan;
+            this.cbxTipoPersona.SelectedValue = this.PersonaActual.IDTipoPersona;
             switch (this.m_form)
             {
                 case UsuarioDesktop.ModoForm.Modificacion:
+                    if (id_tipo_persona == 2 || id_tipo_persona == 3)
+                    {
+                        this.cbxPlan.Visible = false;
+                        this.lblPlan.Visible = false;
+                    }
                     this.btnAceptar.Text = "Guardar";
                     break;
                 case UsuarioDesktop.ModoForm.Baja:
+                    if (id_tipo_persona == 2 || id_tipo_persona == 3)
+                    {
+                        this.cbxPlan.Visible = false;
+                        this.lblPlan.Visible = false;
+                    }
                     this.btnAceptar.Text = "Borrar";
                     break;
                 case UsuarioDesktop.ModoForm.Alta:
+                    if (id_tipo_persona == 2 || id_tipo_persona == 3)
+                    {
+                        this.cbxPlan.Visible = false;
+                        this.lblPlan.Visible = false;
+                    }
                     this.btnAceptar.Text = "Guardar";
                     break;
                 case UsuarioDesktop.ModoForm.Consulta:
+                    this.cbxTipoPersona.Enabled = false;
+                    if (PersonaActual.IDTipoPersona == 2) 
+                    {
+                        this.cbxPlan.Visible = false;
+                        this.lblPlan.Visible = false;
+                    }
+                    if (PersonaActual.IDTipoPersona == 1)
+                    {
+                        this.cbxPlan.Enabled = false;
+                    }
                     this.btnAceptar.Text = "Aceptar";
                     break;
                 default:
@@ -102,7 +149,10 @@ namespace UI.Desktop
                     PersonaActual.FechaNacimiento = Convert.ToDateTime(this.txtFechaNac.Text);
                     PersonaActual.Legajo = Convert.ToInt32(this.txtLegajo.Text);
                     PersonaActual.IDTipoPersona = Convert.ToInt32(this.cbxTipoPersona.SelectedValue);
-                    PersonaActual.IDPlan = Convert.ToInt32(this.cbxPlan.SelectedValue);
+                    if (this.id_tipo_persona == 2 || this.id_tipo_persona == 3)
+                        PersonaActual.IDPlan = 0;
+                    else
+                        PersonaActual.IDPlan = Convert.ToInt32(this.cbxPlan.SelectedValue);
                     PersonaActual.State = Persona.States.New;
                     break;
                 case UsuarioDesktop.ModoForm.Modificacion:

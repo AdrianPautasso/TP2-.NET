@@ -95,7 +95,7 @@ namespace UI.Web
             if (this.IsEntitySelected)
             {
                 this.formPanelCom.Visible = true;
-                this.formActionPanel.Visible = true;
+                this.formActionPanel.Visible = false;
                 this.gridActionPanel.Visible = false;
                 this.FormMode = FormModes.Modificacion;
                 this.EnableForm(true);
@@ -109,11 +109,12 @@ namespace UI.Web
             this.Entity = this.Logic.GetOne(id);
             this.txtDesc.Text = this.Entity.Descripcion;
             this.txtAnioDesc.Text = Convert.ToString(Entity.AnioEspecialidad);
+            this.dpdPlan.SelectedValue = this.Entity.IDPlan.ToString();
         }
 
         private void EnableForm(bool enable)
         {
-            this.txtDesc.Enabled = enable;
+            this.txtDesc.Visible = enable;
             this.txtAnioDesc.Visible = enable;
             this.dpdPlan.Visible = enable;
         }
@@ -204,6 +205,11 @@ namespace UI.Web
             this.formPanelCom.Visible = false;
             this.formActionPanel.Visible = false;
             this.gridActionPanel.Visible = true;
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin.aspx");
         }
 
     }

@@ -32,7 +32,11 @@ namespace Business.Logic
         {
             try
             {
-                return ComisionData.GetOne(id);
+                Comision comision = new Comision();
+                foreach (var com in ComisionData.GetAll())
+                    if (com.ID == id)
+                        comision = com;
+                return comision;
             }
             catch (Exception e)
             {

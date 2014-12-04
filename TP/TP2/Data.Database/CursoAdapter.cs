@@ -37,25 +37,6 @@ namespace Data.Database
             return cursos;
         }
 
-        public Curso GetOne(int id)
-        {
-            Curso curso = new Curso();
-            this.OpenConnection();
-            SqlCommand cmdCurso = new SqlCommand("SELECT * FROM cursos WHERE id_curso=@id", this.sqlConn);
-            cmdCurso.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            SqlDataReader drCurso = cmdCurso.ExecuteReader();
-            while(drCurso.Read())
-            {
-                curso.ID = (int)drCurso["id_curso"];
-                curso.IDComision = (int)drCurso["id_comision"];
-                curso.IDMateria = (int)drCurso["id_materia"];
-                curso.AnioCalendario = (int)drCurso["anio_calendario"];
-                curso.Cupo = (int)drCurso["cupo"];
-            }
-            this.CloseConnection();
-            return curso;
-        }
-
         public void Insert(Curso curso)
         {
             try
@@ -147,5 +128,56 @@ namespace Data.Database
             }
             curso.State = BusinessEntity.States.Unmodified;
         }
+
+        public List<Curso> GetCursosDocente(int id_persona)
+        {
+            List<Curso> cursosDocente = new List<Curso>();
+            this.OpenConnection();
+            SqlCommand cmdCursos = new SqlCommand("SELECT cur.id_curso, cur.id_materia, mat.desc_materia, cur.id_comision, " +
+                                                    "com.desc_comision, cur.anio_calendario, cur.cupo " +
+                                                    "FROM cursos cur INNER JOIN materias mat " +
+                                                    "ON cur.id_materia = mat.id_materia " +
+                                                    "INNER JOIN comisiones com " +
+                                                    "ON com.id_comision = cur.id_comision " +
+                                                    "INNER JOIN docentes_cursos dc " + 
+                                                    "ON cur.id_curso = dc.id_curso " +
+                                                    "WHERE dc.id_docente=@id " +
+                                                    "ORDER BY mat.desc_materia ASC ", this.sqlConn);
+            cmdCursos.Parameters.Add("@id", SqlDbType.Int).Value = id_persona;
+            SqlDataReader drCursos = cmdCursos.ExecuteReader();
+            while (drCursos.Read())
+            {
+                Curso curso = new Curso();
+                curso.ID = (int)drCursos["id_curso"];
+                curso.IDMateria = (int)drCursos["id_materia"];
+                curso.DescMateria = (string)drCursos["desc_materia"];
+                curso.IDComision = (int)drCursos["id_comision"];
+                curso.DescComision = (string)drCursos["desc_comision"];
+                curso.AnioCalendario = (int)drCursos["anio_calendario"];
+                curso.Cupo = (int)drCursos["cupo"];
+                cursosDocente.Add(curso);
+            }
+            this.CloseConnection();
+            return cursosDocente;
+        }
+
+        public Curso GetCursoInscripcion(int idInscripcion)
+        {
+            Curso curso = new Curso();
+            this.OpenConnection();
+            SqlCommand cmdCurso = new SqlCommand("select cur.id_curso " +
+                                                "from alumnos_inscripciones ai inner join cursos cur " +
+                                                "on ai.id_curso = cur.id_curso " +
+                                                "where ai.id_inscripcion = @idInscripcion", this.sqlConn);
+            cmdCurso.Parameters.Add("@idInscripcion", SqlDbType.Int).Value = idInscripcion;
+            SqlDataReader drCurso = cmdCurso.ExecuteReader();
+            while (drCurso.Read())
+            {
+                curso.ID = (int)drCurso["id_curso"];
+            }
+            this.CloseConnection();
+            return curso;
+        }
+
     }
 }

@@ -28,7 +28,11 @@ namespace Business.Logic
         {
             try
             {
-                return UsuarioData.GetOne(id);
+                Usuario usuario = new Usuario();
+                foreach (var usr in this.GetAll())
+                    if (usr.ID == id)
+                        usuario = usr;
+                return usuario;
             }
             catch(Exception e)
             {
@@ -36,21 +40,22 @@ namespace Business.Logic
             }
         }
 
-        // SIN TRY CATCH
         public Usuario GetOne(string nombreUsuario)
         {
-            return UsuarioData.GetOne(nombreUsuario);
-            //List<Usuario> usuarios = new List<Usuario>();
-            //Usuario usuario = new Usuario();
-            //usuarios = UsuarioData.GetAll();
-            //foreach (var us in usuarios)
-            //{
-            //    if (us.NombreUsuario == nombreUsuario)
-            //    {
-            //        usuario = us;
-            //    }
-            //}
-            //return usuario;
+            {
+                try
+                {
+                    Usuario usuario = new Usuario();
+                    foreach (var usr in this.GetAll())
+                        if (usr.NombreUsuario == nombreUsuario)
+                            usuario = usr;
+                    return usuario;
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            }
         }
 
         public List<Usuario> GetAll()
@@ -78,8 +83,41 @@ namespace Business.Logic
 
         public Persona GetPersona(int id_persona)
         { 
-            PersonaAdapter per = new PersonaAdapter();
+            PersonaLogic per = new PersonaLogic();
             return per.GetOne(id_persona);
+        }
+
+        public Usuario GetOneConPersona(int id_persona)
+        {
+            {
+                try
+                {
+                    Usuario usuario = new Usuario();
+                    foreach (var usr in this.GetAll())
+                        if (usr.IdPersona == id_persona)
+                            usuario = usr;
+                    return usuario;
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            }
+        }
+
+        public List<Usuario> GetAll(int idPersona)
+        {
+            List<Usuario> usuarios = new List<Usuario>();
+            foreach (var usr in this.GetAll())
+                if (usr.IdPersona == idPersona)
+                    usuarios.Add(usr);
+            return usuarios;
+        }
+
+        public int GetTipoPersona(int idPersona)
+        {
+            PersonaLogic prsLogic = new PersonaLogic();
+            return prsLogic.GetTipoPer(idPersona);
         }
     }
 }

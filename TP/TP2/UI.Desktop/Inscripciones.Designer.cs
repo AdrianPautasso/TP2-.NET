@@ -199,7 +199,7 @@
             this.tscEliminar});
             this.tsInscripciones.Location = new System.Drawing.Point(3, 0);
             this.tsInscripciones.Name = "tsInscripciones";
-            this.tsInscripciones.Size = new System.Drawing.Size(112, 25);
+            this.tsInscripciones.Size = new System.Drawing.Size(81, 25);
             this.tsInscripciones.TabIndex = 0;
             // 
             // tscNueva
@@ -240,6 +240,7 @@
             this.Controls.Add(this.tscInscripciones);
             this.Name = "Inscripciones";
             this.Text = "Inscripciones";
+            this.Load += new System.EventHandler(this.Inscripciones_Load);
             this.tscInscripciones.ContentPanel.ResumeLayout(false);
             this.tscInscripciones.TopToolStripPanel.ResumeLayout(false);
             this.tscInscripciones.TopToolStripPanel.PerformLayout();

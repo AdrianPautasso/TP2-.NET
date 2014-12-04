@@ -102,7 +102,7 @@ namespace UI.Web
             {
                 this.gridActionPanelEsp.Visible = false;
                 this.formPanelEsp.Visible = true;
-                this.formActionPanelEsp.Visible = true;
+                this.formActionPanelEsp.Visible = false;
                 this.FormMode = FormModes.Modificacion;
                 this.EnableForm(true);
                 this.LoadForm(this.SelectedID);
@@ -197,6 +197,11 @@ namespace UI.Web
         private void ClearForm()
         {
             this.txtDesc.Text = string.Empty;
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin.aspx");
         }
     }
 }

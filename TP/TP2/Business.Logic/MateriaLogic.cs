@@ -30,7 +30,11 @@ namespace Business.Logic
 
         public Materia GetOne(int id)
         {
-            return MateriaData.GetOne(id);
+            Materia materia = new Materia();
+            foreach (var m in this.MateriaData.GetAll())
+                if (m.ID == id)
+                    materia = m;
+            return materia;
         }
 
         public void Save(Materia materia)

@@ -52,6 +52,7 @@ namespace UI.Desktop
         {
             this.txtID.Text = this.PlanActual.ID.ToString();
             this.txtDesc.Text = this.PlanActual.Descripcion;
+            this.cbxEsp.SelectedValue = this.PlanActual.IDEspecialidad;
             switch (this.m_form)
             {
                 case PlanDesktop.ModoForm.Modificacion:

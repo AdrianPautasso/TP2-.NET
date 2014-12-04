@@ -79,7 +79,8 @@ namespace UI.Desktop
             this.txtID.Text = this.MateriaActual.ID.ToString();
             this.txtDescripcion.Text = this.MateriaActual.Descripcion;
             this.txtHsSemanales.Text = this.MateriaActual.HSSemanales.ToString();
-            this.txtHsTotales.Text = this.MateriaActual.HSTotales.ToString();;
+            this.txtHsTotales.Text = this.MateriaActual.HSTotales.ToString();
+            this.cbxPlanes.SelectedValue = this.MateriaActual.IDPlan;
             switch (this.m_form)
             {
                 case MateriaDesktop.ModoForm.Modificacion:
