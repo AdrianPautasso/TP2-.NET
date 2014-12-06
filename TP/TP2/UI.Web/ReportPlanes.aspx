@@ -5,7 +5,7 @@
         AutoDataBind="True" GroupTreeImagesFolderUrl="" Height="1202px" 
         ReportSourceID="crsPlanes" ToolbarImagesFolderUrl="" ToolPanelWidth="200px" 
         Width="1104px" EnableParameterPrompt="False" />
-    <asp:Panel ID="Panel1" runat="server">
+    <asp:Panel ID="panelLogin" runat="server">
         <asp:Button ID="lblVolver" runat="server" Text="Atras" 
             onclick="lblVolver_Click" style="text-align: right" CssClass="submitButton" />
     </asp:Panel>

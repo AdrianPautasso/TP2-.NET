@@ -178,3 +178,147 @@ C:\Users\Adrian\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Usuarios
 C:\Users\Adrian\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.csproj.GenerateResource.Cache
 C:\Users\Adrian\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.exe
 C:\Users\Adrian\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.pdb
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\bin\Debug\UI.Desktop.pdb
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\bin\Debug\Business.Entities.dll
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\bin\Debug\Business.Logic.dll
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\bin\Debug\Data.Database.dll
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\bin\Debug\Business.Entities.pdb
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\bin\Debug\Business.Logic.pdb
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\bin\Debug\Data.Database.pdb
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.csprojResolveAssemblyReference.cache
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.ApplicationForm.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.ComisionDesktop.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Comisiones.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.CursoDesktop.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Cursos.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.DocenteCursoDesktop.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.DocentesCursos.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Especialidades.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.EspecialidadesDesktop.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.frmPermisoAdministrador.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.frmPermisoAlumno.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.frmPermisoProfesor.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Inscripciones.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.InscripcionesDesktop.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.LoginUsuario.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.MateriaDesktop.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Materias.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.PersonaDesktop.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Personas.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.PlanDesktop.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Planes.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Properties.Resources.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.UsuarioDesktop.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Usuarios.resources
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.csproj.GenerateResource.Cache
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.exe
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\bin\Debug\UI.Desktop.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\bin\Debug\Business.Entities.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\bin\Debug\Business.Logic.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\bin\Debug\Data.Database.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\bin\Debug\Business.Entities.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\bin\Debug\Business.Logic.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\bin\Debug\Data.Database.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.ApplicationForm.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.ComisionDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Comisiones.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.CursoDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Cursos.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.DocenteCursoDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.DocentesCursos.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Especialidades.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.EspecialidadesDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.frmPermisoAdministrador.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.frmPermisoAlumno.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.frmPermisoProfesor.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Inscripciones.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.InscripcionesDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.LoginUsuario.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.MateriaDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Materias.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.PersonaDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Personas.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.PlanDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Planes.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Properties.Resources.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.UsuarioDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Usuarios.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.csproj.GenerateResource.Cache
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.exe
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\UI.Desktop.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\Business.Entities.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\Business.Logic.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\Data.Database.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\Business.Entities.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\Business.Logic.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\Data.Database.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.ApplicationForm.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.ComisionDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Comisiones.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.CursoDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Cursos.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.DocenteCursoDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.DocentesCursos.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Especialidades.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.EspecialidadesDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.frmPermisoAdministrador.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.frmPermisoAlumno.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.frmPermisoProfesor.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Inscripciones.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.InscripcionesDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.LoginUsuario.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.MateriaDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Materias.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.PersonaDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Personas.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.PlanDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Planes.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Properties.Resources.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.UsuarioDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Usuarios.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.csproj.GenerateResource.Cache
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.exe
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.exe
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\UI.Desktop.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\Business.Entities.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\Business.Logic.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\Data.Database.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\Business.Entities.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\Business.Logic.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\bin\Debug\Data.Database.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.ApplicationForm.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.ComisionDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Comisiones.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.CursoDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Cursos.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.DocenteCursoDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.DocentesCursos.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Especialidades.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.EspecialidadesDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.frmPermisoAdministrador.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.frmPermisoAlumno.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.frmPermisoProfesor.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Inscripciones.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.InscripcionesDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.LoginUsuario.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.MateriaDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Materias.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.PersonaDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Personas.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.PlanDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Planes.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Properties.Resources.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.UsuarioDesktop.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.Usuarios.resources
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Desktop\obj\x86\Debug\UI.Desktop.csproj.GenerateResource.Cache

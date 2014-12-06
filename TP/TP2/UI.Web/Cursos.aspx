@@ -3,6 +3,22 @@
 
 <asp:Panel ID="grdCursos" runat="server" CssClass="contenedor">
 
+ <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $("#bodyForm").validate({
+                rules: {
+                    <%=txtAnioCalendario.UniqueID %>: { required: true, number: true },
+                    <%=txtCupo.UniqueID %>: { required: true, number: true, min: 0, max: 50 }
+                },
+                messages: {
+                    <%=txtAnioCalendario.UniqueID %>: { required: " Este campo es obligatorio.", number: "Ingrese el año en dígitos." },
+                    <%=txtCupo.UniqueID %>: { required: " Este campo es obligatorio.", number: "Debe ser un número entre 0 y 50.",
+                                                min: "Debe ser un valor entre 0 y 50.", max: "Debe ser un valor entre 0 y 50."}
+                },
+            });
+        })
+</script>
+
         <asp:GridView ID="GridViewCursos" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True"
         SelectedRowStyle-BackColor="Black"
         SelectedRowStyle-ForeColor="White"
@@ -27,7 +43,7 @@
 
     </asp:Panel>
 
-    <asp:Panel ID="formPanelCursos" visible="false" runat="server">
+    <asp:Panel ID="formPanelCursos" visible="false" runat="server" CssClass="contenedor">
 
         <table class="table">
             <tr>
@@ -57,14 +73,6 @@
                 <td>
                     <asp:TextBox ID="txtCupo" runat="server"></asp:TextBox>
                 </td>
-                 <td>
-                    <asp:RequiredFieldValidator ID="rfvCupo" runat="server" 
-                    ControlToValidate="txtCupo" 
-                    ErrorMessage="Debe ingresar el cupo" ForeColor="Red">*</asp:RequiredFieldValidator>
-                    <asp:RangeValidator ID="rvCupo" runat="server" ControlToValidate="txtCupo" 
-                        ErrorMessage="El cupo maximo es de 50 alumnos" ForeColor="Red" MaximumValue="50" 
-                        MinimumValue="1" Type="Integer"></asp:RangeValidator>
-                </td>
             </tr>
                  <tr>
                      <td>
@@ -72,15 +80,12 @@
                      </td>
                      <td>
                          <asp:TextBox ID="txtAnioCalendario" runat="server"></asp:TextBox>
-                         <asp:RequiredFieldValidator ID="rfvAnioCalendario" runat="server" 
-                             ControlToValidate="txtAnioCalendario" 
-                             ErrorMessage="Debe ingresar el anio calendario" ForeColor="Red">*</asp:RequiredFieldValidator>
                      </td>
             </tr>
         </table>
             <ul>
                 <li>
-                    <asp:LinkButton ID="lnkAceptar2" runat="server" onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+                    <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" onclick="btnAceptar_Click" CssClass="btnAceptar"/>
                     <asp:LinkButton ID="lnkCancelar2" runat="server" onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
                 </li>
             </ul>
@@ -94,7 +99,7 @@
     <asp:Panel ID="formActionPanel" Visible="False" runat="server" CssClass="contenedor">
             <ul>
                 <li>
-                    <asp:LinkButton ID="lnkAceptar" runat="server" onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+                    <asp:Button ID="btnAceptar2" runat="server" onclick="btnAceptar_Click" Text="Aceptar" CssClass="btnAceptar"/>
                     <asp:LinkButton ID="lnkCancelar" runat="server" onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
                 </li>
             </ul>
@@ -115,11 +120,9 @@
     </asp:Panel>
 
 
-    <asp:Panel ID="PanelLogin" runat="server">
-        <asp:Button ID="btnVolver" runat="server" Text="Atras" 
-            onclick="btnVolver_Click" CssClass="submitButton"/>
-        <br />
-        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+    <asp:Panel ID="panelLogin" runat="server">
+        <asp:LinkButton ID="lnkVolver" runat="server" onclick="lnkVolver_Click" CssClass="submitButton">Atras</asp:LinkButton>
+        <asp:ValidationSummary ID="ValidationSummary" runat="server" />
     </asp:Panel>
 
 

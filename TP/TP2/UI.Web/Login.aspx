@@ -13,7 +13,7 @@
                 </td>
                 <td>
 
-        <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtUsuario" runat="server" Width="130px"></asp:TextBox>
                     </td>
                 <td>
 
@@ -31,7 +31,7 @@
                 </td>
                 <td>
 
-        <asp:TextBox ID="txtPass" runat="server" TextMode="Password"></asp:TextBox>
+        <asp:TextBox ID="txtPass" runat="server" TextMode="Password" Width="130px"></asp:TextBox>
                     </td>
                 <td>
 
@@ -42,11 +42,11 @@
             </tr>
         </table>
     </div>
-
+    <asp:Panel ID="panelLogin" runat="server">
         <asp:Button ID="btnIngresar" runat="server" onclick="btnIngresar_Click" 
             Text="Ingresar" CssClass="submitButton"/>
 
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
-
+    </asp:Panel>
 </asp:Content>
 

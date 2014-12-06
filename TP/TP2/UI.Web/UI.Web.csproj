@@ -63,6 +63,7 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Admin.aspx" />
+    <Content Include="Administradores.aspx" />
     <Content Include="Alumno.aspx" />
     <Content Include="AlumnoInscripcion.aspx" />
     <Content Include="Comisiones.aspx" />
@@ -70,6 +71,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Docente.aspx" />
     <Content Include="DocenteCurso.aspx" />
+    <Content Include="Docentes.aspx" />
     <Content Include="Especialidades.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Materias.aspx" />
@@ -77,7 +79,9 @@
     <Content Include="Planes.aspx" />
     <Content Include="ReportCursos.aspx" />
     <Content Include="ReportPlanes.aspx" />
+    <Content Include="Scripts\jquery-1.11.1.js" />
     <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\validaciones.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
@@ -137,6 +141,13 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administradores.aspx.cs">
+      <DependentUpon>Administradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administradores.aspx.designer.cs">
+      <DependentUpon>Administradores.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Alumno.aspx.cs">
       <DependentUpon>Alumno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,6 +196,13 @@
     </Compile>
     <Compile Include="DocenteCurso.aspx.designer.cs">
       <DependentUpon>DocenteCurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Docentes.aspx.cs">
+      <DependentUpon>Docentes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Docentes.aspx.designer.cs">
+      <DependentUpon>Docentes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Especialidades.aspx.cs">
       <DependentUpon>Especialidades.aspx</DependentUpon>

@@ -2,7 +2,20 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
 
-<asp:Panel ID="grdEspecialidades" runat="server" CssClass="contenedor">
+    <asp:Panel ID="grdEspecialidades" runat="server" CssClass="contenedor">
+
+     <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $("#bodyForm").validate({
+                rules: {
+                    <%=txtDesc.UniqueID %>: { required: true }
+                },
+                messages: {
+                    <%=txtDesc.UniqueID %>: { required: " Este campo es obligatorio.", }
+                },
+            });
+        })
+</script>
 
     <asp:GridView ID="GridViewEsp" runat="server" AutoGenerateColumns="False" SelectedRowStyle-BackColor="Black"
         ShowHeaderWhenEmpty="True"
@@ -28,20 +41,18 @@
             </td>
             <td>
                 <asp:TextBox ID="txtDesc" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" 
-                    ControlToValidate="txtDesc" ErrorMessage="Debe ingresar la descripcion" 
-                    ForeColor="Red">*</asp:RequiredFieldValidator>
             </td>
         </tr>
 
     </table>
             <ul>
                 <li>
-                    <asp:LinkButton ID="lnkAceptar2" runat="server" onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+                    <asp:Button ID="btnAceptar" runat="server" onclick="btnAceptar_Click" Text="Aceptar" CssClass="btnAceptar"/>
                     <asp:LinkButton ID="lnkCancelar2" runat="server" onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
                 </li>
             </ul>
-</asp:Panel>
+
+    </asp:Panel>
 
 <asp:Panel ID="gridActionPanelEsp" runat="server"  CssClass="contenedor">
     <ul>
@@ -60,16 +71,14 @@
 <asp:Panel ID="formActionPanelEsp" Visible="false" runat="server" CssClass="contenedor">
         <ul>
             <li>
-                <asp:LinkButton ID="lnkAceptar" onclick="aceptarLinkButton_Click" runat="server">Aceptar</asp:LinkButton>
+                <asp:Button ID="btnAceptar2" runat="server" onclick="btnAceptar_Click" Text="Aceptar" CssClass="btnAceptar"/>
                 <asp:LinkButton ID="lnkCancelar" onclick="cancelarLinkButton_Click" runat="server">Cancelar</asp:LinkButton>    
             </li>
         </ul>
     </asp:Panel>
 
-<asp:Panel ID="PanelLogin" runat="server">
-        <asp:Button ID="btnVolver" runat="server" Text="Atras" 
-            onclick="btnVolver_Click" CssClass="submitButton"/>
-        <br />
+    <asp:Panel ID="panelLogin" runat="server">
+        <asp:LinkButton ID="lnkVolver" runat="server" onclick="lnkVolver_Click">Atras</asp:LinkButton>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
     </asp:Panel>
 

@@ -26,10 +26,10 @@ namespace Business.Logic
 
         public List<Persona> GetAll()
         {
-             return PersonaData.GetAll();
+             return this.PersonaData.GetAll();
         }
 
-        public List<Persona> GerPersona(int id)
+        public List<Persona> GetPersona(int id)
         {
             List<Persona> personas = new List<Persona>();
             personas = PersonaData.GetAll();
@@ -60,18 +60,18 @@ namespace Business.Logic
 
         public Persona GetOne(int id)
         {
-            try
-            {
+            //try
+            //{
                 Persona persona = new Persona();
                 foreach (var p in this.GetAll())
                     if (p.ID == id)
                         persona = p;
                 return persona;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    throw e;
+            //}
         }
 
         public void Save(Persona persona)
@@ -86,15 +86,15 @@ namespace Business.Logic
 
         public int GetTipoPer(int id)
         {
-            try
-            {
+            //try
+            //{
                 Persona per = this.GetOne(id);
                 return per.IDTipoPersona;
-            }
-            catch (Exception ExcepcionManejada)
-            {
-                throw ExcepcionManejada;
-            }
+            //}
+            //catch (Exception ExcepcionManejada)
+            //{
+            //    throw ExcepcionManejada;
+            //}
         }
 
         public Persona GetAlumnoInscripcion(int idInscripcion)

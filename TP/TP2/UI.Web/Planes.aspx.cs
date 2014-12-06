@@ -135,7 +135,7 @@ namespace UI.Web
             this.Logic.Delete(id);
         }
 
-        protected void aceptarLinkButton_Click(object sender, EventArgs e)
+        protected void btnAceptar_Click(object sender, EventArgs e)
         {
             switch (this.FormMode)
             {
@@ -180,7 +180,7 @@ namespace UI.Web
         {
             this.formPanelPlan.Visible = true;
             this.gridActionPanel.Visible = false;
-            this.formActionPanel.Visible = true;
+            this.formActionPanel.Visible = false;
             this.FormMode = FormModes.Alta;
             this.ClearForm();
             this.EnableForm(true);
@@ -203,7 +203,7 @@ namespace UI.Web
             this.gridActionPanel.Visible = true;
         }
 
-        protected void btnVolver_Click(object sender, EventArgs e)
+        protected void lnkVolver_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Admin.aspx");
         }

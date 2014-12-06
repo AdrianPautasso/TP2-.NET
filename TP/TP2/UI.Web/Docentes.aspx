@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Personas" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Personas.aspx.cs" Inherits="UI.Web.Personas" %>
+﻿<%@ Page Title="Docentes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Docentes.aspx.cs" Inherits="UI.Web.Docentes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
 
@@ -13,8 +13,7 @@
                     <%=txtDireccion.UniqueID %>: { required: true },
                     <%=txtEmail.UniqueID %>: { required: true, email: true },
                     <%=txtTelefono.UniqueID %>: { required: true },
-                    <%=txtFecNac.UniqueID %>: { required: true },
-                    <%=txtLegajo.UniqueID %>: { required: true, number: true  }
+                    <%=txtFecNac.UniqueID %>: { required: true }
                 },
                 messages: {
                     <%=txtNombre.UniqueID %>: { required: " Este campo es obligatorio.", },
@@ -22,8 +21,7 @@
                     <%=txtDireccion.UniqueID %>: { required: " Este campo es obligatorio." },
                     <%=txtEmail.UniqueID %>: { required: " Este campo es obligatorio.", email: "Debe ser un email (ejemplo@email.com)." },
                     <%=txtTelefono.UniqueID %>: { required: " Este campo es obligatorio." },
-                    <%=txtFecNac.UniqueID %>: { required: " Este campo es obligatorio." },
-                    <%=txtLegajo.UniqueID %>: { required: " Este campo es obligatorio.", number: "Deben ser números."  }
+                    <%=txtFecNac.UniqueID %>: { required: " Este campo es obligatorio." }
                 },
             });
         })
@@ -111,35 +109,17 @@
                     <asp:TextBox ID="txtFecNac" runat="server" Text='<%# Bind("DateofBirth") %>' TextMode="Date"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:Label ID="lblLegajo" runat="server" Text="Legajo:"></asp:Label>
-                </td>
-                <td>
-                    <asp:TextBox ID="txtLegajo" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="lblPlan" runat="server" Text="Plan:"></asp:Label>
-                </td>
-                <td>
-                    <asp:DropDownList ID="dblPlan" runat="server" DataSourceID="odsPlan" 
-                        DataTextField="DescPlanYEspecialidad" DataValueField="ID">
-                    </asp:DropDownList>
-                    <asp:ObjectDataSource ID="odsPlan" runat="server" SelectMethod="GetAll" 
-                        TypeName="Business.Logic.PlanLogic"></asp:ObjectDataSource>
-                </td>
-                <td>
                     <asp:Label ID="Label10" runat="server" Text="Tipo Persona:"></asp:Label>
                 </td>
                 <td>
                     <asp:DropDownList ID="dblTipoPersona" runat="server" 
-                        DataSourceID="odsTipoPersona" DataTextField="Descripcion" 
-                        DataValueField="ID">
+                        DataSourceID="odsTipoPersona" DataTextField="Descripcion" DataValueField="ID">
                     </asp:DropDownList>
                     <asp:ObjectDataSource ID="odsTipoPersona" runat="server" SelectMethod="GetAll" 
                         TypeName="Business.Logic.TipoPersonaLogic"></asp:ObjectDataSource>
                 </td>
             </tr>
+
         </table>
             <ul>
                 <li>

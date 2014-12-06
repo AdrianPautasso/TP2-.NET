@@ -28,7 +28,7 @@
 
     </asp:Panel>
 
-    <asp:Panel ID="formPanelDocCur" visible="false" runat="server">
+    <asp:Panel ID="formPanelDocCur" visible="false" runat="server" CssClass="contenedor">
 
        <table class="table">
             <tr>
@@ -103,8 +103,8 @@
 
 
 
-    <asp:Panel ID="PanelLogin" runat="server">
-        <asp:Button ID="btnVolver" runat="server" 
+    <asp:Panel ID="panelLogin" runat="server">
+        <asp:Button ID="lnkVolver" runat="server" 
     Text="Atras" onclick="btnVolver_Click" CssClass="submitButton"/>
     </asp:Panel>
 

@@ -14,7 +14,7 @@ namespace Data.Database
             List<Persona> personas = new List<Persona>();
             this.OpenConnection();
             SqlCommand cmdPersonas = new SqlCommand("SELECT per.id_persona, per.nombre, per.apellido, " +
-                                                        "per.direccion, per.fecha_nac, per.email, per.legajo, " +
+                                                        "per.direccion, per.fecha_nac, per.email, isnull(per.legajo, 0) as legajo, " +
                                                         "per.telefono, tp.id_tipo_persona, tp.desc_tipo_persona, " +
                                                         "isnull(pl.id_plan, 0) as id_plan, isnull(pl.desc_plan,' ') as desc_plan, " +
                                                         "isnull(es.desc_especialidad, ' ') as desc_especialidad " +
@@ -75,22 +75,41 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdUpdate = new SqlCommand("UPDATE personas " +
-                                                    "SET nombre=@nombre, apellido=@apellido, " +
-                                                         "direccion=@direccion, email=@email, telefono=@telefono, " +
-                                                         "fecha_nac=@fecha_nac, legajo=@legajo, id_plan=@id_plan, id_tipo_persona=@id_tipo_persona " +
-                                                    "WHERE id_persona=@id", sqlConn);
-                cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = persona.ID;
-                cmdUpdate.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
-                cmdUpdate.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
-                cmdUpdate.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = persona.Direccion;
-                cmdUpdate.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
-                cmdUpdate.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
-                cmdUpdate.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
-                cmdUpdate.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
-                cmdUpdate.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IDPlan;
-                cmdUpdate.Parameters.Add("@id_tipo_persona", SqlDbType.Int).Value = persona.IDTipoPersona;
-                cmdUpdate.ExecuteNonQuery();
+                if (persona.IDTipoPersona == 1)
+                {
+                    SqlCommand cmdUpdate = new SqlCommand("UPDATE personas " +
+                                                        "SET nombre=@nombre, apellido=@apellido, " +
+                                                             "direccion=@direccion, email=@email, telefono=@telefono, " +
+                                                             "fecha_nac=@fecha_nac, legajo=@legajo, id_plan=@id_plan, id_tipo_persona=@id_tipo_persona " +
+                                                        "WHERE id_persona=@id", sqlConn);
+                    cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = persona.ID;
+                    cmdUpdate.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
+                    cmdUpdate.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
+                    cmdUpdate.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = persona.Direccion;
+                    cmdUpdate.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
+                    cmdUpdate.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
+                    cmdUpdate.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
+                    cmdUpdate.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
+                    cmdUpdate.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IDPlan;
+                    cmdUpdate.Parameters.Add("@id_tipo_persona", SqlDbType.Int).Value = persona.IDTipoPersona;
+                    cmdUpdate.ExecuteNonQuery();
+                }
+                else {
+                    SqlCommand cmdUpdate = new SqlCommand("UPDATE personas " +
+                                        "SET nombre=@nombre, apellido=@apellido, " +
+                                             "direccion=@direccion, email=@email, telefono=@telefono, " +
+                                             "fecha_nac=@fecha_nac, id_tipo_persona=@id_tipo_persona " +
+                                        "WHERE id_persona=@id", sqlConn);
+                    cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = persona.ID;
+                    cmdUpdate.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
+                    cmdUpdate.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
+                    cmdUpdate.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = persona.Direccion;
+                    cmdUpdate.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
+                    cmdUpdate.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
+                    cmdUpdate.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
+                    cmdUpdate.Parameters.Add("@id_tipo_persona", SqlDbType.Int).Value = persona.IDTipoPersona;
+                    cmdUpdate.ExecuteNonQuery();
+                }
             }
             catch (Exception ex)
             {

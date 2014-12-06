@@ -40,6 +40,15 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.LinkButton lnkAlumInsc;
         
         /// <summary>
+        /// Control panelLogin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelLogin;
+        
+        /// <summary>
         /// Control btnVolver.
         /// </summary>
         /// <remarks>

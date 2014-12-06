@@ -138,7 +138,44 @@ namespace UI.Web
             this.Logic.Delete(id);
         }
 
-        protected void aceptarLinkButton_Click(object sender, EventArgs e)
+        private void LoadEntity(Materia materia)
+        {
+            materia.Descripcion = this.txtMateria.Text;
+            materia.HSSemanales = int.Parse(this.txtHsSem.Text);
+            materia.HSTotales = int.Parse(this.txtHsTot.Text);
+            materia.IDPlan = int.Parse(this.dpdPlan.SelectedValue);
+        }
+
+        protected void nuevoLinkButton_Click(object sender, EventArgs e)
+        {
+            this.formPanelMat.Visible = true;
+            this.gridActionPanel.Visible = false;
+            this.formActionPanel.Visible = false;
+            this.FormMode = FormModes.Alta;
+            this.ClearForm();
+            this.EnableForm(true);
+        }
+
+        private void ClearForm()
+        {
+            this.txtMateria.Text = string.Empty;
+            this.txtHsSem.Text = string.Empty;
+            this.txtHsTot.Text = string.Empty;
+        }
+
+        private void SaveEntity(Materia materia)
+        {
+            this.Logic.Save(materia);
+        }
+
+        protected void cancelarLinkButton_Click(object sender, EventArgs e)
+        {
+            this.formPanelMat.Visible = false;
+            this.formActionPanel.Visible = false;
+            this.gridActionPanel.Visible = true;
+        }
+
+        protected void btnAceptar_Click(object sender, EventArgs e)
         {
             switch (this.FormMode)
             {
@@ -173,44 +210,7 @@ namespace UI.Web
             this.formPanelMat.Visible = false;
         }
 
-        private void LoadEntity(Materia materia)
-        {
-            materia.Descripcion = this.txtMateria.Text;
-            materia.HSSemanales = int.Parse(this.txtHsSem.Text);
-            materia.HSTotales = int.Parse(this.txtHsTot.Text);
-            materia.IDPlan = int.Parse(this.dpdPlan.SelectedValue);
-        }
-
-        protected void nuevoLinkButton_Click(object sender, EventArgs e)
-        {
-            this.formPanelMat.Visible = true;
-            this.gridActionPanel.Visible = false;
-            this.formActionPanel.Visible = true;
-            this.FormMode = FormModes.Alta;
-            this.ClearForm();
-            this.EnableForm(true);
-        }
-
-        private void ClearForm()
-        {
-            this.txtMateria.Text = string.Empty;
-            this.txtHsSem.Text = string.Empty;
-            this.txtHsTot.Text = string.Empty;
-        }
-
-        private void SaveEntity(Materia materia)
-        {
-            this.Logic.Save(materia);
-        }
-
-        protected void cancelarLinkButton_Click(object sender, EventArgs e)
-        {
-            this.formPanelMat.Visible = false;
-            this.formActionPanel.Visible = false;
-            this.gridActionPanel.Visible = true;
-        }
-
-        protected void btnVolver_Click(object sender, EventArgs e)
+        protected void lnkVolver_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Admin.aspx");
         }

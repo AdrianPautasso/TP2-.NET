@@ -1,8 +1,22 @@
-﻿<%@ Page Title="Usuarios" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="UI.Web.Planes" %>
+﻿<%@ Page Title="Planes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Planes.aspx.cs" Inherits="UI.Web.Planes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
 
 <asp:Panel ID="grdPlanes" runat="server" CssClass="contenedor">
+
+ <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $("#bodyForm").validate({
+                rules: {
+                    <%=txtDesc.UniqueID %>: { required: true }
+                },
+                messages: {
+                    <%=txtDesc.UniqueID %>: { required: " Este campo es obligatorio.", }
+                },
+            });
+        })
+</script>
+
     <asp:GridView ID="GridViewPlanes" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True"
         SelectedRowStyle-BackColor="Black"
         SelectedRowStyle-ForeColor="White"
@@ -28,9 +42,6 @@
             </td>
             <td>
                 <asp:TextBox ID="txtDesc" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" 
-                    ControlToValidate="txtDesc" ErrorMessage="Debe ingresar la descripcion" 
-                    ForeColor="Red">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -46,7 +57,7 @@
     </table>     
            <ul>
                 <li>
-                    <asp:LinkButton ID="lnkAceptar2" runat="server" onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+                    <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" onclick="btnAceptar_Click" CssClass="btnAceptar"/>
                     <asp:LinkButton ID="lnkCancelar2" runat="server" onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
                 </li>
             </ul>
@@ -57,7 +68,7 @@
 <asp:Panel ID="formActionPanel" Visible="False" runat="server" CssClass="contenedor">
         <ul>
             <li>
-              <asp:LinkButton ID="lnkAceptar" runat="server" onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+              <asp:Button ID="btnAceptar2" runat="server" onclick="btnAceptar_Click" Text="Aceptar" CssClass="btnAceptar"/>
               <asp:LinkButton ID="lnkCancelar" runat="server" onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>            
             </li>
         </ul>
@@ -77,11 +88,9 @@
     </ul>
 </asp:Panel>
 
-    <asp:Panel ID="PanelLogin" runat="server">
-        <asp:Button ID="btnVolver" runat="server" Text="Atras" 
-            onclick="btnVolver_Click" CssClass="submitButton"/>
-        <br />
-        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+    <asp:Panel ID="panelLogin" runat="server">
+        <asp:LinkButton ID="lnkVolver" runat="server" onclick="lnkVolver_Click">Atras</asp:LinkButton>
+        <asp:ValidationSummary ID="ValidationSummary" runat="server" />
     </asp:Panel>
 
 </asp:Content>

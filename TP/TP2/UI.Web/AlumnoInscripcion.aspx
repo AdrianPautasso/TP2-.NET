@@ -3,6 +3,22 @@
 
 <asp:Panel ID="grdInscripciones" runat="server" CssClass="contenedor">
 
+ <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $("#bodyForm").validate({
+                rules: {
+                    <%=txtCondicion.UniqueID %>: { required: true },
+                    <%=txtNota.UniqueID %>: { required: true, number: true, min: 0, max: 10 }
+                },
+                messages: {
+                    <%=txtCondicion.UniqueID %>: { required: " Este campo es obligatorio.", },
+                    <%=txtNota.UniqueID %>: { required: " Este campo es obligatorio.", number: "Debe ser un número entre 0 y 10.",
+                                                min: "Debe ser un valor entre 0 y 10.", max: "Debe ser un valor entre 0 y 10."}
+                },
+            });
+        })
+</script>
+
         <asp:GridView ID="GridViewAlumInsc" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True"
         SelectedRowStyle-BackColor="Black"
         SelectedRowStyle-ForeColor="White"
@@ -30,7 +46,7 @@
 
     </asp:Panel>
 
-    <asp:Panel ID="formPanelAlumInsc" visible="false" runat="server">
+    <asp:Panel ID="formPanelAlumInsc" visible="false" runat="server" CssClass="contenedor">
 
         <table class="table">
             <tr>
@@ -68,9 +84,6 @@
                 </td>
                 <td>
                     <asp:TextBox ID="txtCondicion" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvCondicion" runat="server" 
-                        ControlToValidate="txtCondicion" ErrorMessage="Debe ingresar la condicion del alumno" 
-                        ForeColor="Red">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -79,59 +92,43 @@
                 </td>
                 <td>
                     <asp:TextBox ID="txtNota" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvNota" runat="server" 
-                        ControlToValidate="txtNota" ErrorMessage="Debe ingresar la nota del alumno" 
-                        ForeColor="Red">*</asp:RequiredFieldValidator>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    <asp:RangeValidator ID="rvNota" runat="server" ControlToValidate="txtNota" 
-                        ErrorMessage="RangeValidator" ForeColor="Red" MaximumValue="10" 
-                        MinimumValue="0" Type="Integer">La nota debe tener un valor entre 0 y 10</asp:RangeValidator>
+
                 </td>
             </tr>
         </table>
             <ul>
                 <li>
-                    <asp:LinkButton ID="lnkAceptar2" runat="server" onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+                    <asp:Button ID="btnAceptar" runat="server" onclick="btnAceptar_Click" Text="Aceptar" CssClass="btnAceptar"/>
                     <asp:LinkButton ID="lnkCancelar2" runat="server" onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
                 </li>
             </ul>
     </asp:Panel>
 
-    <asp:Panel ID="gridActionPanel" runat="server" CssClass="contenedor">
-        <ul>
-            <li>
-                <asp:LinkButton ID="lnkEditar" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
-            </li>
-            <li>
-                <asp:LinkButton ID="lnkEliminar" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
-            </li>
-            <li>
-                <asp:LinkButton ID="lnkNuevo" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
-            </li>
-        </ul>
-    </asp:Panel>
-            
-            
-<asp:Panel ID="formActionPanel" runat="server" Visible="false" CssClass="contenedor">
+        <asp:Panel ID="gridActionPanel" runat="server" CssClass="contenedor">
             <ul>
                 <li>
-                    <asp:LinkButton ID="lnkAceptar" runat="server" onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
-                    <asp:LinkButton ID="lnkCancelar" runat="server" onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>        
+                    <asp:LinkButton ID="lnkEditar" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
+                </li>
+                <li>
+                    <asp:LinkButton ID="lnkEliminar" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
+                </li>
+                <li>
+                    <asp:LinkButton ID="lnkNuevo" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
                 </li>
             </ul>
         </asp:Panel>
-
-
-<asp:Panel ID="panelLogin" runat="server">
-        <asp:Button ID="btnVolver" runat="server" Text="Atras" 
-            onclick="btnVolver_Click" CssClass="submitButton"/>
-
-        <br />
+            
+            
+        <asp:Panel ID="formActionPanel" runat="server" Visible="false" CssClass="contenedor">
+                    <ul>
+                        <li>
+                            <asp:Button ID="btnAceptar2" runat="server" onclick="btnAceptar_Click" Text="Aceptar" CssClass="btnAceptar"/>
+                            <asp:LinkButton ID="lnkCancelar" runat="server" onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>        
+                        </li>
+                    </ul>
+                </asp:Panel>
+        <asp:Panel ID="panelLogin" runat="server">
+        <asp:LinkButton ID="lnkVolver" runat="server" onclick="lnkVolver_Click" CssClass="submitButton">Atras</asp:LinkButton>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
 
     </asp:Panel>

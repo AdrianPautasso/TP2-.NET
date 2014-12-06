@@ -3,6 +3,23 @@
 
 <asp:Panel ID="grdMateria" runat="server" CssClass="contenedor">
 
+ <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $("#bodyForm").validate({
+                rules: {
+                    <%=txtMateria.UniqueID %>: { required: true },
+                    <%=txtHsSem.UniqueID %>: { required: true, number: true },
+                    <%=txtHsTot.UniqueID %>: { required: true, number: true }
+                },
+                messages: {
+                    <%=txtMateria.UniqueID %>: { required: " Este campo es obligatorio.", },
+                    <%=txtHsSem.UniqueID %>: { required: " Este campo es obligatorio.", number: "Debe ser un número." },
+                    <%=txtHsTot.UniqueID %>: { required: " Este campo es obligatorio.", number: "Debe ser un número." }
+                },
+            });
+        })
+</script>
+
         <asp:GridView ID="GridViewMat" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True"
         SelectedRowStyle-BackColor="Black"
         SelectedRowStyle-ForeColor="White"
@@ -34,48 +51,30 @@
                 <td>
                     <asp:Label ID="lblMateria" runat="server" Text="Materia:"></asp:Label>
                 </td>
-                <td>
-                    <asp:TextBox ID="txtMateria" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvMateria" runat="server" 
-                        ControlToValidate="txtMateria" ErrorMessage="Debe ingresar la materia" 
-                        ForeColor="Red">*</asp:RequiredFieldValidator>
+                <td style="width: 165px">
+                    <asp:TextBox ID="txtMateria" runat="server"></asp:TextBox> 
                 </td>
             </tr>
             <tr>
                 <td>
                     <asp:Label ID="lblHsSemanales" runat="server" Text="Horas Semanales:"></asp:Label>
                 </td>
-                <td>
+                <td style="width: 165px">
                     <asp:TextBox ID="txtHsSem" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvHsSemanales" runat="server" 
-                        ControlToValidate="txtHsSem" ErrorMessage="Debe ingresar las horas semanales" 
-                        ForeColor="Red">*</asp:RequiredFieldValidator>
-                    <asp:RangeValidator ID="rvHsSemanales" runat="server" 
-                        ControlToValidate="txtHsSem" 
-                        ErrorMessage="Las horas semanales son de 2 a 8 hs" ForeColor="Red" 
-                        MaximumValue="8" MinimumValue="2" Type="Integer">*</asp:RangeValidator>
-                </td>
             </tr>
             <tr>
                 <td>
                     <asp:Label ID="lblHsTotales" runat="server" Text="Horas Totales:"></asp:Label>
                 </td>
-                <td>
+                <td style="width: 165px">
                     <asp:TextBox ID="txtHsTot" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvHsTotales" runat="server" 
-                        ControlToValidate="txtHsTot" ErrorMessage="Debe ingresar las horas totales" 
-                        ForeColor="Red">*</asp:RequiredFieldValidator>
-                    <asp:RangeValidator ID="rvHsTotales" runat="server" 
-                        ControlToValidate="txtHsTot" 
-                        ErrorMessage="Las horas totales son de 100 a 200 hs" MaximumValue="200" 
-                        MinimumValue="100" ForeColor="Red">*</asp:RangeValidator>
                 </td>
             </tr>
             <tr>
                 <td>
                     <asp:Label ID="lnkPlan" runat="server" Text="Plan:"></asp:Label>
                 </td>
-                <td>
+                <td style="width: 165px">
                     <asp:DropDownList ID="dpdPlan" runat="server" DataSourceID="obdPlan" 
                         DataTextField="DescPlanYEspecialidad" DataValueField="ID">
                     </asp:DropDownList>
@@ -84,7 +83,7 @@
         </table>
             <ul>
                 <li>
-                    <asp:LinkButton ID="lnkAceptar2" runat="server" onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+                    <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" onclick="btnAceptar_Click" CssClass="btnAceptar"/>
                     <asp:LinkButton ID="lnkCancelar2" runat="server" onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
                 </li>
             </ul>
@@ -97,7 +96,7 @@
     <asp:Panel ID="formActionPanel" Visible="False" runat="server" CssClass="contenedor">
             <ul>
                 <li>
-                    <asp:LinkButton ID="lnkAceptar" runat="server" onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+                    <asp:Button ID="btnAceptar2" runat="server" onclick="btnAceptar_Click" Text="Aceptar" CssClass="btnAceptar"/>
                     <asp:LinkButton ID="lnkCancelar" runat="server" onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
                 </li>
             </ul>
@@ -118,8 +117,7 @@
     </asp:Panel>
 
     <asp:Panel ID="panelLogin" runat="server">
-        <asp:Button ID="btnVolver" runat="server" Text="Atras" 
-            onclick="btnVolver_Click" CssClass="submitButton"/>
+        <asp:LinkButton ID="lnkVolver" runat="server" onclick="lnkVolver_Click" CssClass="submitButton">Atras</asp:LinkButton>
 
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
 

@@ -35,16 +35,15 @@ namespace UI.Web
 
         private void LoadGrilla()
         {
-
             if (Session["TipoPersona"].ToString() == "1" || Session["TipoPersona"].ToString() == "2")
             {
                 int isdasad = Convert.ToInt32(Session["ID"]);
-                this.GridViewPer.DataSource = this.Logic.GerPersona(Convert.ToInt32(Session["ID"]));
+                this.GridViewPer.DataSource = this.Logic.GetPersona(Convert.ToInt32(Session["ID"]));
                 this.GridViewPer.DataBind();
             }
             else if (Session["TipoPersona"].ToString() == "3")
             {
-                this.GridViewPer.DataSource = this.Logic.GetAll();
+                this.GridViewPer.DataSource = this.Logic.GetAll(1);
                 this.GridViewPer.DataBind();
             }
         }
@@ -183,7 +182,7 @@ namespace UI.Web
             this.Logic.Delete(id);
         }
 
-        protected void aceptarLinkButton_Click(object sender, EventArgs e)
+        protected void btnAceptar_Click(object sender, EventArgs e)
         {
             switch (this.FormMode)
             {
@@ -237,10 +236,12 @@ namespace UI.Web
             {
                 this.formPanelPer.Visible = true;
                 this.gridActionPanel.Visible = false;
-                this.formActionPanel.Visible = true;
+                this.formActionPanel.Visible = false;
                 this.FormMode = FormModes.Alta;
                 this.ClearForm();
                 this.EnableForm(true);
+                this.dblTipoPersona.SelectedValue = "1";
+                this.dblTipoPersona.Enabled = false;
             }
             else
             {
@@ -271,7 +272,7 @@ namespace UI.Web
             this.gridActionPanel.Visible = true;
         }
 
-        protected void btnVolver_Click(object sender, EventArgs e)
+        protected void lnkVolver_Click(object sender, EventArgs e)
         {
             if (Session["TipoPersona"].ToString() == "1")
             {
@@ -286,6 +287,5 @@ namespace UI.Web
                 Response.Redirect("~/Admin.aspx");
             }
         }
-
     }
 }

@@ -202,9 +202,9 @@ namespace UI.Web
             {
                 this.formPanelDocCur.Visible = true;
                 this.gridActionPanel.Visible = false;
-                this.formActionPanel.Visible = true;
                 this.FormMode = FormModes.Alta;
                 this.EnableForm(true);
+                this.formActionPanel.Visible = false;
             }
             else
             {

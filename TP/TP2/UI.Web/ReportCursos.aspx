@@ -6,7 +6,7 @@
         AutoDataBind="True" EnableParameterPrompt="False" GroupTreeImagesFolderUrl="" 
         Height="1202px" ReportSourceID="crsCursos" ToolbarImagesFolderUrl="" 
         ToolPanelWidth="200px" Width="1104px" />
-            <asp:Panel ID="Panel2" runat="server">
+            <asp:Panel ID="panelLogin" runat="server">
         <asp:Button ID="lblVolver" runat="server" Text="Atras" CssClass="submitButton" 
                     onclick="Button1_Click" />
     </asp:Panel>

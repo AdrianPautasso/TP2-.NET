@@ -150,7 +150,7 @@ namespace UI.Web
             else if (this.IsEntitySelected & (Session["TipoPersona"].ToString() == "2"))
             {
                 this.formPanelAlumInsc.Visible = true;
-                this.formActionPanel.Visible = true;
+                this.formActionPanel.Visible = false;
                 this.gridActionPanel.Visible = false;
                 this.FormMode = FormModes.Modificacion;
                 this.EnableForm(true);
@@ -162,7 +162,7 @@ namespace UI.Web
             else
             {
                 this.formPanelAlumInsc.Visible = true;
-                this.formActionPanel.Visible = true;
+                this.formActionPanel.Visible = false;
                 this.gridActionPanel.Visible = false;
                 this.FormMode = FormModes.Modificacion;
                 this.EnableForm(true);
@@ -198,7 +198,6 @@ namespace UI.Web
                 this.FormMode = FormModes.Baja;
                 this.EnableForm(false);
                 this.LoadForm(this.SelectedID);
-                //CursoLogic.SumarCupo(int.Parse(this.ddlCurso.SelectedValue));
             }
 
             else
@@ -212,7 +211,7 @@ namespace UI.Web
             this.Logic.Delete(id);
         }
 
-        protected void aceptarLinkButton_Click(object sender, EventArgs e)
+        protected void btnAceptar_Click(object sender, EventArgs e)
         {
             //CursoLogic cur = new CursoLogic();
             switch (this.FormMode)
@@ -279,6 +278,7 @@ namespace UI.Web
                 this.txtNota.Enabled = false;
                 this.FormMode = FormModes.Alta;
                 this.EnableForm(true);
+                this.formActionPanel.Visible = false;
 
             }
             else
@@ -289,6 +289,7 @@ namespace UI.Web
                 this.FormMode = FormModes.Alta;
                 this.ClearForm();
                 this.EnableForm(true);
+                this.formActionPanel.Visible = false;
        
             }
         }
@@ -311,7 +312,7 @@ namespace UI.Web
             this.gridActionPanel.Visible = true;
         }
 
-        protected void btnVolver_Click(object sender, EventArgs e)
+        protected void lnkVolver_Click(object sender, EventArgs e)
         {
             if (Session["TipoPersona"].ToString() == "1")
             {

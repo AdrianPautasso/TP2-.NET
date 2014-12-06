@@ -58,15 +58,6 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.TextBox txtMateria;
         
         /// <summary>
-        /// Control rfvMateria.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMateria;
-        
-        /// <summary>
         /// Control lblHsSemanales.
         /// </summary>
         /// <remarks>
@@ -83,24 +74,6 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHsSem;
-        
-        /// <summary>
-        /// Control rfvHsSemanales.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHsSemanales;
-        
-        /// <summary>
-        /// Control rvHsSemanales.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator rvHsSemanales;
         
         /// <summary>
         /// Control lblHsTotales.
@@ -121,24 +94,6 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.TextBox txtHsTot;
         
         /// <summary>
-        /// Control rfvHsTotales.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHsTotales;
-        
-        /// <summary>
-        /// Control rvHsTotales.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator rvHsTotales;
-        
-        /// <summary>
         /// Control lnkPlan.
         /// </summary>
         /// <remarks>
@@ -157,13 +112,13 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.DropDownList dpdPlan;
         
         /// <summary>
-        /// Control lnkAceptar2.
+        /// Control btnAceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkAceptar2;
+        protected global::System.Web.UI.WebControls.Button btnAceptar;
         
         /// <summary>
         /// Control lnkCancelar2.
@@ -193,13 +148,13 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.Panel formActionPanel;
         
         /// <summary>
-        /// Control lnkAceptar.
+        /// Control btnAceptar2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkAceptar;
+        protected global::System.Web.UI.WebControls.Button btnAceptar2;
         
         /// <summary>
         /// Control lnkCancelar.
@@ -256,13 +211,13 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.Panel panelLogin;
         
         /// <summary>
-        /// Control btnVolver.
+        /// Control lnkVolver.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVolver;
+        protected global::System.Web.UI.WebControls.LinkButton lnkVolver;
         
         /// <summary>
         /// Control ValidationSummary1.

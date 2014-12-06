@@ -53,3 +53,47 @@ C:\Users\Adrian\Desktop\TP2\TP2\TP2\UI.Web\bin\Business.Logic.pdb
 C:\Users\Adrian\Desktop\TP2\TP2\TP2\UI.Web\bin\Data.Database.pdb
 C:\Users\Adrian\Desktop\TP2\TP2\TP2\UI.Web\obj\Debug\UI.Web.dll
 C:\Users\Adrian\Desktop\TP2\TP2\TP2\UI.Web\obj\Debug\UI.Web.pdb
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Web\bin\UI.Web.dll
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Web\bin\UI.Web.pdb
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Web\bin\Business.Entities.dll
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Web\bin\Business.Logic.dll
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Web\bin\Data.Database.dll
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Web\bin\Business.Entities.pdb
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Web\bin\Business.Logic.pdb
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Web\bin\Data.Database.pdb
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Web\obj\Debug\UI.Web.csprojResolveAssemblyReference.cache
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Web\obj\Debug\UI.Web.dll
+C:\Users\ElDopela\Desktop\TP2\TP2\TP2\UI.Web\obj\Debug\UI.Web.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Web\bin\UI.Web.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Web\bin\UI.Web.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Web\bin\Business.Entities.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Web\bin\Business.Logic.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Web\bin\Data.Database.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Web\bin\Business.Entities.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Web\bin\Business.Logic.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Web\bin\Data.Database.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Web\obj\Debug\UI.Web.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Web\obj\Debug\UI.Web.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-04\TP2\UI.Web\obj\Debug\UI.Web.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Web\obj\Debug\UI.Web.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Web\bin\UI.Web.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Web\bin\UI.Web.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Web\bin\Business.Entities.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Web\bin\Business.Logic.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Web\bin\Data.Database.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Web\bin\Business.Entities.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Web\bin\Business.Logic.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Web\bin\Data.Database.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Web\obj\Debug\UI.Web.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05\TP2-2014-12-05\TP2\UI.Web\obj\Debug\UI.Web.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Web\bin\UI.Web.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Web\bin\UI.Web.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Web\bin\Business.Entities.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Web\bin\Business.Logic.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Web\bin\Data.Database.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Web\bin\Business.Entities.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Web\bin\Business.Logic.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Web\bin\Data.Database.pdb
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Web\obj\Debug\UI.Web.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Web\obj\Debug\UI.Web.dll
+C:\Users\Adrian\Desktop\TP2-2014-12-05 - copia\TP2-2014-12-05\TP2\UI.Web\obj\Debug\UI.Web.pdb

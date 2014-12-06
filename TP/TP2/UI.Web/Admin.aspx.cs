@@ -74,5 +74,15 @@ namespace UI.Web
             Response.Redirect("~/ReportPlanes.aspx");
         }
 
+        protected void lnkDocentes_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Docentes.aspx");
+        }
+
+        protected void lnkAdmin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Administradores.aspx");
+        }
+
     }
 }

@@ -58,15 +58,6 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.TextBox txtDesc;
         
         /// <summary>
-        /// Control rfvDescripcion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcion;
-        
-        /// <summary>
         /// Control lblAnioEsp.
         /// </summary>
         /// <remarks>
@@ -83,15 +74,6 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAnioDesc;
-        
-        /// <summary>
-        /// Control rfvAnioEsp.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAnioEsp;
         
         /// <summary>
         /// Control lnkPlan.
@@ -112,13 +94,13 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.DropDownList dpdPlan;
         
         /// <summary>
-        /// Control lnkAceptar2.
+        /// Control btnAceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkAceptar2;
+        protected global::System.Web.UI.WebControls.Button btnAceptar;
         
         /// <summary>
         /// Control lnkCancelar2.
@@ -148,13 +130,13 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.Panel formActionPanel;
         
         /// <summary>
-        /// Control lnkAceptar.
+        /// Control btnAceptar2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkAceptar;
+        protected global::System.Web.UI.WebControls.Button btnAceptar2;
         
         /// <summary>
         /// Control lnkCancelar.
@@ -202,30 +184,30 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.LinkButton lnkNuevo;
         
         /// <summary>
-        /// Control PanelLogin.
+        /// Control panelLogin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelLogin;
+        protected global::System.Web.UI.WebControls.Panel panelLogin;
         
         /// <summary>
-        /// Control btnVolver.
+        /// Control lnkVolver.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVolver;
+        protected global::System.Web.UI.WebControls.LinkButton lnkVolver;
         
         /// <summary>
-        /// Control ValidationSummary1.
+        /// Control ValidationSummary.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary;
     }
 }

@@ -2,6 +2,23 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
 
+ <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $("#bodyForm").validate({
+                rules: {
+                    <%=txtNombreUsuario.UniqueID %>: { required: true },
+                    <%=txtClave.UniqueID %>: { required: true },
+                    <%=txtRepetirClave.UniqueID %>: { required: true }
+                },
+                messages: {
+                    <%=txtNombreUsuario.UniqueID %>: { required: " Este campo es obligatorio.", },
+                    <%=txtClave.UniqueID %>: { required: " Este campo es obligatorio." },
+                    <%=txtRepetirClave.UniqueID %>: { required: " Este campo es obligatorio." }
+                },
+            });
+        })
+</script>
+
     <asp:Panel ID="grdUsuarios" runat="server" CssClass="contenedor">
     <asp:GridView ID="gridView" ShowHeaderWhenEmpty="True" runat="server" AutoGenerateColumns="false"
         SelectedRowStyle-BackColor="Black"
@@ -27,7 +44,7 @@
             <td>
                 <asp:Label ID="personaLabel" runat="server" Text="Persona:"></asp:Label>
             </td>
-            <td style="width: 142px">
+            <td>
                 <asp:DropDownList ID="dpdPersonas" runat="server" 
                     DataSourceID="ObjectDataSource1" DataTextField="NombreCompleto" 
                     DataValueField="ID">
@@ -38,7 +55,7 @@
             <td>
                 <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: "></asp:Label>
             </td>
-            <td style="width: 142px">
+            <td>
                 <asp:CheckBox ID="habilitadoCheckBox" runat="server" />
             </td>
         </tr>
@@ -46,30 +63,30 @@
             <td>
                 <asp:Label ID="nombreUsuarioLabel" runat="server" Text="Usuario: "></asp:Label>
             </td>
-            <td style="width: 142px">
-                <asp:TextBox ID="nombreUsuarioTextBox" runat="server"></asp:TextBox>
+            <td>
+                <asp:TextBox ID="txtNombreUsuario" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td>
                 <asp:Label ID="claveLabel" runat="server" Text="Clave: "></asp:Label>
             </td>
-            <td style="width: 142px">
-                <asp:TextBox ID="claveTextBox" runat="server" TextMode="Password"></asp:TextBox>
+            <td>
+                <asp:TextBox ID="txtClave" runat="server" TextMode="Password"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td>
                 <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir Clave: "></asp:Label>
             </td>
-            <td style="width: 142px">
-                <asp:TextBox ID="repetirclaveTextBox" runat="server" TextMode="Password"></asp:TextBox>
+            <td>
+                <asp:TextBox ID="txtRepetirClave" runat="server" TextMode="Password"></asp:TextBox>
             </td>
         </tr>
     </table>
             <ul>
                 <li>
-                    <asp:LinkButton ID="lnkAceptar2" runat="server" onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+                    <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" onclick="btnAceptar_Click" CssClass="btnAceptar"/>
                     <asp:LinkButton ID="lnkCancelar2" runat="server" onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
                 </li>
             </ul>
@@ -81,7 +98,7 @@
 <asp:Panel ID="formActionPanel" Visible="false" runat="server" CssClass="contenedor">
         <ul>
             <li>
-                <asp:LinkButton ID="aceptarLinkButton" runat="server" onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+                <asp:Button ID="btnAceptar2" runat="server" onclick="btnAceptar_Click" Text="Aceptar" CssClass="btnAceptar"/>
                 <asp:LinkButton ID="cancelarLinkButton" runat="server" onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
             </li>
         </ul> 
@@ -101,8 +118,9 @@
     </ul>
 </asp:Panel>
 
-    <asp:Panel ID="PanelLogin" runat="server">
-        <asp:Button ID="btnVolver" runat="server" Text="Volver" onclick="btnVolver_Click" CssClass="submitButton"/>
+    <asp:Panel ID="panelLogin" runat="server">
+        <asp:LinkButton ID="lnkVolver" runat="server" onclick="lnkVolver_Click" CssClass="submitButton">Atras</asp:LinkButton>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
     </asp:Panel>
 
 </asp:Content>

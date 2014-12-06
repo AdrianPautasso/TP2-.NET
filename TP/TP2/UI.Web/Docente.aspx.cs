@@ -41,7 +41,6 @@ namespace UI.Web
 
         protected void lnkPersonas_Click(object sender, EventArgs e)
         {
-
             Response.Redirect("~/Personas.aspx");
         }
     }

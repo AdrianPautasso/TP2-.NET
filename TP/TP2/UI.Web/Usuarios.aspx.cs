@@ -103,7 +103,7 @@ namespace UI.Web
         {
             this.Entity = this.Logic.GetOne(id);
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
-            this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
+            this.txtNombreUsuario.Text = this.Entity.NombreUsuario;
             this.dpdPersonas.SelectedValue = this.Entity.IdPersona.ToString();
 
         }
@@ -132,8 +132,8 @@ namespace UI.Web
 
         private void LoadEntity(Usuario usuario)
         {
-            usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
-            usuario.Clave = this.claveTextBox.Text;
+            usuario.NombreUsuario = this.txtNombreUsuario.Text;
+            usuario.Clave = this.txtClave.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
             usuario.IdPersona = int.Parse(this.dpdPersonas.SelectedValue);
         }
@@ -147,10 +147,10 @@ namespace UI.Web
 
         private void EnableForm(bool enable)
         {
-            this.nombreUsuarioTextBox.Enabled = enable;
-            this.claveTextBox.Visible = enable;
+            this.txtNombreUsuario.Enabled = enable;
+            this.txtClave.Visible = enable;
             this.claveLabel.Visible = enable;
-            this.repetirclaveTextBox.Visible = enable;
+            this.txtRepetirClave.Visible = enable;
             this.repetirClaveLabel.Visible = enable;
         }
 
@@ -176,7 +176,7 @@ namespace UI.Web
             this.Logic.Delete(id);
         }
 
-        protected void aceptarLinkButton_Click(object sender, EventArgs e)
+        protected void btnAceptar_Click(object sender, EventArgs e)
         {
             switch (this.FormMode)
             {
@@ -217,7 +217,7 @@ namespace UI.Web
             if (Session["TipoPersona"].ToString() == "3")
             {
                 this.formPanel.Visible = true;
-                this.formActionPanel.Visible = true;
+                this.formActionPanel.Visible = false;
                 this.gridActionsPanel.Visible = false;
                 this.FormMode = FormModes.Alta;
                 this.ClearForm();
@@ -232,10 +232,10 @@ namespace UI.Web
         private void ClearForm()
         {
             this.habilitadoCheckBox.Checked = false;
-            this.nombreUsuarioTextBox.Text = string.Empty;
+            this.txtNombreUsuario.Text = string.Empty;
         }
 
-        protected void btnVolver_Click(object sender, EventArgs e)
+        protected void lnkVolver_Click(object sender, EventArgs e)
         {
             if (Session["TipoPersona"].ToString() == "1")
             {

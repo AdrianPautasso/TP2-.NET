@@ -13,13 +13,22 @@ namespace UI.Web {
     public partial class Admin {
         
         /// <summary>
-        /// Control LinkButton1.
+        /// Control lnkPersonas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.WebControls.LinkButton lnkPersonas;
+        
+        /// <summary>
+        /// Control lnkAdministradores.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkAdministradores;
         
         /// <summary>
         /// Control lnkComisiones.
@@ -40,13 +49,13 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.LinkButton lnkCursos;
         
         /// <summary>
-        /// Control lnkPersonas.
+        /// Control lnkDocentes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkPersonas;
+        protected global::System.Web.UI.WebControls.LinkButton lnkDocentes;
         
         /// <summary>
         /// Control lnkMaterias.
@@ -110,6 +119,24 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkReporte2;
+        
+        /// <summary>
+        /// Control LinkButton1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        
+        /// <summary>
+        /// Control panelLogin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelLogin;
         
         /// <summary>
         /// Control btnVolver.

@@ -193,21 +193,21 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.LinkButton lnkNuevo;
         
         /// <summary>
-        /// Control PanelLogin.
+        /// Control panelLogin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelLogin;
+        protected global::System.Web.UI.WebControls.Panel panelLogin;
         
         /// <summary>
-        /// Control btnVolver.
+        /// Control lnkVolver.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVolver;
+        protected global::System.Web.UI.WebControls.Button lnkVolver;
     }
 }

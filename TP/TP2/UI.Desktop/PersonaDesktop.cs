@@ -59,7 +59,7 @@ namespace UI.Desktop
             PersonaActual = new PersonaLogic().GetOne(ID);
             if (modo != ModoForm.Alta)
                 MapearDeDatos();
-            if (modo == ModoForm.Alta && id_tipo_persona != 1)
+            if (modo == ModoForm.Alta)
             {
                 this.cbxTipoPersona.SelectedValue = id_tipo_persona;
                 this.cbxTipoPersona.Enabled = false;

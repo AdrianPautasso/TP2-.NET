@@ -4,6 +4,21 @@
 
     <asp:Panel ID="grdComision" runat="server" CssClass="contenedor">
 
+     <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $("#bodyForm").validate({
+                rules: {
+                    <%=txtAnioDesc.UniqueID %>: { required: true, number: true, min: 1, max: 5 },
+                    <%=txtDesc.UniqueID %>: { required: true, number: true }
+                },
+                messages: {
+                    <%=txtAnioDesc.UniqueID %>: { required: " Este campo es obligatorio.", number: "Ingrese el año en dígitos.", min: "El año mínimo es 1.", max: "El año máximo es 5." },
+                    <%=txtDesc.UniqueID %>: { required: " Este campo es obligatorio.", number: "La descripción de la comisión deben ser números (Ejemplo: 304)." }
+                },
+            });
+        })
+    </script>
+
         <asp:GridView ID="GridViewCom" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True"
         SelectedRowStyle-BackColor="Black"
         SelectedRowStyle-ForeColor="White"
@@ -27,7 +42,7 @@
 
     </asp:Panel>
 
-    <asp:Panel ID="formPanelCom" visible="false" runat="server">
+    <asp:Panel ID="formPanelCom" visible="false" runat="server" CssClass="contenedor">
 
         <table class="table">
             <tr>
@@ -36,9 +51,6 @@
                 </td>
                 <td>
                     <asp:TextBox ID="txtDesc" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" 
-                        ControlToValidate="txtDesc" ErrorMessage="Debe ingresar la descripcion" 
-                        ForeColor="Red">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -47,9 +59,6 @@
                 </td>
                 <td>
                     <asp:TextBox ID="txtAnioDesc" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvAnioEsp" runat="server" 
-                        ControlToValidate="txtAnioDesc" ErrorMessage="Debe ingresar el anio" 
-                        ForeColor="Red">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -65,7 +74,7 @@
         </table>
             <ul>
                 <li>
-                    <asp:LinkButton ID="lnkAceptar2" runat="server" onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+                    <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" onclick="btnAceptar_Click" CssClass="btnAceptar"/>
                     <asp:LinkButton ID="lnkCancelar2" runat="server" onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
                 </li>
             </ul>
@@ -76,7 +85,7 @@
     <asp:Panel ID="formActionPanel" Visible="False" runat="server" CssClass="contenedor">
         <ul>
             <li>
-                <asp:LinkButton ID="lnkAceptar" runat="server" onclick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+                <asp:Button ID="btnAceptar2" runat="server" onclick="btnAceptar_Click" Text="Aceptar" CssClass="btnAceptar"/>
                 <asp:LinkButton ID="lnkCancelar" runat="server" onclick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>      
             </li>
         </ul>
@@ -98,11 +107,9 @@
 
 
 
-    <asp:Panel ID="PanelLogin" runat="server">
-        <asp:Button ID="btnVolver" runat="server" Text="Atras" 
-            onclick="btnVolver_Click" CssClass="submitButton" />
-        <br />
-        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+    <asp:Panel ID="panelLogin" runat="server">
+        <asp:LinkButton ID="lnkVolver" runat="server" onclick="lnkVolver_Click" CssClass="submitButton">Atras</asp:LinkButton>
+        <asp:ValidationSummary ID="ValidationSummary" runat="server" />
     </asp:Panel>
 
 </asp:Content>
